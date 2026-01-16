@@ -2234,6 +2234,7 @@ class DailyQuantity(models.Model):
 
     date = models.DateField(db_index=True) # Date for which the quantity applies
     quantity = models.PositiveIntegerField(default=0) # The quantity entered/used for that day
+    total_amount = models.DecimalField(max_digits=12, decimal_places=2, default=0.00)
     last_updated = models.DateTimeField(auto_now=True)
 
     class Meta:

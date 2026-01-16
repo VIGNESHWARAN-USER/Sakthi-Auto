@@ -159,7 +159,7 @@ const AddStock = () => {
         chemical_name: "",
         dose_volume: "",
         quantity: "",
-        quantity: "",
+        // quantity: "",
         expiry_date: "",
         batch_number: "",
         total_amount: "",

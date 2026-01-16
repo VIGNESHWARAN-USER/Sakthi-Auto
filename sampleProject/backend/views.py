@@ -4862,14 +4862,15 @@ def get_current_expiry(request):
     if request.method == 'POST':
         try:
             today = date.today()
-            current_month = today.month; current_year = today.year
-            next_month_date = today + relativedelta(months=1)
-            next_month = next_month_date.month; next_year = next_month_date.year
+            target_date = today + timedelta(days=60)
+            
             with transaction.atomic():
-                # Find medicines expiring exactly in the current month OR exactly in the next month
+                # Find medicines expiring within the next 60 days
+                # We filter for dates greater than or equal to today (to avoid reprocessing already expired/removed ones if any slipped through, tailored to future expiry)
+                # and less than or equal to the target date (60 days from now).
                 expiry_medicines = PharmacyStock.objects.select_for_update().filter(
-                    Q(expiry_date__year=current_year, expiry_date__month=current_month) |
-                    Q(expiry_date__year=next_year, expiry_date__month=next_month)
+                    expiry_date__lte=target_date,
+                    expiry_date__gte=today 
                 )
                 medicines_processed_count = 0
                 for medicine in expiry_medicines:
@@ -5319,6 +5320,23 @@ def update_daily_quantities(request):
             # *** ADJUST THIS if your model field is DecimalField/FloatField etc. ***
             dose_volume_str = str(dose_volume)
 
+            # Look up amount_per_unit from PharmacyStock
+            amount_per_unit = 0
+            if HAS_STOCK_MODEL:
+                # We filter by the same attributes to find the relevant stock item
+                stock_item = PharmacyStock.objects.filter(
+                    chemical_name=chem_name,
+                    brand_name=brand_name,
+                    dose_volume=dose_volume_str,
+                    expiry_date=entry_expiry_date
+                ).first()
+                if stock_item:
+                    amount_per_unit = stock_item.amount_per_unit
+
+            from decimal import Decimal
+            # Calculate total amount
+            total_amount = Decimal(entry_quantity) * Decimal(amount_per_unit)
+
             lookup_keys = {
                 'chemical_name': chem_name,
                 'brand_name': brand_name,
@@ -5328,6 +5346,7 @@ def update_daily_quantities(request):
             }
             defaults = {
                 'quantity': entry_quantity,
+                'total_amount': total_amount,
                 # Add expiry to defaults as well, in case it needs updating or setting on create
                 'expiry_date': entry_expiry_date, # Keep original expiry unless specific logic added
             }
