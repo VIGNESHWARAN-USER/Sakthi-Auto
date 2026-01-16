@@ -1,0 +1,28 @@
+[
+    {
+        "model": "jsw.form40",
+        "pk": 1,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "emp_no": "emp0045",
+            "aadhar": null,
+            "serialNumber": "12345",
+            "dateOfEmployment": "2025-04-06",
+            "workerName": "hi",
+            "sex": "female",
+            "age": 11,
+            "sonWifeDaughterOf": "thhrefds",
+            "natureOfJob": "rtgdf",
+            "urineResult": "rgsfdx",
+            "bloodResult": "rsbtr",
+            "fecesResult": "sbvd",
+            "xrayResult": "sbdzv",
+            "otherExamResult": "rsdzb",
+            "deworming": "svdz",
+            "typhoidVaccinationDate": "2025-04-06",
+            "signatureOfFMO": "nsdbsz",
+            "remarks": "asdzc",
+            "mrdNo": null
+        }
+    }
+]

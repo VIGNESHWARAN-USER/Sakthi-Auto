@@ -1,0 +1,36 @@
+[
+    {
+        "model": "jsw.ophthalmicreport",
+        "pk": 1,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "checked": false,
+            "emp_no": "",
+            "aadhar": "123456789012",
+            "mrdNo": "",
+            "vision": "eeffh",
+            "vision_comments": "",
+            "color_vision": "",
+            "color_vision_comments": "",
+            "Cataract_glaucoma": "",
+            "Cataract_glaucoma_comments": ""
+        }
+    },
+    {
+        "model": "jsw.ophthalmicreport",
+        "pk": 2,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "checked": false,
+            "emp_no": "",
+            "aadhar": "123456789012",
+            "mrdNo": "",
+            "vision": "eeffh",
+            "vision_comments": "",
+            "color_vision": "",
+            "color_vision_comments": "",
+            "Cataract_glaucoma": "",
+            "Cataract_glaucoma_comments": ""
+        }
+    }
+]

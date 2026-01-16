@@ -1,0 +1,77 @@
+[
+    {
+        "model": "jsw.discardedmedicine",
+        "pk": 1,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Calpol",
+            "chemical_name": "Paracetomol",
+            "dose_volume": "5mg",
+            "quantity": 15,
+            "expiry_date": "2025-05-12",
+            "reason": "Damaged",
+            "total_quantity": 0
+        }
+    },
+    {
+        "model": "jsw.discardedmedicine",
+        "pk": 2,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Fluids",
+            "brand_name": "IV Glucose",
+            "chemical_name": "Dextrose",
+            "dose_volume": "500ml",
+            "quantity": 40,
+            "expiry_date": "2026-04-15",
+            "reason": "Damaged",
+            "total_quantity": 0
+        }
+    },
+    {
+        "model": "jsw.discardedmedicine",
+        "pk": 3,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "BrandQQ",
+            "chemical_name": "Levofloxacin",
+            "dose_volume": "600mg",
+            "quantity": 10,
+            "expiry_date": "2025-07-05",
+            "reason": "damaged",
+            "total_quantity": 0
+        }
+    },
+    {
+        "model": "jsw.discardedmedicine",
+        "pk": 4,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Creams",
+            "brand_name": "SkinRepair",
+            "chemical_name": "Hydrocortisone",
+            "dose_volume": "15g",
+            "quantity": 10,
+            "expiry_date": "2026-01-10",
+            "reason": "Discarded",
+            "total_quantity": 0
+        }
+    },
+    {
+        "model": "jsw.discardedmedicine",
+        "pk": 5,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Calpol",
+            "chemical_name": "Paracetamol",
+            "dose_volume": "5mg",
+            "quantity": 5,
+            "expiry_date": "2025-06-01",
+            "reason": "Damaged",
+            "total_quantity": 0
+        }
+    }
+]

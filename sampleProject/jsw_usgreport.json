@@ -1,0 +1,40 @@
+[
+    {
+        "model": "jsw.usgreport",
+        "pk": 1,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "checked": false,
+            "emp_no": "",
+            "aadhar": "123456789012",
+            "mrdNo": "",
+            "usg_abdomen": "",
+            "usg_abdomen_comments": "",
+            "usg_kub": "",
+            "usg_kub_comments": "",
+            "usg_pelvis": "",
+            "usg_pelvis_comments": "",
+            "usg_neck": "",
+            "usg_neck_comments": ""
+        }
+    },
+    {
+        "model": "jsw.usgreport",
+        "pk": 2,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "checked": false,
+            "emp_no": "",
+            "aadhar": "123456789012",
+            "mrdNo": "",
+            "usg_abdomen": "",
+            "usg_abdomen_comments": "",
+            "usg_kub": "",
+            "usg_kub_comments": "",
+            "usg_pelvis": "",
+            "usg_pelvis_comments": "",
+            "usg_neck": "",
+            "usg_neck_comments": ""
+        }
+    }
+]

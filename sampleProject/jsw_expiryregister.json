@@ -1,0 +1,152 @@
+[
+    {
+        "model": "jsw.expiryregister",
+        "pk": 1,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Drops",
+            "brand_name": "BrandV",
+            "chemical_name": "Azithromycin",
+            "dose_volume": "200mg/5ml",
+            "quantity": 37,
+            "expiry_date": "2025-05-02",
+            "removed_date": "2025-04-02",
+            "total_quantity": 0
+        }
+    },
+    {
+        "model": "jsw.expiryregister",
+        "pk": 2,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Calpol",
+            "chemical_name": "Paracetomol",
+            "dose_volume": "5mg",
+            "quantity": 50,
+            "expiry_date": "2025-05-16",
+            "removed_date": "2025-04-02",
+            "total_quantity": 0
+        }
+    },
+    {
+        "model": "jsw.expiryregister",
+        "pk": 3,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Calpol",
+            "chemical_name": "Paracetamol",
+            "dose_volume": "5mg",
+            "quantity": 20,
+            "expiry_date": "2025-04-06",
+            "removed_date": "2025-04-05",
+            "total_quantity": 0
+        }
+    },
+    {
+        "model": "jsw.expiryregister",
+        "pk": 4,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Calpol",
+            "chemical_name": "Paracetamol ",
+            "dose_volume": "5mg",
+            "quantity": 10,
+            "expiry_date": "2025-04-01",
+            "removed_date": "2025-04-17",
+            "total_quantity": 0
+        }
+    },
+    {
+        "model": "jsw.expiryregister",
+        "pk": 5,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Calpol",
+            "chemical_name": "Paracetamol",
+            "dose_volume": "500mg",
+            "quantity": 10,
+            "expiry_date": "2025-05-01",
+            "removed_date": "2025-04-21",
+            "total_quantity": 0
+        }
+    },
+    {
+        "model": "jsw.expiryregister",
+        "pk": 6,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Calpol",
+            "chemical_name": "Paracetamol",
+            "dose_volume": "500mg",
+            "quantity": 20,
+            "expiry_date": "2025-05-01",
+            "removed_date": "2025-04-21",
+            "total_quantity": 0
+        }
+    },
+    {
+        "model": "jsw.expiryregister",
+        "pk": 7,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Dolo",
+            "chemical_name": "Paracetamol",
+            "dose_volume": "650 MG",
+            "quantity": 10,
+            "expiry_date": "2025-04-01",
+            "removed_date": "2025-04-22",
+            "total_quantity": 0
+        }
+    },
+    {
+        "model": "jsw.expiryregister",
+        "pk": 8,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Dolo",
+            "chemical_name": "Paracetamol",
+            "dose_volume": "650 MG",
+            "quantity": 10,
+            "expiry_date": "2025-04-01",
+            "removed_date": "2025-04-22",
+            "total_quantity": 0
+        }
+    },
+    {
+        "model": "jsw.expiryregister",
+        "pk": 9,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Calpol",
+            "chemical_name": "Paracetamol",
+            "dose_volume": "500mg",
+            "quantity": 20,
+            "expiry_date": "2025-04-01",
+            "removed_date": "2025-04-25",
+            "total_quantity": 0
+        }
+    },
+    {
+        "model": "jsw.expiryregister",
+        "pk": 10,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Calpol",
+            "chemical_name": "Paracetamol",
+            "dose_volume": "500mg",
+            "quantity": 10,
+            "expiry_date": "2025-04-01",
+            "removed_date": null,
+            "total_quantity": 0
+        }
+    }
+]

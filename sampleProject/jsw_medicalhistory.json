@@ -1,0 +1,2068 @@
+[
+    {
+        "model": "jsw.medicalhistory",
+        "pk": 1,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "emp_no": "emp009",
+            "aadhar": null,
+            "personal_history": {
+                "diet": "veg",
+                "paan": {
+                    "years": "",
+                    "yesNo": "no"
+                },
+                "alcohol": {
+                    "years": "",
+                    "yesNo": "no",
+                    "frequency": ""
+                },
+                "smoking": {
+                    "years": "",
+                    "yesNo": "cessased",
+                    "perDay": ""
+                }
+            },
+            "medical_data": {
+                "DM": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "RS": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "CNS": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "CVS": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "GIT": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "HTN": {
+                    "detail": "Yes",
+                    "comment": "Past 3 Years"
+                },
+                "KUB": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "Asthma": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "Cancer": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "Gynaec": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "Others": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "Epileptic": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "Obstetric": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "Hypo_Thyroid": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "Hyper_Thyroid": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "Defective_Colour_Vision": {
+                    "detail": "",
+                    "comment": ""
+                }
+            },
+            "female_worker": {
+                "obstetricHistory": "",
+                "gynecologicalHistory": ""
+            },
+            "surgical_history": {
+                "history": "",
+                "children": [
+                    "Kidney Stone"
+                ],
+                "comments": ""
+            },
+            "family_history": {
+                "DM": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "RS": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "CNS": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "CVS": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "GIT": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "HTN": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "KUB": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "Asthma": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "Cancer": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "Gynaec": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "Others": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "father": {
+                    "reason": "",
+                    "status": "Alive",
+                    "remarks": ""
+                },
+                "mother": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "Epileptic": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "Obstetric": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "Hypo_Thyroid": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "Hyper_Thyroid": {
+                    "detail": "",
+                    "comment": ""
+                },
+                "maternalGrandFather": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "maternalGrandMother": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "paternalGrandFather": {
+                    "reason": "Heart Attack",
+                    "status": "Expired",
+                    "remarks": ""
+                },
+                "paternalGrandMother": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "Defective_Colour_Vision": {
+                    "detail": "",
+                    "comment": ""
+                }
+            },
+            "health_conditions": {},
+            "allergy_fields": {
+                "drug": {
+                    "yesNo": "no"
+                },
+                "food": {
+                    "yesNo": "no"
+                },
+                "others": {
+                    "yesNo": "no"
+                }
+            },
+            "allergy_comments": {
+                "drug": "",
+                "food": "",
+                "others": ""
+            },
+            "children_data": [
+                {
+                    "Age": "0",
+                    "dob": "2025-03-31",
+                    "sex": "Male",
+                    "reason": "",
+                    "status": "Alive",
+                    "remarks": ""
+                }
+            ],
+            "conditions": {
+                "DM": [],
+                "RS": [],
+                "CNS": [],
+                "CVS": [],
+                "GIT": [],
+                "HTN": [
+                    "brother",
+                    "mother"
+                ],
+                "KUB": [],
+                "Asthma": [],
+                "Cancer": [],
+                "Others": [],
+                "Epileptic": [],
+                "Hypo_Thyroid": [],
+                "Hyper_Thyroid": [],
+                "Defective_Colour_Vision": []
+            },
+            "spouse_data": null,
+            "mrdNo": null
+        }
+    },
+    {
+        "model": "jsw.medicalhistory",
+        "pk": 2,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "emp_no": "emp009",
+            "aadhar": null,
+            "personal_history": {
+                "diet": "veg",
+                "paan": {
+                    "years": "",
+                    "yesNo": "no"
+                },
+                "alcohol": {
+                    "years": "",
+                    "yesNo": "no",
+                    "frequency": ""
+                },
+                "smoking": {
+                    "years": "",
+                    "yesNo": "cessased",
+                    "perDay": ""
+                }
+            },
+            "medical_data": {
+                "DM": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "RS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "CNS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "CVS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": [
+                        "Yes",
+                        "No"
+                    ]
+                },
+                "GIT": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "HTN": {
+                    "detail": "",
+                    "comment": "",
+                    "history": [],
+                    "children": [
+                        "Past 5 years",
+                        "Past 5 Years"
+                    ]
+                },
+                "KUB": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Asthma": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Cancer": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Gynaec": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Others": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Epileptic": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Obstetric": {
+                    "detail": "",
+                    "comment": "",
+                    "children": [
+                        [
+                            "G3 P1 L1 A1"
+                        ]
+                    ]
+                },
+                "Hypo_Thyroid": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Hyper_Thyroid": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Defective_Colour_Vision": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                }
+            },
+            "female_worker": {
+                "obstetricHistory": "",
+                "gynecologicalHistory": ""
+            },
+            "surgical_history": {
+                "history": "",
+                "children": [
+                    "Kidney Stone"
+                ],
+                "comments": ""
+            },
+            "family_history": {
+                "DM": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "RS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "CNS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "CVS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "GIT": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "HTN": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "KUB": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Asthma": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Cancer": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Gynaec": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Others": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "father": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "mother": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "Epileptic": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Obstetric": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Hypo_Thyroid": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Hyper_Thyroid": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "maternalGrandFather": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "maternalGrandMother": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "paternalGrandFather": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "paternalGrandMother": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "Defective_Colour_Vision": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                }
+            },
+            "health_conditions": {},
+            "allergy_fields": {
+                "drug": {
+                    "yesNo": "no"
+                },
+                "food": {
+                    "yesNo": "no"
+                },
+                "others": {
+                    "yesNo": "no"
+                }
+            },
+            "allergy_comments": {
+                "drug": "",
+                "food": "",
+                "others": ""
+            },
+            "children_data": [
+                {
+                    "Age": "0",
+                    "dob": "2025-03-31",
+                    "sex": "Male",
+                    "reason": "",
+                    "status": "Alive",
+                    "remarks": ""
+                }
+            ],
+            "conditions": {
+                "DM": [],
+                "RS": [],
+                "CNS": [
+                    "sister"
+                ],
+                "CVS": [],
+                "GIT": [],
+                "HTN": [
+                    "brother"
+                ],
+                "KUB": [],
+                "Asthma": [],
+                "Cancer": [],
+                "Others": [],
+                "Epileptic": [],
+                "Hypo_Thyroid": [],
+                "Hyper_Thyroid": [],
+                "Defective_Colour_Vision": []
+            },
+            "spouse_data": null,
+            "mrdNo": null
+        }
+    },
+    {
+        "model": "jsw.medicalhistory",
+        "pk": 3,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "emp_no": "emp009",
+            "aadhar": null,
+            "personal_history": {
+                "diet": "veg",
+                "paan": {
+                    "years": "",
+                    "yesNo": "no"
+                },
+                "alcohol": {
+                    "years": "",
+                    "yesNo": "no",
+                    "frequency": ""
+                },
+                "smoking": {
+                    "years": "",
+                    "yesNo": "cessased",
+                    "perDay": ""
+                }
+            },
+            "medical_data": {
+                "DM": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "RS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "CNS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "CVS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": [
+                        "Yes",
+                        "No"
+                    ]
+                },
+                "GIT": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "HTN": {
+                    "detail": "",
+                    "comment": "",
+                    "history": [],
+                    "children": [
+                        "Past 5 years",
+                        "Past 5 Years"
+                    ]
+                },
+                "KUB": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Asthma": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Cancer": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Gynaec": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Others": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Epileptic": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Obstetric": {
+                    "detail": "",
+                    "comment": "",
+                    "children": [
+                        [
+                            "G3 P1 L1 A1"
+                        ]
+                    ]
+                },
+                "Hypo_Thyroid": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Hyper_Thyroid": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Defective_Colour_Vision": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                }
+            },
+            "female_worker": {
+                "obstetricHistory": "",
+                "gynecologicalHistory": ""
+            },
+            "surgical_history": {
+                "history": "",
+                "children": [
+                    "Kidney Stone"
+                ],
+                "comments": ""
+            },
+            "family_history": {
+                "DM": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "RS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "CNS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "CVS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "GIT": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "HTN": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "KUB": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Asthma": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Cancer": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Gynaec": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Others": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "father": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "mother": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "Epileptic": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Obstetric": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Hypo_Thyroid": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Hyper_Thyroid": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "maternalGrandFather": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "maternalGrandMother": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "paternalGrandFather": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "paternalGrandMother": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "Defective_Colour_Vision": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                }
+            },
+            "health_conditions": {},
+            "allergy_fields": {
+                "drug": {
+                    "yesNo": "no"
+                },
+                "food": {
+                    "yesNo": "no"
+                },
+                "others": {
+                    "yesNo": "no"
+                }
+            },
+            "allergy_comments": {
+                "drug": "",
+                "food": "",
+                "others": ""
+            },
+            "children_data": [
+                {
+                    "Age": "0",
+                    "dob": "2025-03-31",
+                    "sex": "Male",
+                    "reason": "",
+                    "status": "Alive",
+                    "remarks": ""
+                }
+            ],
+            "conditions": {
+                "DM": [],
+                "RS": [],
+                "CNS": [
+                    "sister",
+                    "wife",
+                    "paternalGrandFather",
+                    "maternalGrandMother"
+                ],
+                "CVS": [],
+                "GIT": [],
+                "HTN": [
+                    "brother",
+                    "wife",
+                    "paternalGrandMother"
+                ],
+                "KUB": [],
+                "Asthma": [],
+                "Cancer": [],
+                "Others": [],
+                "Epileptic": [],
+                "Hypo_Thyroid": [],
+                "Hyper_Thyroid": [],
+                "Defective_Colour_Vision": []
+            },
+            "spouse_data": null,
+            "mrdNo": null
+        }
+    },
+    {
+        "model": "jsw.medicalhistory",
+        "pk": 4,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "emp_no": "emp018",
+            "aadhar": null,
+            "personal_history": {
+                "diet": "mixed",
+                "paan": {
+                    "years": "",
+                    "yesNo": "no"
+                },
+                "alcohol": {
+                    "years": "",
+                    "yesNo": "no",
+                    "frequency": ""
+                },
+                "smoking": {
+                    "years": "",
+                    "yesNo": "no",
+                    "perDay": ""
+                }
+            },
+            "medical_data": {
+                "DM": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "RS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "CNS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "CVS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": [
+                        "Past 2 years"
+                    ]
+                },
+                "GIT": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "HTN": {
+                    "detail": "",
+                    "comment": "",
+                    "children": [
+                        "Past 5 years"
+                    ]
+                },
+                "KUB": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Asthma": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Cancer": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Gynaec": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Others": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Epileptic": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Obstetric": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Hypo_Thyroid": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Hyper_Thyroid": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Defective_Colour_Vision": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                }
+            },
+            "female_worker": {
+                "obstetricHistory": "",
+                "gynecologicalHistory": ""
+            },
+            "surgical_history": {
+                "history": "",
+                "children": [
+                    "Kidney stone surgery"
+                ],
+                "comments": ""
+            },
+            "family_history": {
+                "DM": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "RS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "CNS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "CVS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "GIT": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "HTN": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "KUB": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Asthma": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Cancer": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Gynaec": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Others": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "father": {
+                    "reason": "",
+                    "status": "Alive",
+                    "remarks": ""
+                },
+                "mother": {
+                    "reason": "",
+                    "status": "Alive",
+                    "remarks": ""
+                },
+                "Epileptic": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Obstetric": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Hypo_Thyroid": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Hyper_Thyroid": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "maternalGrandFather": {
+                    "reason": "Covid",
+                    "status": "Expired",
+                    "remarks": ""
+                },
+                "maternalGrandMother": {
+                    "reason": "",
+                    "status": "Alive",
+                    "remarks": ""
+                },
+                "paternalGrandFather": {
+                    "reason": "",
+                    "status": "Alive",
+                    "remarks": ""
+                },
+                "paternalGrandMother": {
+                    "reason": "",
+                    "status": "Alive",
+                    "remarks": ""
+                },
+                "Defective_Colour_Vision": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                }
+            },
+            "health_conditions": {},
+            "allergy_fields": {
+                "drug": {
+                    "yesNo": "no"
+                },
+                "food": {
+                    "yesNo": "yes"
+                },
+                "others": {
+                    "yesNo": "no"
+                }
+            },
+            "allergy_comments": {
+                "drug": "",
+                "food": "Allergic to Brinjal and Egg",
+                "others": ""
+            },
+            "children_data": [
+                {
+                    "Age": "1",
+                    "dob": "2024-01-01",
+                    "sex": "Male",
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                }
+            ],
+            "conditions": {
+                "DM": [],
+                "RS": [],
+                "CNS": [],
+                "CVS": [],
+                "GIT": [],
+                "HTN": [
+                    "mother",
+                    "maternalGrandMother"
+                ],
+                "KUB": [],
+                "Asthma": [],
+                "Cancer": [],
+                "Others": [],
+                "Epileptic": [],
+                "Hypo_Thyroid": [],
+                "Hyper_Thyroid": [],
+                "Defective_Colour_Vision": []
+            },
+            "spouse_data": null,
+            "mrdNo": null
+        }
+    },
+    {
+        "model": "jsw.medicalhistory",
+        "pk": 5,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "emp_no": null,
+            "aadhar": "123456789012",
+            "personal_history": {
+                "diet": "veg",
+                "paan": {
+                    "years": "",
+                    "yesNo": "no"
+                },
+                "alcohol": {
+                    "years": "",
+                    "yesNo": "cessased",
+                    "frequency": ""
+                },
+                "smoking": {
+                    "years": "",
+                    "yesNo": "yes",
+                    "perDay": ""
+                }
+            },
+            "medical_data": {
+                "DM": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "RS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "CNS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "CVS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "GIT": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "HTN": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "KUB": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Asthma": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Cancer": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Gynaec": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Others": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Epileptic": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Obstetric": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Hypo_Thyroid": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Hyper_Thyroid": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Defective_Colour_Vision": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                }
+            },
+            "female_worker": {
+                "obstetricHistory": "",
+                "gynecologicalHistory": ""
+            },
+            "surgical_history": {
+                "history": "",
+                "children": [
+                    "Kidney Stone"
+                ],
+                "comments": ""
+            },
+            "family_history": {
+                "DM": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "RS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "CNS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "CVS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "GIT": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "HTN": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "KUB": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Asthma": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Cancer": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Gynaec": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Others": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "father": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "mother": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "Epileptic": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Obstetric": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Hypo_Thyroid": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Hyper_Thyroid": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "maternalGrandFather": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "maternalGrandMother": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "paternalGrandFather": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "paternalGrandMother": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "Defective_Colour_Vision": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                }
+            },
+            "health_conditions": {},
+            "allergy_fields": {
+                "drug": {
+                    "yesNo": "yes"
+                },
+                "food": {
+                    "yesNo": "yes"
+                },
+                "others": {
+                    "yesNo": "no"
+                }
+            },
+            "allergy_comments": {
+                "drug": "",
+                "food": "",
+                "others": ""
+            },
+            "children_data": [],
+            "conditions": {
+                "DM": [],
+                "RS": [],
+                "CNS": [],
+                "CVS": [],
+                "GIT": [],
+                "HTN": [],
+                "KUB": [],
+                "Asthma": [],
+                "Cancer": [],
+                "Others": [],
+                "Epileptic": [],
+                "Hypo_Thyroid": [],
+                "Hyper_Thyroid": [],
+                "Defective_Colour_Vision": []
+            },
+            "spouse_data": null,
+            "mrdNo": null
+        }
+    },
+    {
+        "model": "jsw.medicalhistory",
+        "pk": 6,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "emp_no": null,
+            "aadhar": "123456789012",
+            "personal_history": {
+                "diet": "veg",
+                "paan": {
+                    "years": "",
+                    "yesNo": "no"
+                },
+                "alcohol": {
+                    "years": "",
+                    "yesNo": "cessased",
+                    "frequency": ""
+                },
+                "smoking": {
+                    "years": "",
+                    "yesNo": "no",
+                    "perDay": ""
+                }
+            },
+            "medical_data": {
+                "DM": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "RS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "CNS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "CVS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "GIT": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "HTN": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "KUB": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Asthma": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Cancer": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Gynaec": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Others": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Epileptic": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Obstetric": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Hypo_Thyroid": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Hyper_Thyroid": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Defective_Colour_Vision": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                }
+            },
+            "female_worker": {
+                "obstetricHistory": "",
+                "gynecologicalHistory": ""
+            },
+            "surgical_history": {
+                "history": "",
+                "children": [
+                    "Kidney Stone"
+                ],
+                "comments": ""
+            },
+            "family_history": {
+                "DM": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "RS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "CNS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "CVS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "GIT": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "HTN": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "KUB": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Asthma": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Cancer": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Gynaec": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Others": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "father": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "mother": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "Epileptic": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Obstetric": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Hypo_Thyroid": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Hyper_Thyroid": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "maternalGrandFather": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "maternalGrandMother": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "paternalGrandFather": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "paternalGrandMother": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "Defective_Colour_Vision": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                }
+            },
+            "health_conditions": {},
+            "allergy_fields": {
+                "drug": {
+                    "yesNo": "yes"
+                },
+                "food": {
+                    "yesNo": "yes"
+                },
+                "others": {
+                    "yesNo": "no"
+                }
+            },
+            "allergy_comments": {
+                "drug": "",
+                "food": "",
+                "others": ""
+            },
+            "children_data": [
+                {
+                    "age": "89",
+                    "dob": "",
+                    "sex": "Male",
+                    "reason": "",
+                    "status": "",
+                    "remarks": "hvhjkh"
+                }
+            ],
+            "conditions": {
+                "DM": [],
+                "RS": [],
+                "CNS": [],
+                "CVS": [],
+                "GIT": [],
+                "HTN": [],
+                "KUB": [],
+                "Asthma": [],
+                "Cancer": [],
+                "Others": [],
+                "Epileptic": [],
+                "Hypo_Thyroid": [],
+                "Hyper_Thyroid": [],
+                "Defective_Colour_Vision": []
+            },
+            "spouse_data": [
+                {
+                    "age": "12",
+                    "dob": "",
+                    "sex": "Male",
+                    "reason": "",
+                    "status": "",
+                    "remarks": "vcgch"
+                }
+            ],
+            "mrdNo": null
+        }
+    },
+    {
+        "model": "jsw.medicalhistory",
+        "pk": 7,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "emp_no": null,
+            "aadhar": "123456789018",
+            "personal_history": null,
+            "medical_data": null,
+            "female_worker": null,
+            "surgical_history": null,
+            "family_history": null,
+            "health_conditions": null,
+            "allergy_fields": null,
+            "allergy_comments": null,
+            "children_data": [],
+            "conditions": null,
+            "spouse_data": [
+                {
+                    "age": "15",
+                    "dob": "2009-07-15",
+                    "sex": "Female",
+                    "reason": "",
+                    "status": "Alive",
+                    "remarks": "anushka"
+                }
+            ],
+            "mrdNo": null
+        }
+    },
+    {
+        "model": "jsw.medicalhistory",
+        "pk": 8,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "emp_no": null,
+            "aadhar": "123456789018",
+            "personal_history": null,
+            "medical_data": null,
+            "female_worker": null,
+            "surgical_history": null,
+            "family_history": null,
+            "health_conditions": null,
+            "allergy_fields": null,
+            "allergy_comments": null,
+            "children_data": [],
+            "conditions": null,
+            "spouse_data": [
+                {
+                    "age": "12",
+                    "dob": "2025-04-30",
+                    "sex": "Female",
+                    "reason": "",
+                    "status": "Alive",
+                    "remarks": "sajdhuwegfb"
+                }
+            ],
+            "mrdNo": null
+        }
+    },
+    {
+        "model": "jsw.medicalhistory",
+        "pk": 9,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "emp_no": null,
+            "aadhar": "123456789018",
+            "personal_history": null,
+            "medical_data": null,
+            "female_worker": null,
+            "surgical_history": null,
+            "family_history": null,
+            "health_conditions": null,
+            "allergy_fields": null,
+            "allergy_comments": null,
+            "children_data": [
+                {
+                    "age": "9",
+                    "dob": "2025-04-29",
+                    "sex": "Male",
+                    "reason": "",
+                    "status": "Alive",
+                    "remarks": "mkmk"
+                }
+            ],
+            "conditions": null,
+            "spouse_data": [],
+            "mrdNo": null
+        }
+    },
+    {
+        "model": "jsw.medicalhistory",
+        "pk": 10,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "emp_no": null,
+            "aadhar": "123456789012",
+            "personal_history": null,
+            "medical_data": null,
+            "female_worker": null,
+            "surgical_history": null,
+            "family_history": null,
+            "health_conditions": null,
+            "allergy_fields": null,
+            "allergy_comments": null,
+            "children_data": [
+                {
+                    "age": "10",
+                    "dob": "2025-04-08",
+                    "sex": "Male",
+                    "reason": "",
+                    "status": "Alive",
+                    "remarks": ""
+                }
+            ],
+            "conditions": null,
+            "spouse_data": [
+                {
+                    "age": "38",
+                    "dob": "2025-04-10",
+                    "sex": "Male",
+                    "reason": "",
+                    "status": "Alive",
+                    "remarks": ""
+                }
+            ],
+            "mrdNo": null
+        }
+    },
+    {
+        "model": "jsw.medicalhistory",
+        "pk": 11,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "emp_no": "123456789012",
+            "aadhar": "123456789012",
+            "personal_history": {
+                "diet": "mixed",
+                "paan": {
+                    "years": "",
+                    "yesNo": "yes"
+                },
+                "alcohol": {
+                    "years": "",
+                    "yesNo": "yes",
+                    "frequency": ""
+                },
+                "smoking": {
+                    "years": "",
+                    "yesNo": "yes",
+                    "perDay": ""
+                }
+            },
+            "medical_data": {
+                "DM": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "RS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "CNS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "CVS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "GIT": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "HTN": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "KUB": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Asthma": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Cancer": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Gynaec": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Others": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Epileptic": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Obstetric": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Hypo_Thyroid": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Hyper_Thyroid": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Defective_Colour_Vision": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                }
+            },
+            "female_worker": {
+                "obstetricHistory": "",
+                "gynecologicalHistory": ""
+            },
+            "surgical_history": {
+                "history": "",
+                "children": [],
+                "comments": ""
+            },
+            "family_history": {
+                "DM": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "RS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "CNS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "CVS": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "GIT": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "HTN": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "KUB": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Asthma": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Cancer": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Gynaec": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Others": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "father": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "mother": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "Epileptic": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Obstetric": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Hypo_Thyroid": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "Hyper_Thyroid": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                },
+                "maternalGrandFather": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "maternalGrandMother": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "paternalGrandFather": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "paternalGrandMother": {
+                    "reason": "",
+                    "status": "",
+                    "remarks": ""
+                },
+                "Defective_Colour_Vision": {
+                    "detail": "",
+                    "comment": "",
+                    "children": []
+                }
+            },
+            "health_conditions": null,
+            "allergy_fields": {
+                "drug": {
+                    "yesNo": ""
+                },
+                "food": {
+                    "yesNo": ""
+                },
+                "others": {
+                    "yesNo": ""
+                }
+            },
+            "allergy_comments": {
+                "drug": "",
+                "food": "",
+                "others": ""
+            },
+            "children_data": [
+                {
+                    "age": "12",
+                    "dob": "2025-05-07",
+                    "sex": "Male",
+                    "reason": "",
+                    "status": "Alive",
+                    "remarks": ""
+                }
+            ],
+            "conditions": null,
+            "spouse_data": [
+                {
+                    "age": "21",
+                    "dob": "2025-05-01",
+                    "sex": "Male",
+                    "reason": "",
+                    "status": "Alive",
+                    "remarks": ""
+                }
+            ],
+            "mrdNo": null
+        }
+    }
+]

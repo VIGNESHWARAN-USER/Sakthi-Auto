@@ -1,0 +1,66 @@
+[
+    {
+        "model": "jsw.menspack",
+        "pk": 1,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "checked": false,
+            "emp_no": "",
+            "aadhar": "123456789012",
+            "mrdNo": "",
+            "psa": "agska",
+            "psa_unit": "",
+            "psa_reference_range_from": null,
+            "psa_reference_range_to": null,
+            "psa_comments": ""
+        }
+    },
+    {
+        "model": "jsw.menspack",
+        "pk": 2,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "checked": false,
+            "emp_no": "",
+            "aadhar": "123456789012",
+            "mrdNo": "",
+            "psa": "agska",
+            "psa_unit": "",
+            "psa_reference_range_from": null,
+            "psa_reference_range_to": null,
+            "psa_comments": ""
+        }
+    },
+    {
+        "model": "jsw.menspack",
+        "pk": 3,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "checked": false,
+            "emp_no": "",
+            "aadhar": "123456789012",
+            "mrdNo": "",
+            "psa": "agska",
+            "psa_unit": "",
+            "psa_reference_range_from": null,
+            "psa_reference_range_to": null,
+            "psa_comments": ""
+        }
+    },
+    {
+        "model": "jsw.menspack",
+        "pk": 4,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "checked": false,
+            "emp_no": "",
+            "aadhar": "123456789012",
+            "mrdNo": "",
+            "psa": "agska",
+            "psa_unit": "",
+            "psa_reference_range_from": null,
+            "psa_reference_range_to": null,
+            "psa_comments": ""
+        }
+    }
+]

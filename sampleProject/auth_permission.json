@@ -1,0 +1,2686 @@
+[
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add log entry",
+            "content_type": [
+                "admin",
+                "logentry"
+            ],
+            "codename": "add_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change log entry",
+            "content_type": [
+                "admin",
+                "logentry"
+            ],
+            "codename": "change_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete log entry",
+            "content_type": [
+                "admin",
+                "logentry"
+            ],
+            "codename": "delete_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view log entry",
+            "content_type": [
+                "admin",
+                "logentry"
+            ],
+            "codename": "view_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add permission",
+            "content_type": [
+                "auth",
+                "permission"
+            ],
+            "codename": "add_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change permission",
+            "content_type": [
+                "auth",
+                "permission"
+            ],
+            "codename": "change_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete permission",
+            "content_type": [
+                "auth",
+                "permission"
+            ],
+            "codename": "delete_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view permission",
+            "content_type": [
+                "auth",
+                "permission"
+            ],
+            "codename": "view_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add group",
+            "content_type": [
+                "auth",
+                "group"
+            ],
+            "codename": "add_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change group",
+            "content_type": [
+                "auth",
+                "group"
+            ],
+            "codename": "change_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete group",
+            "content_type": [
+                "auth",
+                "group"
+            ],
+            "codename": "delete_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view group",
+            "content_type": [
+                "auth",
+                "group"
+            ],
+            "codename": "view_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add user",
+            "content_type": [
+                "auth",
+                "user"
+            ],
+            "codename": "add_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change user",
+            "content_type": [
+                "auth",
+                "user"
+            ],
+            "codename": "change_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete user",
+            "content_type": [
+                "auth",
+                "user"
+            ],
+            "codename": "delete_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view user",
+            "content_type": [
+                "auth",
+                "user"
+            ],
+            "codename": "view_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add content type",
+            "content_type": [
+                "contenttypes",
+                "contenttype"
+            ],
+            "codename": "add_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change content type",
+            "content_type": [
+                "contenttypes",
+                "contenttype"
+            ],
+            "codename": "change_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete content type",
+            "content_type": [
+                "contenttypes",
+                "contenttype"
+            ],
+            "codename": "delete_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view content type",
+            "content_type": [
+                "contenttypes",
+                "contenttype"
+            ],
+            "codename": "view_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add session",
+            "content_type": [
+                "sessions",
+                "session"
+            ],
+            "codename": "add_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change session",
+            "content_type": [
+                "sessions",
+                "session"
+            ],
+            "codename": "change_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete session",
+            "content_type": [
+                "sessions",
+                "session"
+            ],
+            "codename": "delete_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view session",
+            "content_type": [
+                "sessions",
+                "session"
+            ],
+            "codename": "view_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add appointment",
+            "content_type": [
+                "jsw",
+                "appointment"
+            ],
+            "codename": "add_appointment"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change appointment",
+            "content_type": [
+                "jsw",
+                "appointment"
+            ],
+            "codename": "change_appointment"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete appointment",
+            "content_type": [
+                "jsw",
+                "appointment"
+            ],
+            "codename": "delete_appointment"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view appointment",
+            "content_type": [
+                "jsw",
+                "appointment"
+            ],
+            "codename": "view_appointment"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add coagulation test",
+            "content_type": [
+                "jsw",
+                "coagulationtest"
+            ],
+            "codename": "add_coagulationtest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change coagulation test",
+            "content_type": [
+                "jsw",
+                "coagulationtest"
+            ],
+            "codename": "change_coagulationtest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete coagulation test",
+            "content_type": [
+                "jsw",
+                "coagulationtest"
+            ],
+            "codename": "delete_coagulationtest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view coagulation test",
+            "content_type": [
+                "jsw",
+                "coagulationtest"
+            ],
+            "codename": "view_coagulationtest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add culture sensitivity test",
+            "content_type": [
+                "jsw",
+                "culturesensitivitytest"
+            ],
+            "codename": "add_culturesensitivitytest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change culture sensitivity test",
+            "content_type": [
+                "jsw",
+                "culturesensitivitytest"
+            ],
+            "codename": "change_culturesensitivitytest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete culture sensitivity test",
+            "content_type": [
+                "jsw",
+                "culturesensitivitytest"
+            ],
+            "codename": "delete_culturesensitivitytest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view culture sensitivity test",
+            "content_type": [
+                "jsw",
+                "culturesensitivitytest"
+            ],
+            "codename": "view_culturesensitivitytest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add dashboard",
+            "content_type": [
+                "jsw",
+                "dashboard"
+            ],
+            "codename": "add_dashboard"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change dashboard",
+            "content_type": [
+                "jsw",
+                "dashboard"
+            ],
+            "codename": "change_dashboard"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete dashboard",
+            "content_type": [
+                "jsw",
+                "dashboard"
+            ],
+            "codename": "delete_dashboard"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view dashboard",
+            "content_type": [
+                "jsw",
+                "dashboard"
+            ],
+            "codename": "view_dashboard"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add discarded medicine",
+            "content_type": [
+                "jsw",
+                "discardedmedicine"
+            ],
+            "codename": "add_discardedmedicine"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change discarded medicine",
+            "content_type": [
+                "jsw",
+                "discardedmedicine"
+            ],
+            "codename": "change_discardedmedicine"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete discarded medicine",
+            "content_type": [
+                "jsw",
+                "discardedmedicine"
+            ],
+            "codename": "delete_discardedmedicine"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view discarded medicine",
+            "content_type": [
+                "jsw",
+                "discardedmedicine"
+            ],
+            "codename": "view_discardedmedicine"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add employee_details",
+            "content_type": [
+                "jsw",
+                "employee_details"
+            ],
+            "codename": "add_employee_details"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change employee_details",
+            "content_type": [
+                "jsw",
+                "employee_details"
+            ],
+            "codename": "change_employee_details"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete employee_details",
+            "content_type": [
+                "jsw",
+                "employee_details"
+            ],
+            "codename": "delete_employee_details"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view employee_details",
+            "content_type": [
+                "jsw",
+                "employee_details"
+            ],
+            "codename": "view_employee_details"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add enzymes cardiac profile",
+            "content_type": [
+                "jsw",
+                "enzymescardiacprofile"
+            ],
+            "codename": "add_enzymescardiacprofile"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change enzymes cardiac profile",
+            "content_type": [
+                "jsw",
+                "enzymescardiacprofile"
+            ],
+            "codename": "change_enzymescardiacprofile"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete enzymes cardiac profile",
+            "content_type": [
+                "jsw",
+                "enzymescardiacprofile"
+            ],
+            "codename": "delete_enzymescardiacprofile"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view enzymes cardiac profile",
+            "content_type": [
+                "jsw",
+                "enzymescardiacprofile"
+            ],
+            "codename": "view_enzymescardiacprofile"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add eventsandcamps",
+            "content_type": [
+                "jsw",
+                "eventsandcamps"
+            ],
+            "codename": "add_eventsandcamps"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change eventsandcamps",
+            "content_type": [
+                "jsw",
+                "eventsandcamps"
+            ],
+            "codename": "change_eventsandcamps"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete eventsandcamps",
+            "content_type": [
+                "jsw",
+                "eventsandcamps"
+            ],
+            "codename": "delete_eventsandcamps"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view eventsandcamps",
+            "content_type": [
+                "jsw",
+                "eventsandcamps"
+            ],
+            "codename": "view_eventsandcamps"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add expiry register",
+            "content_type": [
+                "jsw",
+                "expiryregister"
+            ],
+            "codename": "add_expiryregister"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change expiry register",
+            "content_type": [
+                "jsw",
+                "expiryregister"
+            ],
+            "codename": "change_expiryregister"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete expiry register",
+            "content_type": [
+                "jsw",
+                "expiryregister"
+            ],
+            "codename": "delete_expiryregister"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view expiry register",
+            "content_type": [
+                "jsw",
+                "expiryregister"
+            ],
+            "codename": "view_expiryregister"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add Fitness Assessment",
+            "content_type": [
+                "jsw",
+                "fitnessassessment"
+            ],
+            "codename": "add_fitnessassessment"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change Fitness Assessment",
+            "content_type": [
+                "jsw",
+                "fitnessassessment"
+            ],
+            "codename": "change_fitnessassessment"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete Fitness Assessment",
+            "content_type": [
+                "jsw",
+                "fitnessassessment"
+            ],
+            "codename": "delete_fitnessassessment"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view Fitness Assessment",
+            "content_type": [
+                "jsw",
+                "fitnessassessment"
+            ],
+            "codename": "view_fitnessassessment"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add form17",
+            "content_type": [
+                "jsw",
+                "form17"
+            ],
+            "codename": "add_form17"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change form17",
+            "content_type": [
+                "jsw",
+                "form17"
+            ],
+            "codename": "change_form17"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete form17",
+            "content_type": [
+                "jsw",
+                "form17"
+            ],
+            "codename": "delete_form17"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view form17",
+            "content_type": [
+                "jsw",
+                "form17"
+            ],
+            "codename": "view_form17"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add form27",
+            "content_type": [
+                "jsw",
+                "form27"
+            ],
+            "codename": "add_form27"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change form27",
+            "content_type": [
+                "jsw",
+                "form27"
+            ],
+            "codename": "change_form27"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete form27",
+            "content_type": [
+                "jsw",
+                "form27"
+            ],
+            "codename": "delete_form27"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view form27",
+            "content_type": [
+                "jsw",
+                "form27"
+            ],
+            "codename": "view_form27"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add form38",
+            "content_type": [
+                "jsw",
+                "form38"
+            ],
+            "codename": "add_form38"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change form38",
+            "content_type": [
+                "jsw",
+                "form38"
+            ],
+            "codename": "change_form38"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete form38",
+            "content_type": [
+                "jsw",
+                "form38"
+            ],
+            "codename": "delete_form38"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view form38",
+            "content_type": [
+                "jsw",
+                "form38"
+            ],
+            "codename": "view_form38"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add form39",
+            "content_type": [
+                "jsw",
+                "form39"
+            ],
+            "codename": "add_form39"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change form39",
+            "content_type": [
+                "jsw",
+                "form39"
+            ],
+            "codename": "change_form39"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete form39",
+            "content_type": [
+                "jsw",
+                "form39"
+            ],
+            "codename": "delete_form39"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view form39",
+            "content_type": [
+                "jsw",
+                "form39"
+            ],
+            "codename": "view_form39"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add form40",
+            "content_type": [
+                "jsw",
+                "form40"
+            ],
+            "codename": "add_form40"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change form40",
+            "content_type": [
+                "jsw",
+                "form40"
+            ],
+            "codename": "change_form40"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete form40",
+            "content_type": [
+                "jsw",
+                "form40"
+            ],
+            "codename": "delete_form40"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view form40",
+            "content_type": [
+                "jsw",
+                "form40"
+            ],
+            "codename": "view_form40"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add heamatalogy",
+            "content_type": [
+                "jsw",
+                "heamatalogy"
+            ],
+            "codename": "add_heamatalogy"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change heamatalogy",
+            "content_type": [
+                "jsw",
+                "heamatalogy"
+            ],
+            "codename": "change_heamatalogy"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete heamatalogy",
+            "content_type": [
+                "jsw",
+                "heamatalogy"
+            ],
+            "codename": "delete_heamatalogy"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view heamatalogy",
+            "content_type": [
+                "jsw",
+                "heamatalogy"
+            ],
+            "codename": "view_heamatalogy"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add instrument calibration",
+            "content_type": [
+                "jsw",
+                "instrumentcalibration"
+            ],
+            "codename": "add_instrumentcalibration"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change instrument calibration",
+            "content_type": [
+                "jsw",
+                "instrumentcalibration"
+            ],
+            "codename": "change_instrumentcalibration"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete instrument calibration",
+            "content_type": [
+                "jsw",
+                "instrumentcalibration"
+            ],
+            "codename": "delete_instrumentcalibration"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view instrument calibration",
+            "content_type": [
+                "jsw",
+                "instrumentcalibration"
+            ],
+            "codename": "view_instrumentcalibration"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add lipid profile",
+            "content_type": [
+                "jsw",
+                "lipidprofile"
+            ],
+            "codename": "add_lipidprofile"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change lipid profile",
+            "content_type": [
+                "jsw",
+                "lipidprofile"
+            ],
+            "codename": "change_lipidprofile"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete lipid profile",
+            "content_type": [
+                "jsw",
+                "lipidprofile"
+            ],
+            "codename": "delete_lipidprofile"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view lipid profile",
+            "content_type": [
+                "jsw",
+                "lipidprofile"
+            ],
+            "codename": "view_lipidprofile"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add liver function test",
+            "content_type": [
+                "jsw",
+                "liverfunctiontest"
+            ],
+            "codename": "add_liverfunctiontest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change liver function test",
+            "content_type": [
+                "jsw",
+                "liverfunctiontest"
+            ],
+            "codename": "change_liverfunctiontest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete liver function test",
+            "content_type": [
+                "jsw",
+                "liverfunctiontest"
+            ],
+            "codename": "delete_liverfunctiontest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view liver function test",
+            "content_type": [
+                "jsw",
+                "liverfunctiontest"
+            ],
+            "codename": "view_liverfunctiontest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add medical history",
+            "content_type": [
+                "jsw",
+                "medicalhistory"
+            ],
+            "codename": "add_medicalhistory"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change medical history",
+            "content_type": [
+                "jsw",
+                "medicalhistory"
+            ],
+            "codename": "change_medicalhistory"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete medical history",
+            "content_type": [
+                "jsw",
+                "medicalhistory"
+            ],
+            "codename": "delete_medicalhistory"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view medical history",
+            "content_type": [
+                "jsw",
+                "medicalhistory"
+            ],
+            "codename": "view_medicalhistory"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add member",
+            "content_type": [
+                "jsw",
+                "member"
+            ],
+            "codename": "add_member"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change member",
+            "content_type": [
+                "jsw",
+                "member"
+            ],
+            "codename": "change_member"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete member",
+            "content_type": [
+                "jsw",
+                "member"
+            ],
+            "codename": "delete_member"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view member",
+            "content_type": [
+                "jsw",
+                "member"
+            ],
+            "codename": "view_member"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add mens pack",
+            "content_type": [
+                "jsw",
+                "menspack"
+            ],
+            "codename": "add_menspack"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change mens pack",
+            "content_type": [
+                "jsw",
+                "menspack"
+            ],
+            "codename": "change_menspack"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete mens pack",
+            "content_type": [
+                "jsw",
+                "menspack"
+            ],
+            "codename": "delete_menspack"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view mens pack",
+            "content_type": [
+                "jsw",
+                "menspack"
+            ],
+            "codename": "view_menspack"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add mockdrills",
+            "content_type": [
+                "jsw",
+                "mockdrills"
+            ],
+            "codename": "add_mockdrills"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change mockdrills",
+            "content_type": [
+                "jsw",
+                "mockdrills"
+            ],
+            "codename": "change_mockdrills"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete mockdrills",
+            "content_type": [
+                "jsw",
+                "mockdrills"
+            ],
+            "codename": "delete_mockdrills"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view mockdrills",
+            "content_type": [
+                "jsw",
+                "mockdrills"
+            ],
+            "codename": "view_mockdrills"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add motion test",
+            "content_type": [
+                "jsw",
+                "motiontest"
+            ],
+            "codename": "add_motiontest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change motion test",
+            "content_type": [
+                "jsw",
+                "motiontest"
+            ],
+            "codename": "change_motiontest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete motion test",
+            "content_type": [
+                "jsw",
+                "motiontest"
+            ],
+            "codename": "delete_motiontest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view motion test",
+            "content_type": [
+                "jsw",
+                "motiontest"
+            ],
+            "codename": "view_motiontest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add mri report",
+            "content_type": [
+                "jsw",
+                "mrireport"
+            ],
+            "codename": "add_mrireport"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change mri report",
+            "content_type": [
+                "jsw",
+                "mrireport"
+            ],
+            "codename": "change_mrireport"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete mri report",
+            "content_type": [
+                "jsw",
+                "mrireport"
+            ],
+            "codename": "delete_mrireport"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view mri report",
+            "content_type": [
+                "jsw",
+                "mrireport"
+            ],
+            "codename": "view_mrireport"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add ophthalmic report",
+            "content_type": [
+                "jsw",
+                "ophthalmicreport"
+            ],
+            "codename": "add_ophthalmicreport"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change ophthalmic report",
+            "content_type": [
+                "jsw",
+                "ophthalmicreport"
+            ],
+            "codename": "change_ophthalmicreport"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete ophthalmic report",
+            "content_type": [
+                "jsw",
+                "ophthalmicreport"
+            ],
+            "codename": "delete_ophthalmicreport"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view ophthalmic report",
+            "content_type": [
+                "jsw",
+                "ophthalmicreport"
+            ],
+            "codename": "view_ophthalmicreport"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add pharmacy stock",
+            "content_type": [
+                "jsw",
+                "pharmacystock"
+            ],
+            "codename": "add_pharmacystock"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change pharmacy stock",
+            "content_type": [
+                "jsw",
+                "pharmacystock"
+            ],
+            "codename": "change_pharmacystock"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete pharmacy stock",
+            "content_type": [
+                "jsw",
+                "pharmacystock"
+            ],
+            "codename": "delete_pharmacystock"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view pharmacy stock",
+            "content_type": [
+                "jsw",
+                "pharmacystock"
+            ],
+            "codename": "view_pharmacystock"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add pharmacy stock history",
+            "content_type": [
+                "jsw",
+                "pharmacystockhistory"
+            ],
+            "codename": "add_pharmacystockhistory"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change pharmacy stock history",
+            "content_type": [
+                "jsw",
+                "pharmacystockhistory"
+            ],
+            "codename": "change_pharmacystockhistory"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete pharmacy stock history",
+            "content_type": [
+                "jsw",
+                "pharmacystockhistory"
+            ],
+            "codename": "delete_pharmacystockhistory"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view pharmacy stock history",
+            "content_type": [
+                "jsw",
+                "pharmacystockhistory"
+            ],
+            "codename": "view_pharmacystockhistory"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add prescription",
+            "content_type": [
+                "jsw",
+                "prescription"
+            ],
+            "codename": "add_prescription"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change prescription",
+            "content_type": [
+                "jsw",
+                "prescription"
+            ],
+            "codename": "change_prescription"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete prescription",
+            "content_type": [
+                "jsw",
+                "prescription"
+            ],
+            "codename": "delete_prescription"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view prescription",
+            "content_type": [
+                "jsw",
+                "prescription"
+            ],
+            "codename": "view_prescription"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add renal function test",
+            "content_type": [
+                "jsw",
+                "renalfunctiontest"
+            ],
+            "codename": "add_renalfunctiontest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change renal function test",
+            "content_type": [
+                "jsw",
+                "renalfunctiontest"
+            ],
+            "codename": "change_renalfunctiontest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete renal function test",
+            "content_type": [
+                "jsw",
+                "renalfunctiontest"
+            ],
+            "codename": "delete_renalfunctiontest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view renal function test",
+            "content_type": [
+                "jsw",
+                "renalfunctiontest"
+            ],
+            "codename": "view_renalfunctiontest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add review category",
+            "content_type": [
+                "jsw",
+                "reviewcategory"
+            ],
+            "codename": "add_reviewcategory"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change review category",
+            "content_type": [
+                "jsw",
+                "reviewcategory"
+            ],
+            "codename": "change_reviewcategory"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete review category",
+            "content_type": [
+                "jsw",
+                "reviewcategory"
+            ],
+            "codename": "delete_reviewcategory"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view review category",
+            "content_type": [
+                "jsw",
+                "reviewcategory"
+            ],
+            "codename": "view_reviewcategory"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add routine sugar tests",
+            "content_type": [
+                "jsw",
+                "routinesugartests"
+            ],
+            "codename": "add_routinesugartests"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change routine sugar tests",
+            "content_type": [
+                "jsw",
+                "routinesugartests"
+            ],
+            "codename": "change_routinesugartests"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete routine sugar tests",
+            "content_type": [
+                "jsw",
+                "routinesugartests"
+            ],
+            "codename": "delete_routinesugartests"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view routine sugar tests",
+            "content_type": [
+                "jsw",
+                "routinesugartests"
+            ],
+            "codename": "view_routinesugartests"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add serology test",
+            "content_type": [
+                "jsw",
+                "serologytest"
+            ],
+            "codename": "add_serologytest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change serology test",
+            "content_type": [
+                "jsw",
+                "serologytest"
+            ],
+            "codename": "change_serologytest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete serology test",
+            "content_type": [
+                "jsw",
+                "serologytest"
+            ],
+            "codename": "delete_serologytest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view serology test",
+            "content_type": [
+                "jsw",
+                "serologytest"
+            ],
+            "codename": "view_serologytest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add Significant Note",
+            "content_type": [
+                "jsw",
+                "significantnotes"
+            ],
+            "codename": "add_significantnotes"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change Significant Note",
+            "content_type": [
+                "jsw",
+                "significantnotes"
+            ],
+            "codename": "change_significantnotes"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete Significant Note",
+            "content_type": [
+                "jsw",
+                "significantnotes"
+            ],
+            "codename": "delete_significantnotes"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view Significant Note",
+            "content_type": [
+                "jsw",
+                "significantnotes"
+            ],
+            "codename": "view_significantnotes"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add thyroid function test",
+            "content_type": [
+                "jsw",
+                "thyroidfunctiontest"
+            ],
+            "codename": "add_thyroidfunctiontest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change thyroid function test",
+            "content_type": [
+                "jsw",
+                "thyroidfunctiontest"
+            ],
+            "codename": "change_thyroidfunctiontest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete thyroid function test",
+            "content_type": [
+                "jsw",
+                "thyroidfunctiontest"
+            ],
+            "codename": "delete_thyroidfunctiontest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view thyroid function test",
+            "content_type": [
+                "jsw",
+                "thyroidfunctiontest"
+            ],
+            "codename": "view_thyroidfunctiontest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add urine routine test",
+            "content_type": [
+                "jsw",
+                "urineroutinetest"
+            ],
+            "codename": "add_urineroutinetest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change urine routine test",
+            "content_type": [
+                "jsw",
+                "urineroutinetest"
+            ],
+            "codename": "change_urineroutinetest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete urine routine test",
+            "content_type": [
+                "jsw",
+                "urineroutinetest"
+            ],
+            "codename": "delete_urineroutinetest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view urine routine test",
+            "content_type": [
+                "jsw",
+                "urineroutinetest"
+            ],
+            "codename": "view_urineroutinetest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add user",
+            "content_type": [
+                "jsw",
+                "user"
+            ],
+            "codename": "add_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change user",
+            "content_type": [
+                "jsw",
+                "user"
+            ],
+            "codename": "change_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete user",
+            "content_type": [
+                "jsw",
+                "user"
+            ],
+            "codename": "delete_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view user",
+            "content_type": [
+                "jsw",
+                "user"
+            ],
+            "codename": "view_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add usg report",
+            "content_type": [
+                "jsw",
+                "usgreport"
+            ],
+            "codename": "add_usgreport"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change usg report",
+            "content_type": [
+                "jsw",
+                "usgreport"
+            ],
+            "codename": "change_usgreport"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete usg report",
+            "content_type": [
+                "jsw",
+                "usgreport"
+            ],
+            "codename": "delete_usgreport"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view usg report",
+            "content_type": [
+                "jsw",
+                "usgreport"
+            ],
+            "codename": "view_usgreport"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add vaccination record",
+            "content_type": [
+                "jsw",
+                "vaccinationrecord"
+            ],
+            "codename": "add_vaccinationrecord"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change vaccination record",
+            "content_type": [
+                "jsw",
+                "vaccinationrecord"
+            ],
+            "codename": "change_vaccinationrecord"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete vaccination record",
+            "content_type": [
+                "jsw",
+                "vaccinationrecord"
+            ],
+            "codename": "delete_vaccinationrecord"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view vaccination record",
+            "content_type": [
+                "jsw",
+                "vaccinationrecord"
+            ],
+            "codename": "view_vaccinationrecord"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add vitals",
+            "content_type": [
+                "jsw",
+                "vitals"
+            ],
+            "codename": "add_vitals"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change vitals",
+            "content_type": [
+                "jsw",
+                "vitals"
+            ],
+            "codename": "change_vitals"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete vitals",
+            "content_type": [
+                "jsw",
+                "vitals"
+            ],
+            "codename": "delete_vitals"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view vitals",
+            "content_type": [
+                "jsw",
+                "vitals"
+            ],
+            "codename": "view_vitals"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add ward consumables",
+            "content_type": [
+                "jsw",
+                "wardconsumables"
+            ],
+            "codename": "add_wardconsumables"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change ward consumables",
+            "content_type": [
+                "jsw",
+                "wardconsumables"
+            ],
+            "codename": "change_wardconsumables"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete ward consumables",
+            "content_type": [
+                "jsw",
+                "wardconsumables"
+            ],
+            "codename": "delete_wardconsumables"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view ward consumables",
+            "content_type": [
+                "jsw",
+                "wardconsumables"
+            ],
+            "codename": "view_wardconsumables"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add consultation",
+            "content_type": [
+                "jsw",
+                "consultation"
+            ],
+            "codename": "add_consultation"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change consultation",
+            "content_type": [
+                "jsw",
+                "consultation"
+            ],
+            "codename": "change_consultation"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete consultation",
+            "content_type": [
+                "jsw",
+                "consultation"
+            ],
+            "codename": "delete_consultation"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view consultation",
+            "content_type": [
+                "jsw",
+                "consultation"
+            ],
+            "codename": "view_consultation"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add pharmacy medicine",
+            "content_type": [
+                "jsw",
+                "pharmacymedicine"
+            ],
+            "codename": "add_pharmacymedicine"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change pharmacy medicine",
+            "content_type": [
+                "jsw",
+                "pharmacymedicine"
+            ],
+            "codename": "change_pharmacymedicine"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete pharmacy medicine",
+            "content_type": [
+                "jsw",
+                "pharmacymedicine"
+            ],
+            "codename": "delete_pharmacymedicine"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view pharmacy medicine",
+            "content_type": [
+                "jsw",
+                "pharmacymedicine"
+            ],
+            "codename": "view_pharmacymedicine"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add review",
+            "content_type": [
+                "jsw",
+                "review"
+            ],
+            "codename": "add_review"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change review",
+            "content_type": [
+                "jsw",
+                "review"
+            ],
+            "codename": "change_review"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete review",
+            "content_type": [
+                "jsw",
+                "review"
+            ],
+            "codename": "delete_review"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view review",
+            "content_type": [
+                "jsw",
+                "review"
+            ],
+            "codename": "view_review"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add autoimmune test",
+            "content_type": [
+                "jsw",
+                "autoimmunetest"
+            ],
+            "codename": "add_autoimmunetest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change autoimmune test",
+            "content_type": [
+                "jsw",
+                "autoimmunetest"
+            ],
+            "codename": "change_autoimmunetest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete autoimmune test",
+            "content_type": [
+                "jsw",
+                "autoimmunetest"
+            ],
+            "codename": "delete_autoimmunetest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view autoimmune test",
+            "content_type": [
+                "jsw",
+                "autoimmunetest"
+            ],
+            "codename": "view_autoimmunetest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add ct report",
+            "content_type": [
+                "jsw",
+                "ctreport"
+            ],
+            "codename": "add_ctreport"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change ct report",
+            "content_type": [
+                "jsw",
+                "ctreport"
+            ],
+            "codename": "change_ctreport"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete ct report",
+            "content_type": [
+                "jsw",
+                "ctreport"
+            ],
+            "codename": "delete_ctreport"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view ct report",
+            "content_type": [
+                "jsw",
+                "ctreport"
+            ],
+            "codename": "view_ctreport"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add occupational profile",
+            "content_type": [
+                "jsw",
+                "occupationalprofile"
+            ],
+            "codename": "add_occupationalprofile"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change occupational profile",
+            "content_type": [
+                "jsw",
+                "occupationalprofile"
+            ],
+            "codename": "change_occupationalprofile"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete occupational profile",
+            "content_type": [
+                "jsw",
+                "occupationalprofile"
+            ],
+            "codename": "delete_occupationalprofile"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view occupational profile",
+            "content_type": [
+                "jsw",
+                "occupationalprofile"
+            ],
+            "codename": "view_occupationalprofile"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add others test",
+            "content_type": [
+                "jsw",
+                "otherstest"
+            ],
+            "codename": "add_otherstest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change others test",
+            "content_type": [
+                "jsw",
+                "otherstest"
+            ],
+            "codename": "change_otherstest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete others test",
+            "content_type": [
+                "jsw",
+                "otherstest"
+            ],
+            "codename": "delete_otherstest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view others test",
+            "content_type": [
+                "jsw",
+                "otherstest"
+            ],
+            "codename": "view_otherstest"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add womens pack",
+            "content_type": [
+                "jsw",
+                "womenspack"
+            ],
+            "codename": "add_womenspack"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change womens pack",
+            "content_type": [
+                "jsw",
+                "womenspack"
+            ],
+            "codename": "change_womenspack"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete womens pack",
+            "content_type": [
+                "jsw",
+                "womenspack"
+            ],
+            "codename": "delete_womenspack"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view womens pack",
+            "content_type": [
+                "jsw",
+                "womenspack"
+            ],
+            "codename": "view_womenspack"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add x ray",
+            "content_type": [
+                "jsw",
+                "xray"
+            ],
+            "codename": "add_xray"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change x ray",
+            "content_type": [
+                "jsw",
+                "xray"
+            ],
+            "codename": "change_xray"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete x ray",
+            "content_type": [
+                "jsw",
+                "xray"
+            ],
+            "codename": "delete_xray"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view x ray",
+            "content_type": [
+                "jsw",
+                "xray"
+            ],
+            "codename": "view_xray"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add ambulance consumables",
+            "content_type": [
+                "jsw",
+                "ambulanceconsumables"
+            ],
+            "codename": "add_ambulanceconsumables"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change ambulance consumables",
+            "content_type": [
+                "jsw",
+                "ambulanceconsumables"
+            ],
+            "codename": "change_ambulanceconsumables"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete ambulance consumables",
+            "content_type": [
+                "jsw",
+                "ambulanceconsumables"
+            ],
+            "codename": "delete_ambulanceconsumables"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view ambulance consumables",
+            "content_type": [
+                "jsw",
+                "ambulanceconsumables"
+            ],
+            "codename": "view_ambulanceconsumables"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add Daily Quantity",
+            "content_type": [
+                "jsw",
+                "dailyquantity"
+            ],
+            "codename": "add_dailyquantity"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change Daily Quantity",
+            "content_type": [
+                "jsw",
+                "dailyquantity"
+            ],
+            "codename": "change_dailyquantity"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete Daily Quantity",
+            "content_type": [
+                "jsw",
+                "dailyquantity"
+            ],
+            "codename": "delete_dailyquantity"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view Daily Quantity",
+            "content_type": [
+                "jsw",
+                "dailyquantity"
+            ],
+            "codename": "view_dailyquantity"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add Medical Certificate of Fitness",
+            "content_type": [
+                "jsw",
+                "medicalcertificate"
+            ],
+            "codename": "add_medicalcertificate"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change Medical Certificate of Fitness",
+            "content_type": [
+                "jsw",
+                "medicalcertificate"
+            ],
+            "codename": "change_medicalcertificate"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete Medical Certificate of Fitness",
+            "content_type": [
+                "jsw",
+                "medicalcertificate"
+            ],
+            "codename": "delete_medicalcertificate"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view Medical Certificate of Fitness",
+            "content_type": [
+                "jsw",
+                "medicalcertificate"
+            ],
+            "codename": "view_medicalcertificate"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add Personal Leave Certificate",
+            "content_type": [
+                "jsw",
+                "personalleavecertificate"
+            ],
+            "codename": "add_personalleavecertificate"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change Personal Leave Certificate",
+            "content_type": [
+                "jsw",
+                "personalleavecertificate"
+            ],
+            "codename": "change_personalleavecertificate"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete Personal Leave Certificate",
+            "content_type": [
+                "jsw",
+                "personalleavecertificate"
+            ],
+            "codename": "delete_personalleavecertificate"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view Personal Leave Certificate",
+            "content_type": [
+                "jsw",
+                "personalleavecertificate"
+            ],
+            "codename": "view_personalleavecertificate"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add alcohol_form",
+            "content_type": [
+                "jsw",
+                "alcohol_form"
+            ],
+            "codename": "add_alcohol_form"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change alcohol_form",
+            "content_type": [
+                "jsw",
+                "alcohol_form"
+            ],
+            "codename": "change_alcohol_form"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete alcohol_form",
+            "content_type": [
+                "jsw",
+                "alcohol_form"
+            ],
+            "codename": "delete_alcohol_form"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view alcohol_form",
+            "content_type": [
+                "jsw",
+                "alcohol_form"
+            ],
+            "codename": "view_alcohol_form"
+        }
+    }
+]

@@ -1,0 +1,56 @@
+[
+    {
+        "model": "jsw.xray",
+        "pk": 1,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "checked": false,
+            "emp_no": "",
+            "aadhar": "123456789012",
+            "mrdNo": "",
+            "Chest": ",sflas",
+            "Chest_comments": "",
+            "Spine": "asdhash",
+            "Spine_comments": "",
+            "Abdomen": "",
+            "Abdomen_comments": "",
+            "KUB": "akldjsahf",
+            "KUB_comments": "",
+            "Pelvis": "",
+            "Pelvis_comments": "",
+            "Skull": "False",
+            "Skull_comments": "False",
+            "Upper_limb": "False",
+            "Upper_limb_comments": "False",
+            "Lower_limb": "False",
+            "Lower_limb_comments": "False"
+        }
+    },
+    {
+        "model": "jsw.xray",
+        "pk": 2,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "checked": false,
+            "emp_no": "",
+            "aadhar": "123456789012",
+            "mrdNo": "",
+            "Chest": ",sflas",
+            "Chest_comments": "",
+            "Spine": "asdhash",
+            "Spine_comments": "",
+            "Abdomen": "",
+            "Abdomen_comments": "",
+            "KUB": "akldjsahf",
+            "KUB_comments": "",
+            "Pelvis": "",
+            "Pelvis_comments": "",
+            "Skull": "False",
+            "Skull_comments": "False",
+            "Upper_limb": "False",
+            "Upper_limb_comments": "False",
+            "Lower_limb": "False",
+            "Lower_limb_comments": "False"
+        }
+    }
+]

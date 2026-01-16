@@ -1,0 +1,54 @@
+[
+    {
+        "model": "jsw.thyroidfunctiontest",
+        "pk": 1,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "checked": false,
+            "emp_no": "",
+            "aadhar": "123456789012",
+            "mrdNo": "",
+            "t3_triiodothyronine": "",
+            "t3_triiodothyronine_unit": "",
+            "t3_triiodothyronine_reference_range_from": null,
+            "t3_triiodothyronine_reference_range_to": null,
+            "t3_triiodothyronine_comments": "",
+            "t4_thyroxine": "",
+            "t4_thyroxine_unit": "",
+            "t4_thyroxine_reference_range_from": null,
+            "t4_thyroxine_reference_range_to": null,
+            "t4_thyroxine_comments": "",
+            "tsh_thyroid_stimulating_hormone": "",
+            "tsh_thyroid_stimulating_hormone_unit": "",
+            "tsh_thyroid_stimulating_hormone_reference_range_from": null,
+            "tsh_thyroid_stimulating_hormone_reference_range_to": null,
+            "tsh_thyroid_stimulating_hormone_comments": ""
+        }
+    },
+    {
+        "model": "jsw.thyroidfunctiontest",
+        "pk": 2,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "checked": false,
+            "emp_no": "",
+            "aadhar": "123456789012",
+            "mrdNo": "",
+            "t3_triiodothyronine": "",
+            "t3_triiodothyronine_unit": "",
+            "t3_triiodothyronine_reference_range_from": null,
+            "t3_triiodothyronine_reference_range_to": null,
+            "t3_triiodothyronine_comments": "",
+            "t4_thyroxine": "",
+            "t4_thyroxine_unit": "",
+            "t4_thyroxine_reference_range_from": null,
+            "t4_thyroxine_reference_range_to": null,
+            "t4_thyroxine_comments": "",
+            "tsh_thyroid_stimulating_hormone": "",
+            "tsh_thyroid_stimulating_hormone_unit": "",
+            "tsh_thyroid_stimulating_hormone_reference_range_from": null,
+            "tsh_thyroid_stimulating_hormone_reference_range_to": null,
+            "tsh_thyroid_stimulating_hormone_comments": ""
+        }
+    }
+]

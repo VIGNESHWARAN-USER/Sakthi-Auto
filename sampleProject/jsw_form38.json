@@ -1,0 +1,65 @@
+[
+    {
+        "model": "jsw.form38",
+        "pk": 1,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "emp_no": null,
+            "aadhar": null,
+            "serialNumber": "scdv ",
+            "department": "pouhp",
+            "workerName": "bgfzxvzxc",
+            "sex": "male",
+            "age": 33,
+            "jobNature": "DDGdg",
+            "employmentDate": "2025-03-31",
+            "eyeExamDate": "2025-03-31",
+            "result": "1234",
+            "opthamologistSignature": "",
+            "fmoSignature": "",
+            "remarks": "rgwrgwgg"
+        }
+    },
+    {
+        "model": "jsw.form38",
+        "pk": 2,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "emp_no": "emp009",
+            "aadhar": null,
+            "serialNumber": "vsfkbn/fld",
+            "department": "pouhp",
+            "workerName": "bgfzxvzxc",
+            "sex": "male",
+            "age": 44,
+            "jobNature": "DDGdg",
+            "employmentDate": "2025-03-31",
+            "eyeExamDate": "2025-03-31",
+            "result": "4gg",
+            "opthamologistSignature": "jkkbn;lnbf",
+            "fmoSignature": "fdbnljfdb",
+            "remarks": "kdf jbjkf"
+        }
+    },
+    {
+        "model": "jsw.form38",
+        "pk": 3,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "emp_no": "emp009",
+            "aadhar": null,
+            "serialNumber": "akjd",
+            "department": "awef",
+            "workerName": "fwef",
+            "sex": "male",
+            "age": null,
+            "jobNature": "",
+            "employmentDate": null,
+            "eyeExamDate": null,
+            "result": "",
+            "opthamologistSignature": "",
+            "fmoSignature": "",
+            "remarks": ""
+        }
+    }
+]

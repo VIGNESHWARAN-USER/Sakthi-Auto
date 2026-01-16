@@ -1,0 +1,1192 @@
+[
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 1,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Aziclass",
+            "chemical_name": "Azithromycin",
+            "dose_volume": "500 MG",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 2,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "ATM",
+            "chemical_name": "Azithromycin",
+            "dose_volume": "500 MG",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 3,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Aziwok",
+            "chemical_name": "Azithromycin",
+            "dose_volume": "500 MG",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 4,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Azithral",
+            "chemical_name": "Azithromycin",
+            "dose_volume": "500 MG",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 5,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Augmentin",
+            "chemical_name": "Amoxicillin,Potassium & Clavulanate",
+            "dose_volume": "625 mg",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 6,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Amoxiclav",
+            "chemical_name": "Amoxicillin,Potassium & Clavulanate",
+            "dose_volume": "625 mg",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 7,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Cifran",
+            "chemical_name": "Ciprofloxacin",
+            "dose_volume": "500 mg",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 8,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Cipro",
+            "chemical_name": "Ciprofloxacin",
+            "dose_volume": "500 mg",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 9,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Ciplox",
+            "chemical_name": "Ciprofloxacin",
+            "dose_volume": "500 mg",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 10,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Injection",
+            "brand_name": "Buscopan",
+            "chemical_name": "Hyoscine Butylbromide",
+            "dose_volume": "20 mg",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 11,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Injection",
+            "brand_name": "Spasmocan",
+            "chemical_name": "Hyoscine Butylbromide",
+            "dose_volume": "20 mg",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 12,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Injection",
+            "brand_name": "Buscogast",
+            "chemical_name": "Hyoscine Butylbromide",
+            "dose_volume": "20 mg",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 13,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Injection",
+            "brand_name": "Dexamethasone",
+            "chemical_name": "Dexamethasone",
+            "dose_volume": "2 mg",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 14,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Injection",
+            "brand_name": "Dexamethasone",
+            "chemical_name": "Dexamethasone",
+            "dose_volume": "2 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 15,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Injection",
+            "brand_name": "Dexa",
+            "chemical_name": "Dexamethasone",
+            "dose_volume": "2 mg",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 16,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Injection",
+            "brand_name": "Dexa",
+            "chemical_name": "Dexamethasone",
+            "dose_volume": "2 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 17,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Injection",
+            "brand_name": "Dexamac",
+            "chemical_name": "Dexamethasone",
+            "dose_volume": "2 mg",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 18,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Injection",
+            "brand_name": "Dexamac",
+            "chemical_name": "Dexamethasone",
+            "dose_volume": "2 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 19,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Injection",
+            "brand_name": "Decadron",
+            "chemical_name": "Dexamethasone",
+            "dose_volume": "2 mg",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 20,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Injection",
+            "brand_name": "Decadron",
+            "chemical_name": "Dexamethasone",
+            "dose_volume": "2 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 21,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Injection",
+            "brand_name": "PanI",
+            "chemical_name": "Pantoprazole",
+            "dose_volume": "40 mg",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 22,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Injection",
+            "brand_name": "Pantosec",
+            "chemical_name": "Pantoprazole",
+            "dose_volume": "40 mg",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 23,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Injection",
+            "brand_name": "Pantoprazole",
+            "chemical_name": "Pantoprazole",
+            "dose_volume": "40 mg",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 24,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Syrup",
+            "brand_name": "Digene",
+            "chemical_name": "Magnesium Hydroxide, Simethicone",
+            "dose_volume": "200 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 25,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Syrup",
+            "brand_name": "Antacid",
+            "chemical_name": "Magnesium Hydroxide, Simethicone",
+            "dose_volume": "200 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 26,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Syrup",
+            "brand_name": "Sucralfate",
+            "chemical_name": "Sucralfate",
+            "dose_volume": "100 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 27,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Syrup",
+            "brand_name": "Sucrafil gel",
+            "chemical_name": "Sucralfate",
+            "dose_volume": "100 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 28,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Syrup",
+            "brand_name": "Ascoril-LS",
+            "chemical_name": "Salbutamol, Guaifenesin",
+            "dose_volume": "100 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 29,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Syrup",
+            "brand_name": "Asthalin",
+            "chemical_name": "Salbutamol, Guaifenesin",
+            "dose_volume": "100 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 30,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Syrup",
+            "brand_name": "Ascoril Syrup",
+            "chemical_name": "Salbutamol, Guaifenesin",
+            "dose_volume": "100 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 31,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Drops",
+            "brand_name": "Otorex",
+            "chemical_name": "Ciprofloxacin, Hydrocortisone",
+            "dose_volume": "0.3% (5 ml)",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 32,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Drops",
+            "brand_name": "Cipro",
+            "chemical_name": "Ciprofloxacin, Hydrocortisone",
+            "dose_volume": "0.3% (5 ml)",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 33,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Drops",
+            "brand_name": "Ciprodex",
+            "chemical_name": "Ciprofloxacin, Hydrocortisone",
+            "dose_volume": "0.3% (5 ml)",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 34,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Drops",
+            "brand_name": "Otrivion",
+            "chemical_name": "Xylometazoline",
+            "dose_volume": "0.1% (10 ml)",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 35,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Drops",
+            "brand_name": "Otrivin",
+            "chemical_name": "Xylometazoline",
+            "dose_volume": "0.1% (10 ml)",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 36,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Lotions",
+            "brand_name": "Ketostar",
+            "chemical_name": "Ketoconazole",
+            "dose_volume": "100 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 37,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Lotions",
+            "brand_name": "Nizoral",
+            "chemical_name": "Ketoconazole",
+            "dose_volume": "100 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 38,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Lotions",
+            "brand_name": "Ketoconazole",
+            "chemical_name": "Ketoconazole",
+            "dose_volume": "100 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 39,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Lotions",
+            "brand_name": "Calapure",
+            "chemical_name": "Calamine, Zinc Oxide",
+            "dose_volume": "100 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 40,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Lotions",
+            "brand_name": "Calamine Lotion",
+            "chemical_name": "Calamine, Zinc Oxide",
+            "dose_volume": "100 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 41,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Lotions",
+            "brand_name": "Calamine Zinc",
+            "chemical_name": "Calamine, Zinc Oxide",
+            "dose_volume": "100 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 42,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Creams",
+            "brand_name": "Oint.Candid-B",
+            "chemical_name": "Clotrimazole, Betamethasone",
+            "dose_volume": "15 gm",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 43,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Creams",
+            "brand_name": "Oint.Canestan",
+            "chemical_name": "Clotrimazole, Betamethasone",
+            "dose_volume": "15 gm",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 44,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Creams",
+            "brand_name": "Oint.T-Bact",
+            "chemical_name": "Mupirocin",
+            "dose_volume": "15 gm",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 45,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Creams",
+            "brand_name": "Oint.Mupirocin",
+            "chemical_name": "Mupirocin",
+            "dose_volume": "15 gm",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 46,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Creams",
+            "brand_name": "Amirthangen Roll-on",
+            "chemical_name": "Menthol, Camphor",
+            "dose_volume": "50 gm (Roll-on)",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 47,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Fluids",
+            "brand_name": "Cifran",
+            "chemical_name": "Ciprofloxacin",
+            "dose_volume": "100 ml (IV fluid)",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 48,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Fluids",
+            "brand_name": "Ciprofloxacin",
+            "chemical_name": "Ciprofloxacin",
+            "dose_volume": "100 ml (IV fluid)",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 49,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Fluids",
+            "brand_name": "Cipro",
+            "chemical_name": "Ciprofloxacin",
+            "dose_volume": "100 ml (IV fluid)",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 50,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Fluids",
+            "brand_name": "D5",
+            "chemical_name": "Dextrose (5% solution)",
+            "dose_volume": "500 ml (IV fluid)",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 51,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Fluids",
+            "brand_name": "Dextrose 5%",
+            "chemical_name": "Dextrose (5% solution)",
+            "dose_volume": "500 ml (IV fluid)",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 52,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Fluids",
+            "brand_name": "D5W",
+            "chemical_name": "Dextrose (5% solution)",
+            "dose_volume": "500 ml (IV fluid)",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 53,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Powder",
+            "brand_name": "Mycoderm-C",
+            "chemical_name": "Clotrimazole, Miconazole",
+            "dose_volume": "100 MG",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 54,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Powder",
+            "brand_name": "Clocip",
+            "chemical_name": "Clotrimazole, Miconazole",
+            "dose_volume": "100 MG",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 55,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Powder",
+            "brand_name": "Electral",
+            "chemical_name": "Oral Rehydration Salts",
+            "dose_volume": "5 gm",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 56,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Powder",
+            "brand_name": "ORS",
+            "chemical_name": "Oral Rehydration Salts",
+            "dose_volume": "5 gm",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 57,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Respules",
+            "brand_name": "AsthalinVentolin, Salbair",
+            "chemical_name": "Salbutamol",
+            "dose_volume": "2.5 mg",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 58,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Respules",
+            "brand_name": "AsthalinVentolin, Salbair",
+            "chemical_name": "Salbutamol",
+            "dose_volume": "2.5 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 59,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Respules",
+            "brand_name": "Ventolin",
+            "chemical_name": "Salbutamol",
+            "dose_volume": "2.5 mg",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 60,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Respules",
+            "brand_name": "Ventolin",
+            "chemical_name": "Salbutamol",
+            "dose_volume": "2.5 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 61,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Respules",
+            "brand_name": "Salbair",
+            "chemical_name": "Salbutamol",
+            "dose_volume": "2.5 mg",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 62,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Respules",
+            "brand_name": "Salbair",
+            "chemical_name": "Salbutamol",
+            "dose_volume": "2.5 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 63,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Respules",
+            "brand_name": "Duoline",
+            "chemical_name": "Ipratropium Bromide, Salbutamol",
+            "dose_volume": "0.5 mg",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 64,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Respules",
+            "brand_name": "Duoline",
+            "chemical_name": "Ipratropium Bromide, Salbutamol",
+            "dose_volume": "2.5 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 65,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Respules",
+            "brand_name": "CombiventDuohaler",
+            "chemical_name": "Ipratropium Bromide, Salbutamol",
+            "dose_volume": "0.5 mg",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 66,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Respules",
+            "brand_name": "CombiventDuohaler",
+            "chemical_name": "Ipratropium Bromide, Salbutamol",
+            "dose_volume": "2.5 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 67,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Respules",
+            "brand_name": "Duohaler",
+            "chemical_name": "Ipratropium Bromide, Salbutamol",
+            "dose_volume": "0.5 mg",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 68,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Respules",
+            "brand_name": "Duohaler",
+            "chemical_name": "Ipratropium Bromide, Salbutamol",
+            "dose_volume": "2.5 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 69,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Aziclass",
+            "chemical_name": "Azithromycin",
+            "dose_volume": "500 MG",
+            "total_quantity": 100,
+            "quantity": 90,
+            "expiry_date": "2025-11-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 70,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "ATM",
+            "chemical_name": "Azithromycin",
+            "dose_volume": "500 MG",
+            "total_quantity": 100,
+            "quantity": 94,
+            "expiry_date": "2025-09-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 71,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Aziwok",
+            "chemical_name": "Azithromycin",
+            "dose_volume": "500 MG",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2026-02-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 72,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Azithral",
+            "chemical_name": "Azithromycin",
+            "dose_volume": "500 MG",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2026-03-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 73,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Augmentin",
+            "chemical_name": "Amoxicillin,Potassium & Clavulanate",
+            "dose_volume": "625 mg",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2026-04-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 74,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Amoxiclav",
+            "chemical_name": "Amoxicillin,Potassium & Clavulanate",
+            "dose_volume": "625 mg",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-11-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 75,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Cifran",
+            "chemical_name": "Ciprofloxacin",
+            "dose_volume": "500 mg",
+            "total_quantity": 100,
+            "quantity": 84,
+            "expiry_date": "2026-06-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 76,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Cipro",
+            "chemical_name": "Ciprofloxacin",
+            "dose_volume": "500 mg",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2026-07-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 77,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Ciplox",
+            "chemical_name": "Ciprofloxacin",
+            "dose_volume": "500 mg",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2026-08-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 78,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Syrup",
+            "brand_name": "Digene",
+            "chemical_name": "Magnesium Hydroxide, Simethicone",
+            "dose_volume": "200 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2025-12-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 79,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Syrup",
+            "brand_name": "Antacid",
+            "chemical_name": "Magnesium Hydroxide, Simethicone",
+            "dose_volume": "200 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2026-01-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 80,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Syrup",
+            "brand_name": "Sucralfate",
+            "chemical_name": "Sucralfate",
+            "dose_volume": "100 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2026-02-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 81,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Syrup",
+            "brand_name": "Sucrafil gel",
+            "chemical_name": "Sucralfate",
+            "dose_volume": "100 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2026-03-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 82,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Syrup",
+            "brand_name": "Ascoril-LS",
+            "chemical_name": "Salbutamol, Guaifenesin",
+            "dose_volume": "100 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2026-04-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 83,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Syrup",
+            "brand_name": "Asthalin",
+            "chemical_name": "Salbutamol, Guaifenesin",
+            "dose_volume": "100 ml",
+            "total_quantity": 100,
+            "quantity": 100,
+            "expiry_date": "2026-05-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 84,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Syrup",
+            "brand_name": "Ascoril Syrup",
+            "chemical_name": "Salbutamol, Guaifenesin",
+            "dose_volume": "100 ml",
+            "total_quantity": 100,
+            "quantity": 81,
+            "expiry_date": "2026-06-01"
+        }
+    },
+    {
+        "model": "jsw.pharmacystock",
+        "pk": 85,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Calpol",
+            "chemical_name": "Paracetamol",
+            "dose_volume": "600mg",
+            "total_quantity": 100,
+            "quantity": 60,
+            "expiry_date": "2026-03-01"
+        }
+    }
+]

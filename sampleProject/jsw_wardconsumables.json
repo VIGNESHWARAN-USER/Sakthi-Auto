@@ -1,0 +1,47 @@
+[
+    {
+        "model": "jsw.wardconsumables",
+        "pk": 1,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Calpol",
+            "chemical_name": "Paracetomol",
+            "dose_volume": "5mg",
+            "quantity": 15,
+            "expiry_date": "2025-05-19",
+            "consumed_date": "2025-05-29",
+            "total_quantity": 0
+        }
+    },
+    {
+        "model": "jsw.wardconsumables",
+        "pk": 2,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Parafast",
+            "chemical_name": "Paracetamol",
+            "dose_volume": "500mg",
+            "quantity": 10,
+            "expiry_date": "2025-06-15",
+            "consumed_date": "2025-05-29",
+            "total_quantity": 0
+        }
+    },
+    {
+        "model": "jsw.wardconsumables",
+        "pk": 3,
+        "fields": {
+            "entry_date": "2025-05-29",
+            "medicine_form": "Tablet",
+            "brand_name": "Calpol",
+            "chemical_name": "Paracetamol",
+            "dose_volume": "5mg",
+            "quantity": 5,
+            "expiry_date": "2025-06-01",
+            "consumed_date": "2025-05-29",
+            "total_quantity": 0
+        }
+    }
+]
