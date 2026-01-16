@@ -223,7 +223,7 @@ const Sidebar = ({ redCount }) => {
           <img
             src={img}
             alt="Logo"
-            className="w-auto max-w-[80%] h-auto shadow-2xl p-4 rounded-lg bg-white"
+            className="w-auto max-w-[80%] h-auto p-2"
           />
         </div>
 

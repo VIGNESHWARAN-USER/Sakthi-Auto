@@ -26,7 +26,7 @@ const getDefaultFormData = (formType) => {
         case 'medicalCertificate':
             return {
                 employeeName: "", age: "", sex: "", date: "", empNo: "",
-                department: "", jswContract: "",
+                department: "", contract: "",
                 natureOfWork: "", covidVaccination: "", diagnosis: "",
                 leaveFrom: "", leaveUpTo: "", daysLeave: "", rejoiningDate: "",
                 shift: "", pr: "", sp02: "", temp: "", certificateFrom: "",
@@ -346,7 +346,7 @@ const FormFields = ({ formType, initialData = null, logoSrc = null, apiUrlBase =
                                      <FormInput label="Date" name="date" type="date" value={formData.date} onChange={handleChange} />
                                      <FormInput label="Emp No" name="empNo" value={formData.empNo} onChange={handleChange} />
                                      <FormInput label="Department" name="department" value={formData.department} onChange={handleChange} />
-                                     <FormInput label="JSW Contract" name="jswContract" value={formData.jswContract} onChange={handleChange} />
+                                     <FormInput label="Contract" name="contract" value={formData.contract} onChange={handleChange} />
                                      <FormInput label="Nature of Work" name="natureOfWork" value={formData.natureOfWork} onChange={handleChange} />
                                      <FormSelect
                                         label="Covid Vaccination" name="covidVaccination"

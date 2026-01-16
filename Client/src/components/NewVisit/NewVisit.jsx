@@ -1025,7 +1025,7 @@ const NewVisit = () => {
                       value={formData.organization || ''}
                       onChange={handleChange}
                       type="text"
-                      placeholder="eg,JSW Cement, TATA POWER"
+                      placeholder="eg,Steel, Cement"
                       className="px-4 py-2 w-full bg-blue-100 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
@@ -1129,7 +1129,7 @@ const NewVisit = () => {
                       value={formData.employer || ""}
                       onChange={handleChange}
                       type="text"
-                      placeholder={type === "Contractor" ? "Enter contract employer name" : "eg, JSW steel , JSW Cement"}
+                      placeholder={type === "Contractor" ? "Enter contract employer name" : "eg, Steel , Cement"}
                       className="px-4 py-2 w-full bg-blue-100 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
@@ -1170,7 +1170,7 @@ const NewVisit = () => {
                           <option value="Propreitor">Propreitor</option>
                           <option value="CSR Foundation">CSR Foundation</option>
                           <option value="Transporter">Transporter</option>
-                          <option value="JSW Society">JSW Society</option>
+                          <option value="Society">Society</option>
                           <option value="Shutdown">Shutdown</option>
                           <option value="ITI Apprentice">ITI Apprentice</option>
                           <option value="Supplier">Supplier</option>
@@ -1267,7 +1267,7 @@ const NewVisit = () => {
                       value={formData.previousemployer || ''}
                       onChange={handleChange}
                       type="text"
-                      placeholder="e.g., JSW steel , JSW Cement"
+                      placeholder="e.g., Steel , Cement"
                       className="px-4 py-2 w-full bg-blue-100 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                   </div>)}

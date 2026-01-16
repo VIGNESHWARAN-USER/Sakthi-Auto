@@ -789,10 +789,10 @@ const PersonalDetails = ({ addFilter }) => {
 
 const EmploymentDetails = ({ addFilter, selectedRole }) => {
     const [formData, setFormData] = useState({ designation: "", department: "", moj: "", division: "", workarea: "", employer: "", job_nature: "", previousEmployer: "", previousLocation: "", dojFrom: "", dojTo: "", });
-    const employerOptions = { "JSW Steel Limited": "JSW Steel Limited", "JSW Cement": "JSW Cement", "JSW Foundation": "JSW Foundation" };
+    const employerOptions = { "Steel": "Steel", "Cement": "Cement", "Foundation": "Foundation" };
     const mojOptions = { "New Joinee": "New Joinee", "Transfer": "Transfer" };
     const jobNatureOptions = { "Contract": "Contract", "Permanent": "Permanent", "Consultant": "Consultant", "Painter": "Painter", "Driver": "Driver", "Manager":"Manager" };
-    const jobStatusOptions = { "JBC": "JBC", "SSC": "SSC", "JBN":"JBN", "TBC":"TBC", "GGBS":"GGBS", "JBI":"JBI", "JBA":"JBA", "Support Staff": "Support Staff", "MBC":"MBC", "Propreitor":"Propreitor", "CSR Foundation": "CSR Foundation", "Transporter":"Transporter", "JSW Society":"JSW Society", "Shut Down":"Shut Down", "ITI Apprentice":"ITI Apprentice", "Supplier":"Supplier"}
+    const jobStatusOptions = { "JBC": "JBC", "SSC": "SSC", "JBN":"JBN", "TBC":"TBC", "GGBS":"GGBS", "JBI":"JBI", "JBA":"JBA", "Support Staff": "Support Staff", "MBC":"MBC", "Propreitor":"Propreitor", "CSR Foundation": "CSR Foundation", "Transporter":"Transporter", "Society":"Society", "Shut Down":"Shut Down", "ITI Apprentice":"ITI Apprentice", "Supplier":"Supplier"}
     const handleChange = (e) => { setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value })); };
     const handleSubmit = () => {
         const filteredData = Object.fromEntries(Object.entries(formData).filter(([_, v]) => v !== "" && v !== null));

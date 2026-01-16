@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import leftlogin from "../../assets/login-left.png";
-import jswlogo from "../../assets/logo.png";
+import logo from "../../assets/login.png";
 import { IoIosEyeOff, IoIosEye } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -120,12 +120,12 @@ const Forgot = () => {
         style={{ backgroundImage: `url(${leftlogin})` }}
       >
         <div className="flex items-end justify-center h-full pb-5 md:pb-10">
-          <img src={jswlogo} alt="JSW Logo" className="w-40 md:w-96" />
+    <img src={logo} alt="Logo" className="w-[500px]" />
         </div>
       </div>
 
-      <div className="md:w-3/5 w-full h-full flex items-center justify-center overflow-hidden relative">
-        <div className="relative z-10 w-full sm:w-4/5 md:w-3/4 max-w-md p-6 md:p-8 bg-white border border-white border-opacity-30 rounded-lg shadow-2xl">
+      <div className="md:w-3/5 w-full h-full bg-[#e7f8f9] flex items-center justify-center overflow-hidden relative">
+        <div className="relative z-10 w-full sm:w-4/5 md:w-3/4 max-w-md p-6 md:p-8 bg-white/30 backdrop-blur-md   border border-white border-opacity-30 rounded-2xl shadow-[0_0_20px_rgba(59,130,246,0.5)]">
           <h2 className="text-2xl md:text-4xl font-bold text-center mb-4">
             {step === 1 ? "Request OTP" : step === 2 ? "Enter OTP" : "Reset Password"}
           </h2>
@@ -149,6 +149,9 @@ const Forgot = () => {
                 />
               </div>
               <p className="text-red-600 font-medium text-sm md:text-base mb-4">{err}</p>
+              <div className="flex justify-end mb-6">
+                            <Link to="../login" className="text-blue-900 text-sm md:text-base">Back to Login?</Link>
+              </div>
               <button
                 type="submit"
                 className="mt-4 bg-blue-500 w-full text-white px-6 py-2 rounded-lg hover:shadow-[0_0_10px_#3b82f6] transition-all duration-300"

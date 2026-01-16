@@ -47,10 +47,10 @@ def transfer_model_data(model):
 def main():
     print("\n🚀 Starting FULL MySQL → MSSQL Migration (AUTO MODE)\n")
 
-    # Get all models from jsw app only
-    jsw_models = apps.get_app_config('jsw').get_models()
+    
+    backend_models = apps.get_app_config('backend').get_models()
 
-    for model in jsw_models:
+    for model in backend_models:
         print(f"🔄 Processing {model.__name__}")
         transfer_model_data(model)
         print("-" * 60)

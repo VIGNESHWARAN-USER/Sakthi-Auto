@@ -59,7 +59,7 @@ const FitnessPage = ({ data, mrdNo, register, reference, appointment }) => {
     };
 
     const initialMedicalCertificateState = {
-        employeeName: '', age: '', sex: '', date: '', empNo: '', department: '', jswContract: '',
+        employeeName: '', age: '', sex: '', date: '', empNo: '', department: '', contract: '',
         natureOfWork: '', covidVaccination: '', diagnosis: '', leaveFrom: '', leaveUpTo: '',
         daysLeave: '', rejoiningDate: '', shift: '', pr: '', sp02: '', temp: '',
         certificateFrom: '', note: '', ohcStaffSignature: '', individualSignature: '',

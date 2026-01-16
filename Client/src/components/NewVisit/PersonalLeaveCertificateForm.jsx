@@ -24,7 +24,7 @@ const PersonalLeaveCertificateForm = ({ aadhar, mrdNo, onDataChange, isDoctor, l
 
   const defaultState = {
     employeeName: '', age: '', sex: '', date: '', empNo: '', department: '',
-    jswContract: '', natureOfWork: '', hasSurgicalHistory: '', covidVaccination: '',
+    contract: '', natureOfWork: '', hasSurgicalHistory: '', covidVaccination: '',
     personalLeaveDescription: '', leaveFrom: '', leaveUpTo: '', daysLeave: '',
     rejoiningDate: '', bp: '', pr: '', spo2: '', temp: '', note: '',
     ohcStaffSignature: '', individualSignature: '',

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import leftlogin from "../../assets/login-left.png";
-import jswlogo from "../../assets/logo.png";
+import logo from "../../assets/login.png";
 import { IoIosEyeOff, IoIosEye } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -86,7 +86,7 @@ const Login = () => {
     <div className="flex flex-col md:flex-row h-screen">
       <div className="md:w-2/5 w-full h-1/3 md:h-full bg-center bg-cover" style={{ backgroundImage: `url(${leftlogin})` }}>
         <div className="flex items-end justify-center h-full pb-5 md:pb-10">
-          <img src={jswlogo} alt="JSW Logo" className="w-40 md:w-96" />
+          <img src={logo} alt="Logo" className="w-[500px]" />
         </div>
       </div>
 
@@ -97,7 +97,7 @@ const Login = () => {
 
         <div className="relative z-10 w-full sm:w-4/5 md:w-3/4 max-w-md p-6 md:p-8 bg-white/30 backdrop-blur-md   border border-white border-opacity-30 rounded-2xl shadow-[0_0_20px_rgba(59,130,246,0.5)]">
           <h2 className="text-2xl md:text-4xl font-bold text-center mb-4">Login</h2>
-          <p className="text-center text-gray-600 mb-6 text-sm md:text-base">Welcome to JSW OHC</p>
+          <p className="text-center text-gray-600 mb-6 text-sm md:text-base">Welcome to OHC Portal</p>
           <form onSubmit={login}>
             <div className="mb-4">
               <label htmlFor="username" className="block text-gray-700 mb-2 text-sm md:text-base">Username</label>

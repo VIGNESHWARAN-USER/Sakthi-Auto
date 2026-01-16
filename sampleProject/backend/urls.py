@@ -7,7 +7,7 @@ from django.conf.urls.static import static
 from django.conf import settings # Import settings
 
 urlpatterns = [
-    # Authentication & Member Management
+    
     path('login', views.login, name='login'),
     path('forgot_password/', views.forgot_password, name='forgot_password'),
     path('verify_otp/', views.verify_otp, name='verify_otp'),

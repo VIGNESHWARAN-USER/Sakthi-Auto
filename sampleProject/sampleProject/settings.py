@@ -25,7 +25,7 @@ ALLOWED_HOSTS = [
     'localhost',
     '10.15.4.22',
     '127.0.0.1',
-    'ohc.jsw.in'
+    'ohc.backend.in'
 ]
 
 
@@ -38,7 +38,7 @@ EMAIL_HOST = 'smtp.office365.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
-EMAIL_HOST_USER = 'jsw.salem@jsw.in'
+EMAIL_HOST_USER = 'backend.salem@backend.in'
 EMAIL_HOST_PASSWORD = 'pgtrkschxwqmfgtd'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'jsw',
+    'backend',
     'sslserver',
     'django_extensions'
 ]
@@ -67,7 +67,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'jsw.middleware.SimpleMiddleware',
+    'backend.middleware.SimpleMiddleware',
 ]
 
 # CHANGED FROM OHC.urls
@@ -89,14 +89,14 @@ TEMPLATES = [
     },
 ]
 
-# CHANGED FROM OHC.wsgi.application
+
 WSGI_APPLICATION = 'sampleProject.wsgi.application'
 
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'defaultdb',
+        'NAME': 'sakthiautodb',
         'USER': 'avnadmin',
         'PASSWORD': 'AVNS_fTKFcjzwiSA50liDciv',
         'HOST': "mysql-96df329-pramothrpro-9634.f.aivencloud.com",

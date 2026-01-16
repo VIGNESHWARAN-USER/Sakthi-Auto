@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
 from django.db import transaction
-from jsw.models import (
+from backend.models import (
     user, employee_details, Dashboard, vitals, mockdrills, eventsandcamps,
     heamatalogy, RoutineSugarTests, RenalFunctionTest, LipidProfile,
     LiverFunctionTest, ThyroidFunctionTest, AutoimmuneTest, CoagulationTest,

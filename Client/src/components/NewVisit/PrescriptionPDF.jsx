@@ -6,7 +6,7 @@ const Prescription = () => {
       {/* Header */}
       <div className="flex justify-between items-center border-b pb-2 mb-4">
         <h1 className="text-lg font-bold text-gray-800">
-          <span className="text-2xl">✶</span> JSW STEEL LTD, SALEM WORKS
+          <span className="text-2xl">✶</span> HEALTH CARE CLINIC
         </h1>
         <div className="text-right">
           <p className="text-sm font-semibold">Date: <span className="underline">26/06/2024</span></p>

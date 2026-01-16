@@ -97,14 +97,14 @@ ALLOWED_FILE_TYPES = ['pdf', 'doc', 'docx', 'xls', 'xlsx', 'jpg', 'jpeg', 'png',
 # --- Authentication & Member Management ---
 
 def send_otp_via_email(email, otp):
-    subject = "🔐 Password Reset OTP - JSW Health Portal"
+    subject = "🔐 Password Reset OTP - Health Care Portal"
     from_email = settings.EMAIL_HOST_USER
     recipient_list = [email]
     context = {"otp": otp, "email": email}
     try:
         # Ensure template exists or provide fallback text content
         html_content = render_to_string("otp_email_template.html", context)
-        text_content = f"Your OTP for JSW Health Portal password reset is {otp}. This code is valid for 5 minutes."
+        text_content = f"Your OTP for Health Care Portal password reset is {otp}. This code is valid for 5 minutes."
         msg = EmailMultiAlternatives(subject, text_content, from_email, recipient_list)
         msg.attach_alternative(html_content, "text/html")
         msg.send()
@@ -2986,7 +2986,7 @@ def add_or_update_medical_certificate(request):
             'empNo': 'empNo',
             'department': 'department',
             'date': 'date', # This will be replaced by the parsed date object
-            'jswContract': 'jswContract',
+            'contract': 'contract',
             'natureOfWork': 'natureOfWork',
             'covidVaccination': 'covidVaccination',
             'diagnosis': 'diagnosis',
@@ -3095,7 +3095,7 @@ def get_personal_leave_data(request):
             'employeeName': latest_record.employeeName, 'age': latest_record.age,
             'sex': latest_record.sex, 'date': latest_record.date.isoformat() if latest_record.date else None,
             'empNo': latest_record.empNo, 'department': latest_record.department,
-            'jswContract': latest_record.jswContract, 'natureOfWork': latest_record.natureOfWork,
+            'contract': latest_record.contract, 'natureOfWork': latest_record.natureOfWork,
             'hasSurgicalHistory': latest_record.hasSurgicalHistory, 'covidVaccination': latest_record.covidVaccination,
             'personalLeaveDescription': latest_record.personalLeaveDescription,
             'leaveFrom': latest_record.leaveFrom.isoformat() if latest_record.leaveFrom else None,
@@ -3132,7 +3132,7 @@ def save_personal_leave_data(request):
         defaults = {
             'mrdNo': mrdNo, 'aadhar': aadhar, 'employeeName': data.get('employeeName'),
             'sex': data.get('sex'), 'empNo': data.get('empNo'),
-            'department': data.get('department'), 'jswContract': data.get('jswContract'),
+            'department': data.get('department'), 'contract': data.get('contract'),
             'natureOfWork': data.get('natureOfWork'), 'hasSurgicalHistory': data.get('hasSurgicalHistory'),
             'covidVaccination': data.get('covidVaccination'), 'personalLeaveDescription': data.get('personalLeaveDescription'),
             'bp': data.get('bp'), 'pr': data.get('pr'), 'spo2': data.get('spo2'),
@@ -3206,7 +3206,7 @@ def get_medical_certificate_data(request):
             'date': latest_record.date.isoformat() if latest_record.date else None,
             'empNo': latest_record.empNo,
             'department': latest_record.department,
-            'jswContract': latest_record.jswContract,
+            'contract': latest_record.contract,
             'natureOfWork': latest_record.natureOfWork,
             'covidVaccination': latest_record.covidVaccination,
             'diagnosis': latest_record.diagnosis,
@@ -3251,7 +3251,7 @@ def add_or_update_medical_certificate(request):
         key_map = {
             'mrdNo': 'mrdNo', 'aadhar': 'aadhar', 'employeeName': 'employeeName',
             'age': 'age', 'sex': 'sex', 'empNo': 'empNo', 'department': 'department',
-            'jswContract': 'jswContract', 'natureOfWork': 'natureOfWork',
+            'contract': 'contract', 'natureOfWork': 'natureOfWork',
             'covidVaccination': 'covidVaccination', 'diagnosis': 'diagnosis',
             'daysLeave': 'daysLeave', 'shift': 'shift', 'pr': 'pr', 'sp02': 'spo2',
             'temp': 'temp', 'certificateFrom': 'certificateFrom', 'note': 'note',
@@ -6114,7 +6114,7 @@ logger = logging.getLogger(__name__)
 
 # In your Django views.py
 
-# In jsw/views.py
+
 
 @csrf_exempt
 def get_calibrations(request):
@@ -6165,13 +6165,7 @@ def get_calibrations(request):
     except Exception as e:
         logger.exception("Error in get_calibrations")
         return JsonResponse({"error": "Server error.", "detail": str(e)}, status=500)
-# In your Django views.py
 
-# In your views.py
-
-# In your Django views.py
-
-# jsw/views.py
 
 @csrf_exempt
 def get_calibration_history(request):
@@ -6229,13 +6223,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-# jsw/views.py
 
-# ... (keep all other imports and functions as they are)
-
-# jsw/views.py
-
-# In jsw/views.py
 
 @csrf_exempt
 def complete_calibration(request):
@@ -6329,13 +6317,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-# jsw/views.py
 
-# jsw/views.py
-
-# jsw/views.py
-
-# jsw/views.py
 
 @csrf_exempt
 def add_instrument(request):
@@ -6855,7 +6837,7 @@ def view_prescription_by_id(request, prescription_id):
         response['Allow'] = 'GET'
         return response
 
-# Add this function definition to your jsw/views.py file
+
 
 from django.http import JsonResponse
 from .models import ExpiryRegister
@@ -8012,7 +7994,7 @@ def get_pendingfootfalls(request):
 
         
 
-# jsw/views.py
+
 
 # ... (other imports at the top of your file)
 # Make sure these are present:
@@ -8063,25 +8045,13 @@ def deleteInstrument(request):
 
 
 
-# ... (rest of your views.py file, including EditInstrument) ...
-# jsw/views.py
 
-# ... (other imports at the top of your file)
-# Make sure these are present:
 from .utils import parse_date_internal, get_next_due_date # Assuming these are in your utils.py or views.py
 import logging
 
 logger = logging.getLogger(__name__)
 
-# ... (rest of your views)
 
-# jsw/views.py
-
-# jsw/views.py
-
-# jsw/views.py
-
-# jsw/views.py
 
 @csrf_exempt
 def EditInstrument(request):
@@ -8167,12 +8137,7 @@ def EditInstrument(request):
 # Add this import at the top if it's not already there
 from django.db.models import F
 
-# ... (rest of your views.py file) ...
 
-# Add this new function anywhere in your views.py
-# jsw/views.py
-
-# Make sure Max is imported from django.db.models at the top of your file
 from django.db.models import Max
 
 # ... (rest of your views.py file)

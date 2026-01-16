@@ -60,7 +60,7 @@ const MedicalCertificateForm = ({ onDataChange,  mrdNo, aadhar }) => {
   // --- A constant for the default empty state, used for resetting the form. ---
   const defaultFormState = {
     employeeName: '', age: '', sex: '', date: '', empNo: '',
-    department: '', jswContract: '', natureOfWork: '', covidVaccination: '',
+    department: '', contract: '', natureOfWork: '', covidVaccination: '',
     diagnosis: '', leaveFrom: '', leaveUpTo: '', daysLeave: '',
     rejoiningDate: '', shift: '', pr: '', sp02: '', temp: '',
     certificateFrom: '', note: '', ohcStaffSignature: '', individualSignature: ''

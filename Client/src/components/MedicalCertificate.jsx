@@ -51,7 +51,7 @@ const MedicalCertificate = () => {
           <input type="date" name="date" value={formData.date} onChange={handleChange} className="border p-2 rounded w-full" />
           <input type="text" name="empNo" placeholder="Emp No" value={formData.empNo} onChange={handleChange} className="border p-2 rounded w-full" />
           <input type="text" name="department" placeholder="Department" value={formData.department} onChange={handleChange} className="border p-2 rounded w-full" />
-          <input type="text" name="JswContract" placeholder="Jsw Contract" value={formData.jswcontract} onChange={handleChange} className="border p-2 rounded w-full" />
+          <input type="text" name="Contract" placeholder="Contract" value={formData.contract} onChange={handleChange} className="border p-2 rounded w-full" />
           <input type="text" name="natureOfWork" placeholder="Nature of Work" value={formData.natureOfWork} onChange={handleChange} className="border p-2 rounded w-full" />
           
         </div>

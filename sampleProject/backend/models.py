@@ -2058,7 +2058,7 @@ class PersonalLeaveCertificate(models.Model):
     empNo = models.CharField(_("Employee Number"), max_length=50, blank=True)
     department = models.CharField(_("Department"), max_length=100, blank=True)
     date = models.DateField(_("Date of Certificate"), null=True, blank=True)
-    jswContract = models.CharField(_("JSW / Contract"), max_length=100, blank=True)
+    contract = models.CharField(_("Contract"), max_length=100, blank=True)
     natureOfWork = models.CharField(_("Nature of Work"), max_length=255, blank=True)
 
     hasSurgicalHistory = models.CharField( _("Surgical & Medical History"),  max_length=3,  choices=YES_NO_CHOICES, blank=True)
@@ -2109,7 +2109,7 @@ class MedicalCertificate(models.Model):
     empNo = models.CharField(_("Employee Number"), max_length=50, blank=True)
     department = models.CharField(_("Department"), max_length=100, blank=True)
     date = models.DateField(_("Date of Certificate"), null=True, blank=True)
-    jswContract = models.CharField(_("JSW Contract"), max_length=100, blank=True)
+    contract = models.CharField(_("Contract"), max_length=100, blank=True)
     natureOfWork = models.CharField(_("Nature of Work"), max_length=255, blank=True)
     covidVaccination = models.CharField(
         _("Covid Vaccination"),
