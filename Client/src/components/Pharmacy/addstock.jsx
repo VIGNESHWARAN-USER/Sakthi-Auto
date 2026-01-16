@@ -14,6 +14,9 @@ const AddStock = () => {
     dose_volume: "",
     quantity: "",
     expiry_date: "",
+    batch_number: "",
+    total_amount: "",
+    amount_per_unit: "",
   });
 
   const [message, setMessage] = useState("");
@@ -103,7 +106,19 @@ const AddStock = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+
+    let updatedFormData = { ...formData, [name]: value };
+
+    if (name === "quantity" || name === "total_amount") {
+      const qty = parseFloat(name === "quantity" ? value : formData.quantity);
+      const total = parseFloat(name === "total_amount" ? value : formData.total_amount);
+      if (qty > 0 && total >= 0) {
+        updatedFormData.amount_per_unit = (total / qty).toFixed(2);
+      } else {
+        updatedFormData.amount_per_unit = "";
+      }
+    }
+    setFormData(updatedFormData);
 
     if (name === "chemical_name") fetchBrandSuggestions(value, formData.medicine_form);
     if (name === "brand_name") {
@@ -127,7 +142,7 @@ const AddStock = () => {
     setMessage("");
     setIsError(false);
 
-    if (!formData.medicine_form || !formData.brand_name || !formData.chemical_name || !formData.dose_volume || !formData.quantity || !formData.expiry_date) {
+    if (!formData.medicine_form || !formData.brand_name || !formData.chemical_name || !formData.dose_volume || !formData.quantity || !formData.expiry_date || !formData.batch_number || !formData.total_amount) {
       setMessage("Please fill in all required fields.");
       setIsError(true);
       return;
@@ -144,7 +159,10 @@ const AddStock = () => {
         chemical_name: "",
         dose_volume: "",
         quantity: "",
+        quantity: "",
         expiry_date: "",
+        batch_number: "",
+        total_amount: "",
       });
       setDoseManuallyEntered(false);
     } catch (error) {
@@ -311,6 +329,54 @@ const AddStock = () => {
                   className="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
+
+              {/* Batch Number */}
+              <div>
+                <label className="block text-gray-700 text-sm font-bold mb-2">
+                  Batch Number
+                </label>
+                <input
+                  type="text"
+                  name="batch_number"
+                  value={formData.batch_number}
+                  onChange={handleChange}
+                  placeholder="Enter Batch Number"
+                  className="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+
+              {/* Total Amount */}
+              <div>
+                <label className="block text-gray-700 text-sm font-bold mb-2">
+                  Total Amount (₹)
+                </label>
+                <input
+                  type="number"
+                  name="total_amount"
+                  value={formData.total_amount}
+                  onChange={handleChange}
+                  placeholder="Enter Total Cost"
+                  className="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  min="0"
+                  step="0.01"
+                />
+              </div>
+
+              {/* Amount Per Tablet (Read-Only) */}
+              <div>
+                <label className="block text-gray-700 text-sm font-bold mb-2">
+                  Amount per Unit (₹)
+                </label>
+                <input
+                  type="text"
+                  name="amount_per_unit"
+                  value={formData.amount_per_unit}
+                  readOnly
+                  placeholder="Auto-calculated"
+                  className="w-full mt-1 p-3 border border-gray-300 rounded-lg bg-gray-100 focus:outline-none cursor-not-allowed"
+                />
+              </div>
+
             </div>
 
             {/* Submit Button */}

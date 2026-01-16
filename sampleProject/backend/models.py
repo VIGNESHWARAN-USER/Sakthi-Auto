@@ -1735,6 +1735,9 @@ class PharmacyStock(BaseModel):
     total_quantity = models.PositiveIntegerField()
     quantity = models.PositiveIntegerField()
     expiry_date = models.DateField()
+    batch_number = models.CharField(max_length=100, blank=True, null=True)
+    total_amount = models.DecimalField(max_digits=12, decimal_places=2, default=0.00)
+    amount_per_unit = models.DecimalField(max_digits=12, decimal_places=2, default=0.00)
 
     def save(self, *args, **kwargs):
         if not self.pk: 
@@ -2210,6 +2213,9 @@ class PharmacyStockHistory(models.Model):
     
     total_quantity = models.PositiveIntegerField(default=0)
     expiry_date = models.DateField()
+    batch_number = models.CharField(max_length=100, blank=True, null=True)
+    total_amount = models.DecimalField(max_digits=12, decimal_places=2, default=0.00)
+    amount_per_unit = models.DecimalField(max_digits=12, decimal_places=2, default=0.00)
 
     def __str__(self):
         if self.chemical_name:

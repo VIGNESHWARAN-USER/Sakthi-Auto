@@ -61,7 +61,7 @@ const CurrentStock = () => {
     const minutes = now.getMinutes().toString().padStart(2, "0");
     const ampm = hours >= 12 ? "PM" : "AM";
     hours = hours % 12 || 12;
-    
+
     const timeFormatted = `${hours}.${minutes} ${ampm}`;
     const fileName = `Pharmacy Current Stock - ${day}-${month}-${year} @ ${timeFormatted}.xlsx`;
 
@@ -75,7 +75,7 @@ const CurrentStock = () => {
     <div className="h-screen w-full flex bg-gradient-to-br from-blue-300 to-blue-400">
       <Sidebar />
       <div className="w-4/5 p-8 overflow-y-auto">
-        
+
         {/* Header Section */}
         <div className="mb-8 flex justify-between items-center">
           <h1 className="text-4xl font-bold text-gray-800">Pharmacy Inventory</h1>
@@ -88,7 +88,7 @@ const CurrentStock = () => {
           </button>
         </div>
 
-        <motion.div 
+        <motion.div
           className="bg-white p-8 rounded-lg shadow-lg"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -116,7 +116,7 @@ const CurrentStock = () => {
               </div>
             </div>
             <div className="hidden md:flex flex-col justify-end h-full pt-7">
-               <p className="text-xs text-gray-500 italic">Showing {filteredData.length} items in stock</p>
+              <p className="text-xs text-gray-500 italic">Showing {filteredData.length} items in stock</p>
             </div>
           </div>
 
@@ -138,10 +138,13 @@ const CurrentStock = () => {
                     <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Brand Name</th>
                     <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Chemical Name</th>
                     <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Dose</th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Batch No</th>
                     <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Entry Date</th>
                     <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total Qty</th>
                     <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Current Qty</th>
                     <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Expiry</th>
+                    {/* <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Expiry</th> */}
+                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount/Unit (₹)</th>
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
@@ -151,17 +154,18 @@ const CurrentStock = () => {
                       <td className="px-4 py-4 whitespace-nowrap text-sm font-bold text-gray-900">{item.brand_name}</td>
                       <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500">{item.chemical_name}</td>
                       <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-600">{item.dose_volume}</td>
+                      <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-600 font-mono">{item.batch_number || "-"}</td>
                       <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500">{item.entry_date}</td>
                       <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-600">{item.total_quantity}</td>
                       <td className={`px-4 py-4 whitespace-nowrap text-sm font-bold`}>
-                        <span className={`px-2 py-1 rounded ${
-                          item.quantity_expiry <= 10 ? 'bg-red-100 text-red-700' : 
+                        <span className={`px-2 py-1 rounded ${item.quantity_expiry <= 10 ? 'bg-red-100 text-red-700' :
                           item.quantity_expiry <= 30 ? 'bg-yellow-100 text-yellow-700' : 'bg-green-100 text-green-700'
-                        }`}>
+                          }`}>
                           {item.quantity_expiry}
                         </span>
                       </td>
                       <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-600">{item.expiry_date}</td>
+                      <td className="px-4 py-4 whitespace-nowrap text-sm font-semibold text-gray-700">₹{item.amount_per_unit || "0.00"}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -169,10 +173,10 @@ const CurrentStock = () => {
             </div>
           )}
         </motion.div>
-        
-        
-      </div>
-    </div>
+
+
+      </div >
+    </div >
   );
 };
 

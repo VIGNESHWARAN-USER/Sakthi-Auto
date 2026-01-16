@@ -4554,7 +4554,9 @@ def add_stock(request):
             brand_name = data.get("brand_name") # Frontend sends 'Item Name' here for Sutures
             quantity_str = data.get("quantity")
             expiry_date_str = data.get("expiry_date") # Expect YYYY-MM
-            
+            batch_number = data.get("batch_number")
+            total_amount_str = data.get("total_amount")
+
             # Extract these, but we might overwrite them based on category
             chemical_name_input = data.get("chemical_name")
             dose_volume_input = data.get("dose_volume")
@@ -4580,15 +4582,20 @@ def add_stock(request):
             dose_volume = dose_volume_input
 
             # Validate ALL fields
-            if not all([medicine_form, brand_name, chemical_name, dose_volume, quantity_str, expiry_date_str]):
-                return JsonResponse({"error": "All fields (Form, Brand, Chemical, Dose, Qty, Expiry) are required"}, status=400)
+            if not all([medicine_form, brand_name, chemical_name, dose_volume, quantity_str, expiry_date_str, batch_number, total_amount_str]):
+                return JsonResponse({"error": "All fields (Form, Brand, Chemical, Dose, Qty, Expiry, Batch, Total Amount) are required"}, status=400)
 
             # 4. Parse Quantity and Date
             try:
                 quantity = int(quantity_str)
                 if quantity <= 0: raise ValueError("Quantity must be positive")
+                
+                total_amount = float(total_amount_str)
+                if total_amount < 0: raise ValueError("Total Amount must be positive")
+
+                amount_per_unit = total_amount / quantity if quantity > 0 else 0.00
             except (ValueError, TypeError):
-                 return JsonResponse({"error": "Invalid quantity provided. Must be a positive integer."}, status=400)
+                 return JsonResponse({"error": "Invalid quantity or amount provided."}, status=400)
             
             try:
                  # Parse YYYY-MM. Default to 1st of the month.
@@ -4612,26 +4619,39 @@ def add_stock(request):
                 )
                 
                 # B. Handle Stock Record (PharmacyStock)
-                # Check for existing stock with same details AND expiry date
+                # Check for existing stock with same details AND expiry date AND batch_number
                 stock_item, stock_created = PharmacyStock.objects.select_for_update().get_or_create(
                     medicine_form=medicine_form,
                     brand_name=brand_name,
                     chemical_name=chemical_name, # Will be None for Sutures
                     dose_volume=dose_volume,     # Will be None for Sutures
                     expiry_date=expiry_date,
+                    batch_number=batch_number,
                     defaults={
                         'entry_date': entry_date,
                         'quantity': quantity,
-                        'total_quantity': quantity
+                        'total_quantity': quantity,
+                        'total_amount': total_amount,
+                        'amount_per_unit': amount_per_unit
                     }
                 )
 
                 if not stock_created:
-                    # If batch exists, increase quantity
+                    # If batch exists, increase quantity and amount
                     stock_item.quantity = F('quantity') + quantity
                     stock_item.total_quantity = F('total_quantity') + quantity
+                    # Assuming total_amount adds up for the same batch if added again? Or average? 
+                    # Usually batches are added once. If added again, we sum the cost.
+                    stock_item.total_amount = F('total_amount') + total_amount
                     stock_item.entry_date = entry_date 
                     stock_item.save()
+                    stock_item.refresh_from_db() # Refresh to get actual values from F() expressions
+                    
+                    # Update amount per unit based on new totals
+                    if stock_item.total_quantity > 0:
+                        stock_item.amount_per_unit = stock_item.total_amount / stock_item.total_quantity
+                        stock_item.save(update_fields=['amount_per_unit'])
+
                     logger.info(f"Updated Stock ID {stock_item.id}: Added {quantity}")
                 else:
                      logger.info(f"Created Stock ID {stock_item.id}: Qty {quantity}")
@@ -4641,10 +4661,14 @@ def add_stock(request):
                     entry_date=entry_date,
                     medicine_form=medicine_form,
                     brand_name=brand_name,
-                    chemical_name=chemical_name, # Stores None for Sutures
-                    dose_volume=dose_volume,     # Stores None for Sutures
-                    total_quantity=quantity,
+                    chemical_name=chemical_name, 
+                    dose_volume=dose_volume, 
+                    # quantity=quantity, # Removed as field does not exist in History model
                     expiry_date=expiry_date,
+                    batch_number=batch_number,
+                    total_amount=total_amount,
+                    amount_per_unit=amount_per_unit,
+                    total_quantity=stock_item.total_quantity # Now holds the integer value
                 )
 
             return JsonResponse({"message": "Stock added successfully"}, status=201)
@@ -4790,16 +4814,17 @@ def get_current_stock(request):
     if request.method == 'GET':
         try:
             # Group by all identifying fields including expiry date to sum quantities per batch
+            # Group by all identifying fields including expiry date to sum quantities per batch
             stock_data = (
                 PharmacyStock.objects
-                .values("medicine_form", "brand_name", "chemical_name", "dose_volume", "expiry_date")
+                .values("medicine_form", "brand_name", "chemical_name", "dose_volume", "expiry_date", "batch_number", "amount_per_unit")
                 .annotate(
                     total_quantity_batch=Sum("total_quantity"), # Sum total quantity for this batch
                     quantity_batch=Sum("quantity"), # Sum current quantity for this batch
                     latest_entry_date=Max("entry_date") # Get the latest entry date for this batch
                 )
                 .filter(quantity_batch__gt=0) # Only include batches with quantity > 0
-                .order_by("medicine_form", "brand_name", "chemical_name", "dose_volume", "expiry_date")
+                .order_by("medicine_form", "brand_name", "chemical_name", "dose_volume", "expiry_date", "batch_number")
             )
 
             data = [
@@ -4812,6 +4837,8 @@ def get_current_stock(request):
                     "total_quantity": entry["total_quantity_batch"], # Use summed total
                     "quantity_expiry": entry["quantity_batch"], # Use summed current quantity
                     "expiry_date": entry["expiry_date"].strftime("%b-%y") if entry["expiry_date"] else None,
+                    "batch_number": entry["batch_number"],
+                    "amount_per_unit": entry["amount_per_unit"]
                 }
                 for entry in stock_data
             ]
