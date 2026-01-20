@@ -166,7 +166,7 @@ const AllAppointments = () => {
         >
             <div className="mb-4 md:mb-6 flex justify-between items-center">
                 <h1 className="text-xl md:text-2xl font-bold text-gray-800">
-                    {`${purpose ? `${purpose} Appointments` : "All Appointments"}`}
+                    Reviews
                 </h1>
                 <button
                     className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition flex items-center gap-2 text-sm"

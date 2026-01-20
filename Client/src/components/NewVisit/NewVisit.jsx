@@ -27,10 +27,12 @@ const NewVisit = () => {
   const [loading, setLoading] = useState(false);
   const [searchId, setSearchId] = useState("");
   const [type, setType] = useState("");
-  const [visit, setVisit] = useState("Preventive");
+  const [visit, setVisit] = useState("");
   const [register, setRegister] = useState("");
   const [purpose, setPurpose] = useState("");
   const [OtherRegister, setOtherRegister] = useState("");
+  const [followUpTye, setFollowUpTye] = useState("");
+  const [OtherType, setOtherType] = useState("");
   const [activeTab, setActiveTab] = useState("BasicDetails");
   const [data, setdata] = useState([]);
   const [singleData, setsingleData] = useState([]);
@@ -39,10 +41,10 @@ const NewVisit = () => {
   const [formData, setFormData] = useState({});
   const [selectedPurpose, setSelectedPurpose] = useState("");
   const [formDataDashboard, setFormDataDashboard] = useState({
-    typeofVisit: "Preventive",
-    category: "Employee",
-    register: "Pre employment",
-    purpose: "Medical Examination"
+    typeofVisit: "",
+    category: "",
+    register: "",
+    purpose: ""
   });
   const [profileImage, setProfileImage] = useState(null); // State for profile image (data URL)
   const videoRef = useRef(null);
@@ -58,17 +60,6 @@ const NewVisit = () => {
   const [bpSugarStatus, setBpSugarStatus] = useState(""); 
   const [bpSugarChartReason, setBpSugarChartReason] = useState(""); 
 
-
-  const [annualPeriodicalFields, setAnnualPeriodicalFields] = useState({
-    year: "",
-    batch: "",
-    hospitalName: "",
-  });
-
-  const [campFields, setCampFields] = useState({
-    campName: "",
-    hospitalName: "",
-  });
 
   const fileInputRef = useRef(null);
 
@@ -110,8 +101,7 @@ const NewVisit = () => {
 
         if (updateResponse.status === 200) {
           alert("Profile image updated successfully!");
-          // Refresh employee list or update local state
-          const fetchResponse = await axios.post("http://localhost:8000/userData");
+          const fetchResponse = await axios.post("http://localhost:8000/userDataWithID");
           setEmployees(fetchResponse.data.data);
           setFilteredEmployees(fetchResponse.data.data);
           setdata([{ ...formData, profileImage: imageData }]);
@@ -130,86 +120,82 @@ const NewVisit = () => {
   };
 
   const dataMapping = {
-    Employee: {
-      Preventive: {
-        "Pre employment": "Medical Examination",
-        "Pre employment (Food Handler)": "Medical Examination",
-        "Pre Placement": "Medical Examination",
-        "Annual / Periodical": "Medical Examination",
-        "Periodical (Food Handler)": "Medical Examination",
-        "Retirement medical examination": "Medical Examination",
-        "Camps (Mandatory)": "Medical Examination",
-        "Camps (Optional)": "Medical Examination",
-        "Special Work Fitness": "Periodic Work Fitness",
-        "Special Work Fitness (Renewal)": "Periodic Work Fitness",
-        "Fitness After Medical Leave": "Fitness After Medical Leave",
-        "Fitness After Personal Long Leave": "Fitness After Personal Long Leave", 
-        "Mock Drill": "Mock Drill",
-        "BP Sugar Check  ( Normal Value)": "BP Sugar Check  ( Normal Value)",
-        "Preventive - Follow Up Visits":"Follow Up Visits",
-        "Preventive Other": "Preventive Other",
+    Staff: {
+      "Sickness Register": {
+        "Fever":"Fever",
+        "Cold":"Cold",
+        "Throat Pain":"Throat Pain",
+        "Headache": "Headache",
+        "Abdominal Pain": "Abdominal Pain",
+        "Other":"Other"
       },
-      Curative: {
-        "Illness": "Outpatient",
-        "Over Counter Illness": "Outpatient",
-        "Injury": "Outpatient",
-        "Over Counter Injury": "Outpatient",
-        "Curative - Follow Up Visits": "Follow Up Visits",
-        "BP Sugar Chart (Abormal Value)": "Outpatient",
-        "Injury Outside the Premises": "Outpatient",
-        "Over Counter Injury Outside the Premises": "Outpatient",
-        "Alcohol Abuse": "Alcohol Abuse",
-        "Curative Other": "Curative Other",
+      "Injury Register": {
+        "Other":"Other"
       }
     },
-    Contractor: {
-      Preventive: {
-        "Pre employment": "Medical Examination",
-        "Pre employment (Food Handler)": "Medical Examination",
-        "Pre Placement (Same Contract)": "Medical Examination",
-        "Pre Placement (Contract change)": "Medical Examination",
-        "Annual / Periodical": "Medical Examination",
-        "Periodical (Food Handler)": "Medical Examination",
-        "Camps (Mandatory)": "Medical Examination",
-        "Camps (Optional)": "Medical Examination",
-        "Special Work Fitness": "Periodic Work Fitness",
-        "Special Work Fitness (Renewal)": "Periodic Work Fitness",
-        "Fitness After Medical Leave": "Fitness After Medical Leave",
-        "Fitness After Personal Long Leave": "Fitness After Personal Long Leave",
-        "Mock Drill": "Mock Drill",
-        "BP Sugar Check  ( Normal Value)": "BP Sugar Check  ( Normal Value)",
-        "Preventive - Follow Up Visits":"Follow Up Visits",
-        "Preventive Other": "Preventive Other",
+    Workman: {
+      "Sickness Register": {
+        "Fever":"Fever",
+        "Cold":"Cold",
+        "Throat Pain":"Throat Pain",
+        "Headache": "Headache",
+        "Abdominal Pain": "Abdominal Pain",
+        "Other":"Other"
       },
-      Curative: {
-        "Illness": "Outpatient",
-        "Over Counter Illness": "Outpatient",
-        "Injury": "Outpatient",
-        "Over Counter Injury": "Outpatient",
-        "Curative - Follow Up Visits": "Outpatient",
-        "BP Sugar ( Abnormal Value)": "BP Sugar Check  ( Abnormal Value)",
-        "Injury Outside the Premises": "Outpatient",
-        "Over Counter Injury Outside the Premises": "Outpatient",
-        "Alcohol Abuse": "Alcohol Abuse",
-        "Curative Other": "Curative Other",
-      },
+      "Injury Register": {
+        "Other":"Other"
+      }
     },
-    Visitor: {
-      Preventive: {
-        "Fitness": "Fitness",
-        "BP Sugar Check ( Normal Value)": "BP Sugar Check  ( Normal Value)",
-        "Preventive - Follow Up Visits":"Follow Up Visits",
+    Apprentice: {
+      "Sickness Register": {
+        "Fever":"Fever",
+        "Cold":"Cold",
+        "Throat Pain":"Throat Pain",
+        "Headache": "Headache",
+        "Abdominal Pain": "Abdominal Pain",
+        "Other":"Other"
       },
-      Curative: {
-        "Illness": "Outpatient",
-        "Over Counter Illness": "Outpatient",
-        "Injury": "Outpatient",
-        "Over Counter Injury": "Outpatient",
-        "Curative - Follow Up Visits": "Outpatient",
-        "BP Sugar ( Abnormal Value)": "BP Sugar Check  ( Abnormal Value)",
-        "Injury Outside the Premises": "Outpatient",
-        "Over Counter Injury Outside the Premises": "Outpatient",
-        "Curative Other": "Curative Other",
+      "Injury Register": {
+        "Other":"Other"
+      }
+    },
+    "Contract Labour": {
+      "Sickness Register": {
+        "Fever":"Fever",
+        "Cold":"Cold",
+        "Throat Pain":"Throat Pain",
+        "Headache": "Headache",
+        "Abdominal Pain": "Abdominal Pain",
+        "Other":"Other"
+      },
+      "Injury Register": {
+        "Other":"Other"
+      }
+    },
+    Security: {
+      "Sickness Register": {
+        "Fever":"Fever",
+        "Cold":"Cold",
+        "Throat Pain":"Throat Pain",
+        "Headache": "Headache",
+        "Abdominal Pain": "Abdominal Pain",
+        "Other":"Other"
+      },
+      "Injury Register": {
+        "Other":"Other"
+      }
+    },
+    "Others": {
+      "Sickness Register": {
+        "Fever":"Fever",
+        "Cold":"Cold",
+        "Throat Pain":"Throat Pain",
+        "Headache": "Headache",
+        "Abdominal Pain": "Abdominal Pain",
+        "Other":"Other"
+      },
+      "Injury Register": {
+        "Other":"Other"
       }
     }
   };
@@ -221,8 +207,6 @@ const NewVisit = () => {
 
   setFormData(prev => {
     const updated = { ...prev, [name]: value };
-
-    // Check if any field changed from previous value
     if (prev[name] !== value) {
       setIsUpdated(true);
     }
@@ -249,7 +233,7 @@ const NewVisit = () => {
   e.preventDefault();
   setLoading1(true);
 
-  // Validate required fields
+  
   if (!formData.aadhar) {
     alert("Please search and get employee data by Aadhar number first");
     setLoading1(false);
@@ -269,9 +253,19 @@ const NewVisit = () => {
     return;
   }
 
-  // Required selections
+  
   if (!type) {
     alert("Please select Type");
+    setLoading1(false);
+    return;
+  }
+  if(type === "Others" && !OtherType){
+    alert("Please enter Other Type");
+    setLoading1(false);
+    return;
+  }
+  if(type === "Contract Labour" && !formData.contract_name){
+    alert("Please enter Contract Name");
     setLoading1(false);
     return;
   }
@@ -280,85 +274,17 @@ const NewVisit = () => {
     setLoading1(false);
     return;
   }
-  if (!register) {
+  if (visit === "Injury Register" || visit === "Sickness Register" && !register) {
     alert("Please select Register");
     setLoading1(false);
     return;
   }
-
-  // Extra validations
-  if (
-    register === "Annual / Periodical" ||
-    register === "Periodical (Food Handler)"
-  ) {
-    if (
-      !annualPeriodicalFields.year ||
-      !annualPeriodicalFields.batch ||
-      !annualPeriodicalFields.hospitalName
-    ) {
-      alert("Please fill all Annual/Periodical fields");
-      setLoading1(false);
-      return;
-    }
+  if(visit === "Follow Up" && !followUpTye){
+    alert("Please enter Follow Up Type");
+    setLoading1(false);
+    return;
   }
-
-  if (register.startsWith("Camps")) {
-    if (!campFields.campName || !campFields.hospitalName) {
-      alert("Please fill all Camp fields");
-      setLoading1(false);
-      return;
-    }
-  }
-
-  if (register.startsWith("Pre Placement Same Contract")) {
-    if (!campFields.contractName) {
-      alert("Please fill Contract Name");
-      setLoading1(false);
-      return;
-    }
-  }
-
-  if (register.startsWith("Pre Placement Contract change")) {
-    if (!campFields.prevcontractName || !campFields.old_emp_no) {
-      alert("Please fill all Contract Change Fields");
-      setLoading1(false);
-      return;
-    }
-  }
-
-  if (register.startsWith("BP Sugar Check")) {
-    if (!bpSugarStatus) {
-      alert("Please select Patient Status");
-      setLoading1(false);
-      return;
-    }
-  }
-
-  if (register.startsWith("BP Sugar Chart (Abormal Value)")) {
-    if (!bpSugarChartReason) {
-      alert("Please select Reason");
-      setLoading1(false);
-      return;
-    }
-  }
-
-  if (register.startsWith("Curative - Follow Up Visits")) {
-    if (!followupConsultationReason) {
-      alert("Please select a Follow up Reason");
-      setLoading1(false);
-      return;
-    }
-    if (
-      followupConsultationReason.endsWith("Others") &&
-      !otherfollowupConsultationReason.trim()
-    ) {
-      alert("Please specify Other Consultation Reason");
-      setLoading1(false);
-      return;
-    }
-  }
-
-  // Build submission data
+  
   const submissionData = {
     reference: reference || false,
     appointmentId: appointment ? appointment.id : null,
@@ -381,63 +307,7 @@ const NewVisit = () => {
     },
   };
 
-  console.log(submissionData);
-
-  // Add extra fields based on register
-  if (
-    register === "Annual / Periodical" ||
-    register === "Periodical (Food Handler)"
-  ) {
-    submissionData.extraData = {
-      year: annualPeriodicalFields.year,
-      batch: annualPeriodicalFields.batch,
-      hospitalName: annualPeriodicalFields.hospitalName,
-    };
-  }
-
-  if (register.startsWith("Camps")) {
-    submissionData.extraData = {
-      campName: campFields.campName,
-      hospitalName: campFields.hospitalName,
-    };
-  }
-
-  if (register.startsWith("Pre Placement Same Contract")) {
-    submissionData.extraData = {
-      contractName: campFields.contractName,
-    };
-  }
-
-  if (register.startsWith("Pre Placement Contract change")) {
-    submissionData.extraData = {
-      prevcontractName: campFields.prevcontractName,
-      old_emp_no: campFields.old_emp_no,
-    };
-  }
-
-  if (register.startsWith("BP Sugar Check")) {
-    submissionData.extraData = {
-      status: bpSugarStatus,
-    };
-  }
-
-  if (register.startsWith("BP Sugar Chart (Abormal Value)")) {
-    submissionData.extraData = {
-      reason: bpSugarChartReason,
-    };
-  }
-
-  if (register.startsWith("Curative - Follow Up Visits")) {
-    submissionData.extraData = {
-      purpose: followupConsultationReason,
-      ...(followupConsultationReason.endsWith("Others") && {
-        purpose_others: otherfollowupConsultationReason,
-      }),
-    };
-  }
-
-  // Submit data to backend
-  try {
+    try {
     console.log(submissionData);
     const response = await axios.post(
       "http://localhost:8000/addEntries",
@@ -605,11 +475,6 @@ const NewVisit = () => {
         // 1. Basic Details
         setSearchId(appointment.aadhar || appointment.aadharNo || "");
         setMRDNo(appointment.mrdNo || "");
-
-        // 2. Classification (Priority: New Backend Keys -> Fallback)
-        
-        // 'register' is the specific value (e.g. "Preventive - Follow Up Visits")
-        // If appointment.register is empty (legacy data), fall back to appointment.purpose
         const targetRegister = appointment.register || appointment.purpose || "";
         
         // 'purpose' is the Broad Category (e.g. "Follow Up Visits")
@@ -733,6 +598,25 @@ const NewVisit = () => {
       setPurpose("");   
       setFormDataDashboard(prev => ({ ...prev, category: selectedType, register: "", setOtherRegister:"", purpose: "" })); 
     };
+
+    const handleOtherTypeChange = (e) => {
+      const selectedType = e.target.value;
+      console.log("Selected Type:", selectedType);
+      setOtherType(selectedType);
+      setRegister(""); 
+      setOtherRegister
+      setPurpose("");   
+      setFormDataDashboard(prev => ({ ...prev, otherType: selectedType, register: "", setOtherRegister:"", purpose: "" })); 
+    }
+
+    const handlefollowUpTypeChange = (e) => {
+      const selectedType = e.target.value;
+      console.log("Selected Type:", selectedType);
+      setFollowUpTye(selectedType);
+      setRegister(""); 
+      setPurpose("");   
+      setFormDataDashboard(prev => ({ ...prev, followUpTye: selectedType, register: "", purpose: "" })); 
+    }
   
     const handleVisitChange = (e) => {
       const selectedVisit = e.target.value;
@@ -774,10 +658,10 @@ const NewVisit = () => {
     visit === "Preventive" && register !== "Camps (Optional)" && { id: "Fitness", label: "Fitness" },
 
     
-    (visit === "Curative") && { id: "Consultation", label: "Consultation and Referral" },
+    (visit === "Sickness Register") && { id: "Consultation", label: "Consultation and Referral" },
     
     
-    visit === "Curative" && { id: "Prescription", label: "Prescription" },
+    visit === "Sickness Register" && { id: "Prescription", label: "Prescription" },
     
   ].filter(Boolean); 
 
@@ -823,7 +707,7 @@ const NewVisit = () => {
 
             if (updateResponse.status === 200) {
                 alert("Profile image captured and updated successfully!");
-                const fetchResponse = await axios.post("http://localhost:8000/userData");
+                const fetchResponse = await axios.post("http://localhost:8000/userDataWithID");
                 setEmployees(fetchResponse.data.data);
                 setFilteredEmployees(fetchResponse.data.data);
                 setdata([{ ...formData, profileImage: imageData }]);
@@ -1726,13 +1610,46 @@ const NewVisit = () => {
                       disabled = {isFrozen}
                     >
                       <option value="">Select Type</option>
-                      <option>Employee</option>
-                      <option>Contractor</option>
-                      <option>Visitor</option>
+                      <option>Staff</option>
+                      <option>Workman</option>
+                      <option>Apprentice</option>
+                      <option>Contract Labour</option>
+                      <option>Security</option>
+                      <option>Others</option>
                     </select>
                   </div>
 
-                  {/* Visit Selection */}
+                  {(type === "Others") && (
+                  <div>
+                    <label className="block text-gray-700 text-sm font-bold mb-2">
+                      Other Type of Worker
+                    </label>
+                    <input
+                      type="text"
+                      value={OtherType}
+                      onChange={handleOtherTypeChange}
+                      placeholder="Specify other type of worker"
+                      className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm"
+                    />
+                  </div>
+                ) ||
+                 (type === "Contract Labour") && (
+                  <div>
+                    <label className="block text-gray-700 text-sm font-bold mb-2">
+                      Contractor Name
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.contract_name || ''}
+                      onChange={handleChange}
+                      placeholder="Specify name of the contractor"
+                      className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm"
+                    />
+                  </div>
+                ) 
+                }
+
+                  
                   <div>
                     <label className="block text-gray-700 text-sm font-bold mb-2">
                       Select Type of Visit
@@ -1744,13 +1661,17 @@ const NewVisit = () => {
                       disabled = { isFrozen}
                     >
                       <option value="">Select Visit Type</option>
-                      <option>Preventive</option>
-                      <option>Curative</option>
+                      <option>New Arrivals Medical Examination</option>
+                      <option>Glucose Register</option>
+                      <option>Eye Incident Register</option>
+                      <option>Sickness Register</option>
+                      <option>Injury Register</option>
+                      <option>Follow Up</option>
                     </select>
                   </div>
 
-                  {/* Register Selection */}
-                  <div>
+
+                  {(visit === "Sickness Register" || visit === "Injury Register") && (<div>
                     <label className="block text-gray-700 text-sm font-bold mb-2">
                       Select Register
                     </label>
@@ -1765,39 +1686,42 @@ const NewVisit = () => {
                         <option key={option}>{option}</option>
                       ))}
                     </select>
-                  </div>
+                  </div>)}
 
-                  {/* Purpose (Auto-selected) */}
+                  {(visit === "Follow Up") && (
                   <div>
                     <label className="block text-gray-700 text-sm font-bold mb-2">
-                      Purpose
+                      What type of Follow Up?
                     </label>
                     <input
                       type="text"
-                      value={purpose}
-                      placeholder="Select the above feilds"
-                      readOnly
-                      className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm bg-gray-100"
+                      value={followUpTye}
+                      onChange={handlefollowUpTypeChange}
+                      placeholder="Mention type of Follow Up"
+                      className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm"
                     />
                   </div>
-                </div>
+                )}
 
-                
-
-                {(register === "Preventive Other"  || register === "Curative Other") && (
+                  {(register === "Other"  || register === "Other") && (
                   <div>
                     <label className="block text-gray-700 text-sm font-bold mb-2">
-                      Other Purpose
+                      Other Register
                     </label>
                     <input
                       type="text"
                       value={OtherRegister}
                       onChange={handleOtherRegisterChange}
-                      placeholder="Specify other purpose"
-                      className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm bg-gray-100"
+                      placeholder="Specify other register"
+                      className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm"
                     />
                   </div>
                 )}
+                </div>
+
+                
+
+                
 
                 {/* Conditionally Rendered Fields */}
                 {(register === "Annual / Periodical" || register === "Periodical (Food Handler)") && (

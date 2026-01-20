@@ -19,9 +19,9 @@ const AppointmentPage = () => {
   
         <div className="w-4/5 p-8 overflow-y-auto">
           <div className="flex justify-between mb-8 items-center">
-            <h2 className="text-4xl font-bold text-gray-800">Appointments</h2>
+            <h2 className="text-4xl font-bold text-gray-800">Pendings & Reviews</h2>
             <div>
-              {(accessLevel === "nurse" && ["Appointments", "Pending Footfalls","Book Appointment", "Upload"].map(
+              {(accessLevel === "nurse" && ["Reviews", "Pending Footfalls"].map(
                 (btnText, index) => (
                   <button
                     key={index}
@@ -34,7 +34,7 @@ const AppointmentPage = () => {
                   </button>
                 )
               )) ||
-              (accessLevel === "camp_nurse" && ["Appointments", "Pending Footfalls"].map(
+              (accessLevel === "camp_nurse" && ["Reviews", "Pending Footfalls"].map(
                 (btnText, index) => (
                   <button
                     key={index}
@@ -56,7 +56,7 @@ const AppointmentPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            {formVal === "Appointments" ? (
+            {formVal === "Reviews" ? (
               <AllAppointments />
             ) : formVal === "Book Appointment" ? (
               <BookAppointment />
@@ -83,7 +83,7 @@ const AppointmentPage = () => {
   
         <div className="w-4/5 p-6 h-screen overflow-auto">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-4xl font-bold text-gray-800">Appointments</h2>
+            <h2 className="text-4xl font-bold text-gray-800">Pendings & Reviews</h2>
           </div>
           
           <motion.div
