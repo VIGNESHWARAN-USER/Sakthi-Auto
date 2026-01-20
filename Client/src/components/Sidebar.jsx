@@ -101,7 +101,7 @@ const Sidebar = ({ redCount }) => {
       { name: "Events & Camps", to: "../eventsandcamps", icon: <MdEvent /> },
       { name: "Records & Filters", to: "../recordsfilters", icon: <MdFilterList /> },
       { name: "Mock Drills", to: "../mockdrills", icon: <MdLibraryAdd /> },
-      { name: "Appointments & Reviews", to: "../appointments", icon: <FaRegCalendarAlt /> },
+      { name: "Pendings & Reviews", to: "../appointments", icon: <FaRegCalendarAlt /> },
       { name: "Data Upload", to: "../dataupload", icon: <FaUpload /> },
       { name: "Instrument Calibration", to: "../instrumentcalibration", icon: <FaRegCalendarAlt />, badgeName: 'pending' },
     ],
@@ -109,7 +109,7 @@ const Sidebar = ({ redCount }) => {
       { name: "Dashboard", to: "../dashboard", icon: <MdDashboard /> },
       { name: "Worker Profile", to: "../searchemployee", icon: <FaUsers /> },
       { name: "New Visit", to: "../newvisit", icon: <FaUserMd /> },
-      { name: "Appointments & Reviews", to: "../appointments", icon: <FaRegCalendarAlt /> },
+      { name: "Pendings & Reviews", to: "../appointments", icon: <FaRegCalendarAlt /> },
     ],
     doctor: [
      { name: "Dashboard", to: "../dashboard", icon: <MdDashboard /> },
@@ -118,7 +118,7 @@ const Sidebar = ({ redCount }) => {
       { name: "Events & Camps", to: "../eventsandcamps", icon: <MdEvent /> },
       { name: "Records & Filters", to: "../recordsfilters", icon: <MdFilterList /> },
       { name: "Mock Drills", to: "../mockdrills", icon: <MdLibraryAdd /> },
-      { name: "Appointments & Reviews", to: "../appointments", icon: <FaRegCalendarAlt /> },
+      { name: "Pendings & Reviews", to: "../appointments", icon: <FaRegCalendarAlt /> },
       { name: "Instrument Calibration", to: "../instrumentcalibration", icon: <FaRegCalendarAlt />, badgeName: 'pending' },
       ],
     admin: [

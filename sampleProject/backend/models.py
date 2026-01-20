@@ -24,9 +24,12 @@ class user(BaseModel):
 # --- Employee Details Model ---
 class employee_details(BaseModel):
     EMPLOYEE_TYPES = [
-        ('Employee', 'Employee'),
-        ('Contractor', 'Contractor'),
-        ('Visitor', 'Visitor'),
+        ('Staff', 'Staff'),
+        ('Workman', 'Workman'),
+        ('Apprentice', 'Apprentice'),
+        ('Contract Labour', 'Contract Labour'),
+        ('Security', 'Security'),
+        ('Others', 'Others')
     ]
     MARITAL_STATUS_CHOICES = [
         ('Single', 'Single'),
@@ -38,7 +41,7 @@ class employee_details(BaseModel):
     ]
 
     # --- Visit and Identity Information ---
-    type = models.CharField(max_length=50, choices=EMPLOYEE_TYPES, default='Employee')
+    type = models.CharField(max_length=50, choices=EMPLOYEE_TYPES, default='Staff')
     type_of_visit = models.CharField(max_length=255, blank=True)
     register = models.CharField(max_length=255, blank=True)
     purpose = models.CharField(max_length=255, blank=True)
