@@ -34,55 +34,59 @@ import StockHistory from './components/Pharmacy/stockHistory'
 import AmbulanceConsumables from './components/Pharmacy/ambulanceconsumable'
 import DataUpload from './components/DataUpload'
 import PrescriptionIn from './components/Pharmacy/prescriptionin'
+import FirstAidConsumables from './components/Pharmacy/FirstAidConsumable'
+import GlucoseConsumables from './components/Pharmacy/GlucoseConsumable'
 function App() {
   return (
     <div className='bg-[#8fcadd] overflow-auto  h-screen'>
       <Routes>
-      <Route path="*" element={<Navigate to="/" />} />
-      <Route path='/' element={<Login/>}/>
-      <Route path='/forgot-password' element={<Forgot/>}/>
-      <Route element={<ProtectedRoute />}>
+        <Route path="*" element={<Navigate to="/" />} />
+        <Route path='/' element={<Login />} />
+        <Route path='/forgot-password' element={<Forgot />} />
+        <Route element={<ProtectedRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path = '/newvisit' element = {<NewVisit/>}/>
-          <Route path= '/appointments' element = {<AppointmentPage/>}/>
-          <Route path = '/mockDrills' element = {<MockDrills/>}/>
-          <Route path = '/eventsandcamps' element = {<EventsAndCamps/>}/>
-          <Route path = '/addmember' element = {<AddMember/>}/>
-          <Route path = '/adminDashboard' element = {<AdminDashboard/>}/>
-          <Route path = '/searchEmployee' element = {<Search/>}/>
-          <Route path = '/recordsfilters' element = {<RecordsFilters/>}/>
-          <Route path = '/employeeprofile' element = {<EmployeeProfile/>}/>
-          <Route path = '/pdf' element = {<PrescriptionPDF/>}/>
-          <Route path = '/reviewpeople' element = {<ReviewPeople/>}/>
-          <Route path = '/summary' element = {<Summary/>}/>
-          <Route path = '/fitnessCirtificate' element = {<MedicalCertificate/>}/>
-          <Route path = '/alcohol' element = {<AlcoholPage/>}/>
-          <Route path = '/eye' element = {<EyeFitnessCertificate/>}/>
-          <Route path = '/or' element = {<OphthalmicReport/>}/>
-          <Route path = '/me' element = {<MedicalExaminationForm/>}/>
-          <Route path = '/addstock' element = {<AddStock/>}/>
-          <Route path = '/currentstock' element = {<CurrentStock/>}/>
-          <Route path = '/stockhistory' element = {<StockHistory/>}/>
-          <Route path = '/currentexpiry' element = {<CurrentExpiry/>}/>
-          <Route path = '/expiryregister' element = {<ExpiryRegister/>}/>
-          <Route path = '/discarddamaged' element = {<DiscardedMedicines/>}/>
-          <Route path = '/wardconsumable' element = {<WardConsumable/>}/>
-          <Route path = '/ambulanceconsumable' element= {<AmbulanceConsumables/>}/>
-          <Route path = '/instrumentcalibration' element = {<InstrumentCalibration/>}/>
-          <Route path = '/addstock' element = {<AddStock/>}/>
-          <Route path = '/currentstock' element = {<CurrentStock/>}/>
-          <Route path = '/currentexpiry' element = {<CurrentExpiry/>}/>
-          <Route path = '/expiryregister' element = {<ExpiryRegister/>}/>
-          <Route path = '/discarddamaged' element = {<DiscardedMedicines/>}/>
-          <Route path = '/wardconsumable' element = {<WardConsumable/>}/>
-          <Route path = '/instrumentcalibration' element = {<InstrumentCalibration/>}/>
-          <Route path = '/viewprescription' element = {<Viewprescription/>}/>
-          <Route path='/dataupload' element = {<DataUpload/>}/>
-          <Route path = '/prescriptionin' element = {<PrescriptionIn/>}/>
-      </Route>
-    </Routes>
+          <Route path='/newvisit' element={<NewVisit />} />
+          <Route path='/appointments' element={<AppointmentPage />} />
+          <Route path='/mockDrills' element={<MockDrills />} />
+          <Route path='/eventsandcamps' element={<EventsAndCamps />} />
+          <Route path='/addmember' element={<AddMember />} />
+          <Route path='/adminDashboard' element={<AdminDashboard />} />
+          <Route path='/searchEmployee' element={<Search />} />
+          <Route path='/recordsfilters' element={<RecordsFilters />} />
+          <Route path='/employeeprofile' element={<EmployeeProfile />} />
+          <Route path='/pdf' element={<PrescriptionPDF />} />
+          <Route path='/reviewpeople' element={<ReviewPeople />} />
+          <Route path='/summary' element={<Summary />} />
+          <Route path='/fitnessCirtificate' element={<MedicalCertificate />} />
+          <Route path='/alcohol' element={<AlcoholPage />} />
+          <Route path='/eye' element={<EyeFitnessCertificate />} />
+          <Route path='/or' element={<OphthalmicReport />} />
+          <Route path='/me' element={<MedicalExaminationForm />} />
+          <Route path='/addstock' element={<AddStock />} />
+          <Route path='/currentstock' element={<CurrentStock />} />
+          <Route path='/stockhistory' element={<StockHistory />} />
+          <Route path='/currentexpiry' element={<CurrentExpiry />} />
+          <Route path='/expiryregister' element={<ExpiryRegister />} />
+          <Route path='/discarddamaged' element={<DiscardedMedicines />} />
+          <Route path='/wardconsumable' element={<WardConsumable />} />
+          <Route path='/ambulanceconsumable' element={<AmbulanceConsumables />} />
+          <Route path='/firstaidconsumable' element={<FirstAidConsumables />} />
+          <Route path='/glucoseconsumable' element={<GlucoseConsumables />} />
+          <Route path='/instrumentcalibration' element={<InstrumentCalibration />} />
+          <Route path='/addstock' element={<AddStock />} />
+          <Route path='/currentstock' element={<CurrentStock />} />
+          <Route path='/currentexpiry' element={<CurrentExpiry />} />
+          <Route path='/expiryregister' element={<ExpiryRegister />} />
+          <Route path='/discarddamaged' element={<DiscardedMedicines />} />
+          <Route path='/wardconsumable' element={<WardConsumable />} />
+          <Route path='/instrumentcalibration' element={<InstrumentCalibration />} />
+          <Route path='/viewprescription' element={<Viewprescription />} />
+          <Route path='/dataupload' element={<DataUpload />} />
+          <Route path='/prescriptionin' element={<PrescriptionIn />} />
+        </Route>
+      </Routes>
     </div>
-    
+
   )
 }
 
