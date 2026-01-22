@@ -8287,9 +8287,6 @@ def get_currentfootfalls(request):
                 'assessment': None,
                 'consultation': None,
             }
-
-            # --- KEY CHANGE HERE ---
-            # If the related record is NOT found in the map, we skip this footfall completely.
             
             data_found = False
 
