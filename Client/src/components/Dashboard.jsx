@@ -109,16 +109,16 @@ const OverAllFootFallDropdown = ({ value, onChange }) => {
 
     return (
         <motion.div
-            className="mb-4 w-full md:w-1/3"
             variants={variants}
             initial="hidden"
             animate="visible"
+            className="flex items-center"
         >
             <select
                 id="over-all-footfall"
                 value={value}
                 onChange={onChange}
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow border rounded px-3 py-2 w-[300px] text-gray-700 whitespace-nowrap focus:outline-none focus:shadow-outline"
             >
                 {footFallOptions.map(option => (
                     <option key={option.value} value={option.value}>
@@ -129,6 +129,7 @@ const OverAllFootFallDropdown = ({ value, onChange }) => {
         </motion.div>
     );
 };
+
 
 const App = () => {
     // UI States
@@ -148,8 +149,11 @@ const App = () => {
     const [currentChartLevel, setCurrentChartLevel] = useState(1);
 
     // Date Filters
-    const [fromDate, setFromDate] = useState('');
-    const [toDate, setToDate] = useState('');
+    //default : today's date
+    const today = new Date();
+    const formattedDate = today.toLocaleDateString();
+    const [fromDate, setFromDate] = useState(today);
+    const [toDate, setToDate] = useState(today);
 
     // Raw Data Storage
     const [visitData, setVisitData] = useState([]);
@@ -207,7 +211,7 @@ const App = () => {
     }, []);
 
     // --- 2. Filter Logic (Apply Button) ---
-    const fetchChartData = () => {
+    useEffect(() => {
         if (!fromDate || !toDate) {
             alert("Please select both 'From' and 'To' dates.");
             return;
@@ -234,7 +238,7 @@ const App = () => {
         setSelectedBar(null);
         setSelectedSubBar(null);
         setCurrentChartLevel(1);
-    };
+    }, [fromDate, toDate]);
 
     const clearDateFilter = () => {
         // Reset dates to empty or stay as is, but show ALL data
@@ -256,6 +260,7 @@ const App = () => {
     };
 
     const handleBarClick = (event) => {
+        if (!event || !event.activePayload || !event.activePayload[0] || event.activePayload[0].payload.name == "Eye Incident" || event.activePayload[0].payload.name == "New Arrivals Medical Examination") return;
         if (event && event.activePayload && event.activePayload[0]) {
             const clickedBarName = event.activePayload[0].payload.name;
             setSelectedBar(clickedBarName);
@@ -267,6 +272,7 @@ const App = () => {
     };
 
     const handleSubBarClick = (event) => {
+        if(!event || !event.activePayload || !event.activePayload[0] || event.activePayload[0].payload.name !== "Other") return;
         if (event && event.activePayload && event.activePayload[0]) {
             const clickedBarName = event.activePayload[0].payload.name;
             setSelectedSubBar(clickedBarName);
@@ -325,14 +331,22 @@ const App = () => {
             } else if (overAllFootFall && overAllFootFall !== "Total") {
                 filteredData = visitData.filter(item => item.type === overAllFootFall);
             }
-            
             const subFilteredData = filteredData.filter(item => item.type_of_visit === selectedBar);
-
+            console.log("Sub Filtered Data for Level 2:", subFilteredData);
             const groupedData = {};
-            subFilteredData.forEach(item => {
-                const key = item.purpose;
+            if(selectedBar === "Follow Up")
+            {
+                subFilteredData.forEach(item => {
+                const key = item.followup_type;
                 groupedData[key] = (groupedData[key] || 0) + 1;
             });
+            }
+            else{
+                subFilteredData.forEach(item => {
+                const key = item.register;
+                groupedData[key] = (groupedData[key] || 0) + 1;
+            });
+            }
             detailData = Object.keys(groupedData).map(key => ({
                 name: key,
                 count: groupedData[key],
@@ -345,13 +359,14 @@ const App = () => {
     useEffect(() => {
         let thirdData = [];
         if (selectedSubBar && selectedBar) {
+            console.log("Selected Sub Bar for Level 3:", selectedSubBar, selectedBar);
             const filteredVisitData = visitData.filter(item => 
-                item.purpose === selectedSubBar && item.type_of_visit === selectedBar
+                item.register === selectedSubBar && item.type_of_visit === selectedBar
             );
-
+            console.log("Filtered Data for Level 3:", filteredVisitData);
             const groupedData = {};
             filteredVisitData.forEach(item => {
-                const key = item.register;
+                const key = item.other_register;
                 groupedData[key] = (groupedData[key] || 0) + 1;
             });
             thirdData = Object.keys(groupedData).map(key => ({
@@ -400,63 +415,76 @@ const App = () => {
     return (
         <div className="h-screen w-full flex bg-gradient-to-br from-blue-300 to-blue-400">
             <Sidebar />
-            <div className="flex-1 p-6 overflow-y-auto">
+            <div className="p-8 w-4/5 overflow-y-auto">
 
                 {/* Top Section with Date Filters */}
                 <motion.div
-                    className="bg-white p-6 rounded-lg shadow-md mb-6"
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <h2 className="text-2xl font-semibold mb-4 text-gray-800">
-                        <FontAwesomeIcon icon={faCalendar} className="mr-2" />
+                    <h2 className="text-4xl font-bold mb-8 text-gray-800">
                         Dashboard Statistics
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
-                        <div className="w-full">
-                            <label htmlFor="fromDate" className="block text-gray-700 text-sm font-bold mb-2">From Date:</label>
-                            <input
-                                type="date"
-                                id="fromDate"
-                                value={fromDate}
-                                onChange={(e) => setFromDate(e.target.value)}
-                                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            />
-                        </div>
-                        <div className="w-full">
-                            <label htmlFor="toDate" className="block text-gray-700 text-sm font-bold mb-2">To Date:</label>
-                            <input
-                                type="date"
-                                id="toDate"
-                                value={toDate}
-                                onChange={(e) => setToDate(e.target.value)}
-                                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            />
-                        </div>
-                        <div className="flex justify-end w-full">
-                            <button
-                                className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-2"
-                                type="button"
-                                onClick={fetchChartData}
-                                disabled={isLoading}
+                    
+                </motion.div>                
+                    <>
+                        {activeAnalysis === 'footfall' && (
+                            <motion.div
+                                className="bg-white rounded-lg shadow-md p-6"
+                                variants={chartVariants}
+                                initial="initial"
+                                animate="animate"
+                                exit="exit"
                             >
-                                Apply
-                            </button>
-                            <button
-                                className="bg-gray-300 hover:bg-gray-400 text-gray-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                                type="button"
-                                onClick={clearDateFilter}
-                                disabled={isLoading}
-                            >
-                                Show All
-                            </button>
-                        </div>
-                    </div>
-                </motion.div>
+                                <div className="flex items-center gap-4 mb-4 w-full">
 
-                {/* Conditional Rendering: Loading, Error, or Content */}
-                {isLoading ? (
+  {/* Title */}
+  <h2 className="text-2xl font-semibold text-gray-800 whitespace-nowrap">
+    Footfall Analysis
+  </h2>
+
+    <div className="flex-1" />
+  {/* From Date */}
+  <input
+    type="date"
+    value={fromDate}
+    onChange={(e) => setFromDate(e.target.value)}
+    className="shadow border rounded px-3 py-2 text-gray-700"
+  />
+
+  {/* To Date */}
+  <input
+    type="date"
+    value={toDate}
+    onChange={(e) => setToDate(e.target.value)}
+    className="shadow border rounded px-3 py-2 text-gray-700"
+  />
+
+  {/* Dropdown */}
+  <div className="min-w-[180px]">
+    <OverAllFootFallDropdown
+      value={overAllFootFall}
+      onChange={handleOverAllFootFallChange}
+    />
+  </div>
+
+  
+  
+
+  {/* Back Button */}
+  <button
+    disabled={currentChartLevel === 1}
+    onClick={goBack}
+    className={`px-4 py-2 rounded font-semibold bg-gray-300 hover:bg-gray-400 whitespace-nowrap
+      ${currentChartLevel === 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
+  >
+    Back
+  </button>
+
+</div>
+
+                                {isLoading ? (
                     <div className="bg-white rounded-lg shadow-md p-10 h-64">
                         <LoadingSpinner />
                     </div>
@@ -466,43 +494,6 @@ const App = () => {
                     </div>
                 ) : (
                     <>
-                        {/* Footfall Analysis */}
-                        {activeAnalysis === 'footfall' && (
-                            <motion.div
-                                className="bg-white rounded-lg shadow-md p-6"
-                                variants={chartVariants}
-                                initial="initial"
-                                animate="animate"
-                                exit="exit"
-                            >
-                                <div className='flex flex-col md:flex-row gap-4 items-start md:items-center'>
-                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800">Footfall Analysis</h2>
-                                    <div className="flex justify-around gap-4 mb-6">
-                                        <button
-                                            className={`flex items-center bg-${activeAnalysis === 'footfall' ? 'blue' : 'gray'}-500 hover:bg-${activeAnalysis === 'footfall' ? 'blue' : 'gray'}-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline`}
-                                            onClick={() => toggleAnalysis('footfall')}
-                                        >
-                                            <FontAwesomeIcon icon={faChartBar} className="mr-2" />
-                                            Footfall Analysis
-                                        </button>
-                                        <button
-                                            className={`flex items-center bg-${activeAnalysis === 'fitness' ? 'blue' : 'gray'}-500 hover:bg-${activeAnalysis === 'fitness' ? 'blue' : 'gray'}-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline`}
-                                            onClick={() => toggleAnalysis('fitness')}
-                                        >
-                                            <GrRun className='text-xl me-2' />
-                                            Fitness Analysis
-                                        </button>
-                                    </div>
-                                    <OverAllFootFallDropdown value={overAllFootFall} onChange={handleOverAllFootFallChange} />
-                                    <button
-                                        disabled={currentChartLevel === 1}
-                                        className={`bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded mb-4 ${currentChartLevel === 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
-                                        onClick={goBack}
-                                    >
-                                        Back
-                                    </button>
-                                </div>
-
                                 <AnimatePresence mode="wait">
                                     {currentChartLevel === 1 && (
                                         <MyBarChart
@@ -541,66 +532,12 @@ const App = () => {
                                         No footfall data found for the selected dates.
                                     </div>
                                 )}
-                            </motion.div>
-                        )}
-
-                        {/* Fitness Analysis */}
-                        {activeAnalysis === 'fitness' && (
-                            <motion.div
-                                className="bg-white rounded-lg shadow-md p-6 mt-6"
-                                variants={chartVariants}
-                                initial="initial"
-                                animate="animate"
-                                exit="exit"
-                            >
-                                <div className='flex flex-col md:flex-row gap-4 items-start md:items-center'>
-                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800">Fitness Analysis</h2>
-                                    <div className="flex justify-around gap-4 mb-6">
-                                        <button
-                                            className={`flex items-center bg-${activeAnalysis === 'footfall' ? 'blue' : 'gray'}-500 hover:bg-${activeAnalysis === 'footfall' ? 'blue' : 'gray'}-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline`}
-                                            onClick={() => toggleAnalysis('footfall')}
-                                        >
-                                            <FontAwesomeIcon icon={faChartBar} className="mr-2" />
-                                            Footfall Analysis
-                                        </button>
-                                        <button
-                                            className={`flex items-center bg-${activeAnalysis === 'fitness' ? 'blue' : 'gray'}-500 hover:bg-${activeAnalysis === 'fitness' ? 'blue' : 'gray'}-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline`}
-                                            onClick={() => toggleAnalysis('fitness')}
-                                        >
-                                            <GrRun className='text-xl me-2' />
-                                            Fitness Analysis
-                                        </button>
-                                    </div>
-                                </div>
-                                <ResponsiveContainer width="100%" height={400}>
-                                    <BarChart data={fitnessChartData} margin={{ top: 50, right: 30, left: 20, bottom: 5 }}>
-                                        <CartesianGrid strokeDasharray="3 3" />
-                                        <XAxis dataKey="name" />
-                                        <YAxis />
-                                        <Legend />
-                                        <Bar dataKey="Fit" fill="#2ecc71">
-                                            <LabelList dataKey="Fit" content={renderCustomizedLabel} />
-                                        </Bar>
-                                        <Bar dataKey="Unfit" fill="#e74c3c">
-                                            <LabelList dataKey="Unfit" content={renderCustomizedLabel} />
-                                        </Bar>
-                                        <Bar dataKey="Conditional" fill="#f39c12">
-                                            <LabelList dataKey="Conditional" content={renderCustomizedLabel} />
-                                        </Bar>
-                                        <Bar dataKey="Pending" fill="#95a5a6">
-                                            <LabelList dataKey="Pending" content={renderCustomizedLabel} />
-                                        </Bar>
-                                    </BarChart>
-                                </ResponsiveContainer>
-                                {fitnessChartData.length === 0 && (
-                                    <div className="text-center text-gray-500 py-10">
-                                        No fitness data found for the selected dates.
-                                    </div>
-                                )}
+                                </>
+                            )}
                             </motion.div>
                         )}
                     </>
-                )}
+                
             </div>
         </div>
     );

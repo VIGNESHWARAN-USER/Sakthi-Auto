@@ -557,11 +557,6 @@ const NewVisit = () => {
                 appointment.other_followup_reason || appointment.otherfollowupConsultationReason || ""
             );
         }
-
-        // F. Other Register Custom Text
-        if (targetRegister === "Preventive Other" || targetRegister === "Curative Other") {
-            setOtherRegister(appointment.other_purpose || appointment.otherPurpose || "");
-        }
       }
 
       setLoading(false);
@@ -665,13 +660,13 @@ const NewVisit = () => {
     { id: "Vaccination", label: "Vaccination" },
     { id: "Investigations", label: "Investigations" },
     
-    visit === "Preventive" && register !== "Camps (Optional)" && { id: "Fitness", label: "Fitness" },
+    visit === "New Arrivals Medical Examination" && { id: "Fitness", label: "Fitness" },
 
     
-    (visit === "Sickness Register") && { id: "Consultation", label: "Consultation and Referral" },
+    (visit === "Sickness Register" || visit === "Injury Register" || visit === "Follow Up" || visit === "Eye Incident Register") && { id: "Consultation", label: "Consultation and Referral" },
     
     
-    visit === "Sickness Register" && { id: "Prescription", label: "Prescription" },
+    (visit === "Sickness Register" || visit === "Injury Register" || visit === "Follow Up" || visit === "Eye Incident Register") && { id: "Prescription", label: "Prescription" },
     
   ].filter(Boolean); 
 
@@ -729,16 +724,7 @@ const NewVisit = () => {
     }
   };
 
-  const handlePurposeChange = (e) =>{
-    const purpose = e.target.value;
-    console.log("purpose : ",purpose);
-    if(purpose === "Outpatient" || purpose === "Alcohol Abuse"){
-      setVisit("Curative");
-    }else{
-      setVisit("Preventive");
-    }
-    setSelectedPurpose(purpose);
-  }
+  
   const purposeOptions = ["Medical Examination","Periodic Work Fitness","Fitness After Medical Leave","Fitness After Long Leave",
     "Mock Drill","BP Sugar Check  ( Normal Value)","Outpatient","Alcohol Abuse"];
 
@@ -1672,7 +1658,6 @@ const NewVisit = () => {
                     >
                       <option value="">Select Visit Type</option>
                       <option>New Arrivals Medical Examination</option>
-                      <option>Glucose Register</option>
                       <option>Eye Incident Register</option>
                       <option>Sickness Register</option>
                       <option>Injury Register</option>

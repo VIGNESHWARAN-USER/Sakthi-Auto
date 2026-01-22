@@ -20,7 +20,7 @@ const NewVisit = () => {
   const [loading, setLoading] = useState(false);
   const [searchId, setSearchId] = useState("");
   const [type, setType] = useState("Employee");
-  const [visit, setVisit] = useState("Preventive");
+  const [visit, setVisit] = useState("");
   const [register, setRegister] = useState("");
   const [purpose, setPurpose] = useState("");
   const [activeTab, setActiveTab] = useState("BasicDetails");
