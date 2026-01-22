@@ -1016,7 +1016,7 @@ def addEntries(request):
         if not aadhar:
             logger.warning("addEntries failed: Aadhar number (aadhar) is required in formData.")
             return JsonResponse({"error": "Aadhar number (aadhar) is required"}, status=400)
-
+        print(extra_data)
         entry_date = date.today()
 
         # --- MRD Number Logic ---
@@ -1093,30 +1093,22 @@ def addEntries(request):
             'stay_in_guest_house': employee_data.get('stay_in_guest_house', ''),
             'visiting_purpose': employee_data.get('visiting_purpose', ''),
             'type': employee_data.get('type', ''),
+            'contractName': employee_data.get('contract_name', ''),
             'type_of_visit': dashboard_data.get('typeofVisit', ''),
             'register': dashboard_data.get('register', ''),
-            'purpose': dashboard_data.get('purpose', ''),
+            'other_register': employee_data.get('otherRegister', ''),
+            'other_type': employee_data.get('otherType', ''),
+            'followup_type': employee_data.get('followUpType', ''),
             'year': extra_data.get('year', ''),
             'batch': extra_data.get('batch', ''),
             'hospitalName': extra_data.get('hospitalName', ''),
             'campName': extra_data.get('campName', ''),
-            'contractName': extra_data.get('contractName', ''),
             'prevcontractName': extra_data.get('prevcontractName', ''),
             'old_emp_no': extra_data.get('old_emp_no', ''),
             'otherRegister': extra_data.get('otherRegister', ''),
             'mrdNo': determined_mrd_no,
         }
         
-        # Handle conditional logic from 'extraData'
-        register_type = dashboard_data.get('register', '')
-        if "BP Sugar Check" in register_type:
-            employee_defaults['status'] = extra_data.get('status', '')
-        elif "BP Sugar Chart" in register_type:
-            employee_defaults['bp_sugar_chart_reason'] = extra_data.get('reason', '')
-        elif "Follow Up Visits" in register_type:
-            employee_defaults['followup_reason'] = extra_data.get('purpose', '')
-            if extra_data.get('purpose', '').endswith("Others"):
-                employee_defaults['followup_other_reason'] = extra_data.get('purpose_others', '')
         
         # Remove keys with None values
         employee_defaults_filtered = {k: v for k, v in employee_defaults.items() if v is not None}
@@ -1162,8 +1154,9 @@ def addEntries(request):
                 'type': employee_entry.type,
                 'type_of_visit': employee_entry.type_of_visit,
                 'register': employee_entry.register,
-                'purpose': employee_entry.purpose,
-                'otherRegister': employee_entry.otherRegister,
+                'other_register': employee_entry.other_register,
+                'other_type': employee_entry.other_type,
+                'followup_type': employee_entry.followup_type,
                 'year': employee_entry.year,
                 'batch': employee_entry.batch,
                 'hospitalName': employee_entry.hospitalName,

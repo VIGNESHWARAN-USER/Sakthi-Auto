@@ -40,16 +40,18 @@ class employee_details(BaseModel):
         ('Separated', 'Separated'),
     ]
 
-    # --- Visit and Identity Information ---
+    
     type = models.CharField(max_length=50, choices=EMPLOYEE_TYPES, default='Staff')
+    other_type = models.CharField(max_length=255, blank=True)
     type_of_visit = models.CharField(max_length=255, blank=True)
     register = models.CharField(max_length=255, blank=True)
-    purpose = models.CharField(max_length=255, blank=True)
+    other_register = models.CharField(max_length=255, blank=True)
+    followup_type = models.CharField(max_length=255, blank=True)
     mrdNo = models.CharField(max_length=255, blank=True)
     aadhar = models.CharField(max_length=225, blank=True, null=True)
-    entry_date = models.DateField(null=True, blank=True) # Added to track entry date
+    entry_date = models.DateField(null=True, blank=True) 
 
-    # --- Personal Details ---
+   
     name = models.CharField(max_length=225)
     guardian = models.CharField(max_length=255, blank=True)
     dob = models.DateField(null=True, blank=True)
@@ -156,8 +158,13 @@ class Dashboard(BaseModel):
     emp_no = models.CharField(max_length=200, blank=True) # Changed to CharField for consistency
     aadhar = models.CharField(max_length=225, blank=True, null=True)
     type = models.CharField(max_length=255, blank=True) # e.g., Employee, Contractor
-    type_of_visit = models.CharField(max_length=255, blank=True) # e.g., Preventive, Curative
+    other_type = models.CharField(max_length=255, blank=True)
+    type_of_visit = models.CharField(max_length=255, blank=True)
     register = models.CharField(max_length=255, blank=True)
+    other_register = models.CharField(max_length=255, blank=True)
+    followup_type = models.CharField(max_length=255, blank=True)
+    other_register = models.CharField(max_length=255, blank=True)
+    other_type = models.CharField(max_length=255, blank=True)
     purpose = models.CharField(max_length=255, blank=True)
     date = models.DateField() # Removed auto_now=True to be set explicitly
     visitOutcome = models.CharField(max_length=255, blank=True)
