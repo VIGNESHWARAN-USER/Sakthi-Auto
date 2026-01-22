@@ -93,9 +93,12 @@ const MyBarChart = ({ data, title, color, onItemClick, visible }) => {
 
 const footFallOptions = [
     { value: "", label: "Select Footfall Type" },
-    { value: "Employee", label: "Employee" },
-    { value: "Contractor", label: "Contractor" },
-    { value: "Visitor", label: "Visitor" }
+    { value: "Staff", label: "Staff" },
+    { value: "Workman", label: "Workman" },
+    { value: "Apprentice", label: "Apprentice" },
+    { value: "Contract Labour", label: "Contract Labour" },
+    { value: "Security", label: "Security" },
+    { value: "Others", label: "Others" },
 ];
 
 const OverAllFootFallDropdown = ({ value, onChange }) => {
@@ -363,7 +366,7 @@ const App = () => {
     useEffect(() => {
         if (!fitnessVisitData) return;
 
-        const employerTypes = ['Overall', 'Employee', 'Contractor', 'Visitor'];
+        const employerTypes = ['Overall', 'Staff', 'Workman', 'Apprentice', 'Contract Labour', 'Security', 'Others'];
         
         const fitnessData = employerTypes.map(employer => {
             let filteredData = fitnessVisitData;

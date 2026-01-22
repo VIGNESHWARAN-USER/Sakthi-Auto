@@ -31,7 +31,7 @@ const NewVisit = () => {
   const [register, setRegister] = useState("");
   const [purpose, setPurpose] = useState("");
   const [OtherRegister, setOtherRegister] = useState("");
-  const [followUpTye, setFollowUpTye] = useState("");
+  const [followUpType, setFollowUpType] = useState("");
   const [OtherType, setOtherType] = useState("");
   const [activeTab, setActiveTab] = useState("BasicDetails");
   const [data, setdata] = useState([]);
@@ -264,7 +264,7 @@ const NewVisit = () => {
     setLoading1(false);
     return;
   }
-  if(type === "Contract Labour" && !formData.contract_name){
+  if(type === "Contract Labour" && !formData.contractName){
     alert("Please enter Contract Name");
     setLoading1(false);
     return;
@@ -274,12 +274,12 @@ const NewVisit = () => {
     setLoading1(false);
     return;
   }
-  if (visit === "Injury Register" || visit === "Sickness Register" && !register) {
+  if ((visit === "Injury Register" || visit === "Sickness Register") && !register) {
     alert("Please select Register");
     setLoading1(false);
     return;
   }
-  if(visit === "Follow Up" && !followUpTye){
+  if(visit === "Follow Up" && !followUpType){
     alert("Please enter Follow Up Type");
     setLoading1(false);
     return;
@@ -292,8 +292,11 @@ const NewVisit = () => {
     formDataDashboard: {
       typeofVisit: visit,
       type: type,
-      register: register,
-      purpose: purpose,
+      register: (visit === "Sickness Register" || visit === "Injury Register") ? register : "",
+      otherType: type === "Others" ? OtherType : "",
+      otherRegister: register === "Other" ? OtherRegister : "",
+      followUpType: visit === "Follow Up" ? followUpType : "",
+      contractName: type === "Contract Labour" ? (formData.contractName || "") : "",
     },
     extraData: {},
     formData: {
@@ -301,8 +304,11 @@ const NewVisit = () => {
       entry_date: today,
       type: type,
       type_of_visit: visit,
-      register: register,
-      purpose: purpose,
+      register: (visit === "Sickness Register" || visit === "Injury Register") ? register : "",
+      otherType: type === "Others" ? OtherType : "",
+      otherRegister: register === "Other" ? OtherRegister : "",
+      followUpType: visit === "Follow Up" ? followUpType : "",
+      contractName: type === "Contract Labour" ? (formData.contractName || "") : "",
       profilepic: uploadedImage || profileImage,
     },
   };
@@ -401,7 +407,7 @@ const NewVisit = () => {
 
         // Auto-fill dropdowns based on fetched data
         setType(latestEmployee.type || "");
-        
+        setOtherType(latestEmployee.other_type || "");
 
         // Handle Profile Picture
         localStorage.setItem("selectedEmployee", JSON.stringify(latestEmployee));
@@ -461,6 +467,10 @@ const NewVisit = () => {
     setIsNewEmployee(false);
     setMRDNo("");
     setIsFrozen(false);
+    setType("");
+    setVisit("");
+    setRegister("");
+    setPurpose("");
   };
 
   
@@ -520,8 +530,8 @@ const NewVisit = () => {
             setCampFields({
                 campName: appointment.camp_name || appointment.campName || "",
                 hospitalName: appointment.hospital_name || appointment.hospitalName || "",
-                contractName: appointment.contract_name || appointment.contractName || "",
-                prevcontractName: appointment.prev_contract_name || appointment.prevcontractName || "",
+                contractName: appointment.contractName || appointment.contractName || "",
+                prevcontractName: appointment.prev_contractName || appointment.prevcontractName || "",
                 old_emp_no: appointment.old_emp_no || "" 
             });
         }
@@ -612,10 +622,10 @@ const NewVisit = () => {
     const handlefollowUpTypeChange = (e) => {
       const selectedType = e.target.value;
       console.log("Selected Type:", selectedType);
-      setFollowUpTye(selectedType);
+      setFollowUpType(selectedType);
       setRegister(""); 
       setPurpose("");   
-      setFormDataDashboard(prev => ({ ...prev, followUpTye: selectedType, register: "", purpose: "" })); 
+      setFormDataDashboard(prev => ({ ...prev, followUpType: selectedType, register: "", purpose: "" })); 
     }
   
     const handleVisitChange = (e) => {
@@ -1640,8 +1650,8 @@ const NewVisit = () => {
                     </label>
                     <input
                       type="text"
-                      value={formData.contract_name || ''}
-                      onChange={handleChange}
+                      value={formData.contractName || ''}
+                      onChange={(event) => setFormData({...formData, contractName: event.target.value})}
                       placeholder="Specify name of the contractor"
                       className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm"
                     />
@@ -1695,7 +1705,7 @@ const NewVisit = () => {
                     </label>
                     <input
                       type="text"
-                      value={followUpTye}
+                      value={followUpType}
                       onChange={handlefollowUpTypeChange}
                       placeholder="Mention type of Follow Up"
                       className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm"
@@ -1718,287 +1728,6 @@ const NewVisit = () => {
                   </div>
                 )}
                 </div>
-
-                
-
-                
-
-                {/* Conditionally Rendered Fields */}
-                {(register === "Annual / Periodical" || register === "Periodical (Food Handler)") && (
-                  <div className="grid grid-cols-3 gap-4 mb-6">
-                    <div>
-                      <label className="block text-gray-700 text-sm font-bold mb-2">Year</label>
-                      <input
-                        type="text"
-                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm"
-                        value={annualPeriodicalFields.year}
-                        onChange={(e) => setAnnualPeriodicalFields(prev => ({ ...prev, year: e.target.value }))}
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-gray-700 text-sm font-bold mb-2">Batch</label>
-                      <input
-                        type="text"
-                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm"
-                        value={annualPeriodicalFields.batch}
-                        onChange={(e) => setAnnualPeriodicalFields(prev => ({ ...prev, batch: e.target.value }))}
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-gray-700 text-sm font-bold mb-2">Hospital Name</label>
-                      <input
-                        type="text"
-                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm"
-                        value={annualPeriodicalFields.hospitalName}
-                        onChange={(e) => setAnnualPeriodicalFields(prev => ({ ...prev, hospitalName: e.target.value }))}
-                      />
-                    </div>
-                  </div>
-                )}
-
-                {register.startsWith("Camps") && (
-                  <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div>
-                      <label className="block text-gray-700 text-sm font-bold mb-2">Camp Name</label>
-                      <input
-                        type="text"
-                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm"
-                        value={campFields.campName}
-                        onChange={(e) => setCampFields(prev => ({ ...prev, campName: e.target.value }))}
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-gray-700 text-sm font-bold mb-2">Hospital Name</label>
-                      <input
-                        type="text"
-                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm"
-                        value={campFields.hospitalName}
-                        onChange={(e) => setCampFields(prev => ({ ...prev, hospitalName: e.target.value }))}
-                      />
-                    </div>
-                  </div>
-                )}
-
-                {register.startsWith("Pre Placement Same Contract") && (
-                  <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div>
-                      <label className="block text-gray-700 text-sm font-bold mb-2">Contract Name</label>
-                      <input
-                        type="text"
-                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm"
-                        value={campFields.contractName}
-                        onChange={(e) => setCampFields(prev => ({ ...prev, contractName: e.target.value }))}
-                      />
-                    </div>
-                  </div>
-                )}
-
-                {register.startsWith("Pre Placement Contract change") && (
-                  <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div>
-                      <label className="block text-gray-700 text-sm font-bold mb-2">Previous Contract Name</label>
-                      <input
-                        type="text"
-                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm"
-                        value={campFields.prevcontractName}
-                        onChange={(e) => setCampFields(prev => ({ ...prev, prevcontractName: e.target.value }))}
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-gray-700 text-sm font-bold mb-2">Employee number</label>
-                      <input
-                        type="text"
-                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm"
-                        value={campFields.old_emp_no}
-                        onChange={(e) => setCampFields(prev => ({ ...prev, old_emp_no: e.target.value }))}
-                      />
-                    </div>
-                  </div>
-                )}
-                
-                {register.startsWith("BP Sugar Check") && (
-                  <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div>
-                      <label className="block text-gray-700 text-sm font-bold mb-2">Patient Status</label>
-                      <select 
-                        name="bp_sugar_status" 
-                        id="bp_sugar_status" 
-                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm"
-                        value={bpSugarStatus}
-                        onChange={(e) => setBpSugarStatus(e.target.value)}
-                      >
-                        <option value="">Select</option>
-                        <option value="Normal People">Normal People</option>
-                        <option value="Patient under control">Patient under control</option>
-                      </select>
-                    </div>
-                  </div>
-                )}
-
-
-                {register.startsWith("BP Sugar Chart (Abormal Value)") && (
-                  <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div>
-                      <label className="block text-gray-700 text-sm font-bold mb-2">Job Nature (Reason)</label>
-                      <select 
-                        name="bp_sugar_chart_reason" 
-                        id="bp_sugar_chart_reason" 
-                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm"
-                        value={bpSugarChartReason}
-                        onChange={(e) => setBpSugarChartReason(e.target.value)}
-                      >
-                        <option value="">Select</option>
-                        <option value="Newly detected">Newly detected</option>
-                        <option value="Patient <150 <100">Patient</option>
-                      </select>
-                    </div>
-                  </div>
-                )}
-
-                {(register.startsWith("Curative - Follow Up Visits") || register.startsWith("Preventive - Follow Up Visits")) && (
-                  <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div>
-                      <label className="block text-gray-700 text-sm font-bold mb-2">Follow Up of</label>
-                      {(() => {
-                        if (type === "Visitor" && visit === "Curative" ) {
-                          return (
-                            <select 
-                                value={followupConsultationReason}
-                                onChange={(e) => setFollowupConsultationReason(e.target.value)} 
-                                name="reason" 
-                                id="reason" 
-                                className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm">
-                               <option value="">Select Reason</option>
-                                <option>Illness</option>
-                                <option>Over Counter illness</option>
-                                <option>Injury</option>
-                                <option>Over Counter Injury</option>
-                                <option>BP Sugar Chart (Abormal Value) (Abormal Value)</option>
-                                <option>Injury Outside the Premises</option>
-                                <option>Over Counter Injury Outside the Premises</option>
-                                <option>Cure Others</option>
-                                <option>Fitness</option>
-                                <option>Prev Others</option>
-                            </select>
-                          );
-                        } else if ((type ==="Employee") && visit === "Curative" ) {
-                          return (
-                            <select 
-                                value={followupConsultationReason}
-                                onChange={(e) => setFollowupConsultationReason(e.target.value)} 
-                                name="reason" 
-                                id="reason" 
-                                className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm">
-                                <option value="">Select Reason</option>
-                                <option>Illness</option>
-                                <option>Over Counter illness</option>
-                                <option>Injury</option>
-                                <option>Over Counter Injury</option>
-                                <option>BP Sugar Chart (Abormal Value)</option>
-                                <option>Injury Outside the Premises</option>
-                                <option>Over Counter Injury Outside the Premises</option>
-                                <option>Cure Others</option>
-                                <option>Alcohol Abuse</option>
-                                <option>Pre Employment</option>
-                                <option>Pre Employment(Food Handler)</option>
-                                <option>Pre Placement (Dept/job change)</option>
-                                <option>Pre Employment Contract change</option>
-                                <option>Annual/Periodical</option>
-                                <option>Periodical (Food Handler)</option>
-                                <option>Retirement medical examination</option>
-                                <option>Camps(Mandatory)</option>
-                                <option>Camps(Optional)</option>
-                                <option>Special Work Fitness</option>
-                                <option>Special Work Fitness(Renewal)</option>
-                                <option>Fitness After Medical Leave</option>
-                                <option>Fitness After Personal Long Leave</option>
-                                <option>Mock Drill</option>
-                                <option>Prev Others</option>
-                            </select>
-                          );
-                        } 
-                        else if ((type === "Contractor") && visit === "Curative" ) {
-                          return (
-                            <select 
-                                value={followupConsultationReason}
-                                onChange={(e) => setFollowupConsultationReason(e.target.value)} 
-                                name="reason" 
-                                id="reason" 
-                                className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm">
-                                <option value="">Select Reason</option>
-                                <option>Illness</option>
-                                <option>Over Counter illness</option>
-                                <option>Injury</option>
-                                <option>Over Counter Injury</option>
-                                <option>BP Sugar Chart (Abormal Value)</option>
-                                <option>Injury Outside the Premises</option>
-                                <option>Over Counter Injury Outside the Premises</option>
-                                <option>Cure Others</option>
-                                <option>Alcohol Abuse</option>
-                                <option>Pre Employment</option>
-                                <option>Pre Employment(Food Handler)</option>
-                                <option>Pre Placement (Same Contract)</option>
-                                <option>Pre Employment Contract change</option>
-                                <option>Annual/Periodical</option>
-                                <option>Periodical (Food Handler)</option>
-                                <option>Camps(Mandatory)</option>
-                                <option>Camps(Optional)</option>
-                                <option>Special Work Fitness</option>
-                                <option>Special Work Fitness(Renewal)</option>
-                                <option>Fitness After Medical Leave</option>
-                                <option>Fitness After Personal Long Leave</option>
-                                <option>Mock Drill</option>
-                                <option>Prev Others</option>
-                            </select>
-                          );
-                        } 
-                        else if ((type ==="Employee" || type =="Contractor") && visit === "Preventive" ) {
-                          return (
-                            <select 
-                                value={followupConsultationReason}
-                                onChange={(e) => setFollowupConsultationReason(e.target.value)} 
-                                name="reason" 
-                                id="reason" 
-                                className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm">
-                                <option value="">Select Reason</option>                           
-                                <option>Annual/Periodical</option>
-                                <option>Periodical (Food Handler)</option>
-                                <option>Camps(Mandatory)</option>
-                                <option>Camps(Optional)</option>
-                                <option>Others</option>
-                            </select>
-                          );
-                        } 
-                         else {
-                          return (
-                            <select 
-                                value={followupConsultationReason}
-                                onChange={(e) => setFollowupConsultationReason(e.target.value)} 
-                                name="reason" 
-                                id="reason" 
-                                className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm">
-                              <option value="">Select Reason</option>
-                              <option>Others</option>
-                            </select>
-                          );
-                        }
-                      })()}
-                    </div>
-                    {(followupConsultationReason.endsWith("Others")) && (
-                      <div>
-                        <label className="block text-gray-700 text-sm font-bold mb-2">Other Consultation Reason</label>
-                        <input
-                          type="text"
-                          className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm"
-                          value={otherfollowupConsultationReason}
-                          onChange={(e) => setotherfollowupConsultationReason(e.target.value)}
-                        />
-                      </div>
-                    )}
-                  </div>
-                )}
-
-                {/* ########## MODIFICATION END ########## */}
 
 
                 <p className="text-gray-500 italic">MRD Number : {mrdNo || "Make add entry to generate MRD Number"}</p>
