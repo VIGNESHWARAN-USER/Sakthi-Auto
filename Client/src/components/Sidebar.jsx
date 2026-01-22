@@ -28,7 +28,7 @@ import img from "../assets/logo.png"; // Make sure this path is correct
 const Sidebar = ({ redCount }) => {
   const navigate = useNavigate();
   const location = useLocation();
-  
+
   const userName = localStorage.getItem("userData") || "Unknown User";
   const accessLevel = localStorage.getItem("accessLevel") || "unknown";
   const [pendingCount, setPendingCount] = useState(null);
@@ -57,12 +57,12 @@ const Sidebar = ({ redCount }) => {
         setPendingCount(0); // Set to 0 if not applicable for this user role
       }
     }
-    
+
     // Fetch expiry count separately, as this logic is independent.
     if (accessLevel === 'pharmacy') {
-       fetchExpiryCount();
+      fetchExpiryCount();
     }
-  // This effect will re-run if the user navigates, the role changes, or the redCount prop updates.
+    // This effect will re-run if the user navigates, the role changes, or the redCount prop updates.
   }, [redCount, accessLevel, location.pathname]);
 
 
@@ -78,21 +78,21 @@ const Sidebar = ({ redCount }) => {
   };
 
   const fetchExpiryCount = async () => {
-     if (accessLevel === 'pharmacy') {
-        try {
-            const response = await axios.get(
-                "http://localhost:8000/get_current_expiry_count/"
-            );
-            setExpiryCount(response.data.count);
-        } catch (error) {
-            console.error("Error fetching expiry count:", error);
-            setExpiryCount(0); // Default to 0 on error
-        }
-     } else {
-         setExpiryCount(0); // Not applicable
-     }
+    if (accessLevel === 'pharmacy') {
+      try {
+        const response = await axios.get(
+          "http://localhost:8000/get_current_expiry_count/"
+        );
+        setExpiryCount(response.data.count);
+      } catch (error) {
+        console.error("Error fetching expiry count:", error);
+        setExpiryCount(0); // Default to 0 on error
+      }
+    } else {
+      setExpiryCount(0); // Not applicable
+    }
   };
-  
+
   const menus = {
     nurse: [
       { name: "Dashboard", to: "../dashboard", icon: <MdDashboard /> },
@@ -112,7 +112,7 @@ const Sidebar = ({ redCount }) => {
       { name: "Pendings & Reviews", to: "../appointments", icon: <FaRegCalendarAlt /> },
     ],
     doctor: [
-     { name: "Dashboard", to: "../dashboard", icon: <MdDashboard /> },
+      { name: "Dashboard", to: "../dashboard", icon: <MdDashboard /> },
       { name: "Worker Profile", to: "../searchemployee", icon: <FaUsers /> },
       { name: "New Visit", to: "../newvisit", icon: <FaUserMd /> },
       { name: "Events & Camps", to: "../eventsandcamps", icon: <MdEvent /> },
@@ -120,7 +120,7 @@ const Sidebar = ({ redCount }) => {
       { name: "Mock Drills", to: "../mockdrills", icon: <MdLibraryAdd /> },
       { name: "Pendings & Reviews", to: "../appointments", icon: <FaRegCalendarAlt /> },
       { name: "Instrument Calibration", to: "../instrumentcalibration", icon: <FaRegCalendarAlt />, badgeName: 'pending' },
-      ],
+    ],
     admin: [
       { name: "Admin Dashboard", to: "../admindashboard", icon: <FaUsers /> },
       { name: "Add Members", to: "../addmember", icon: <FaUsers /> },
@@ -135,10 +135,12 @@ const Sidebar = ({ redCount }) => {
       { name: "Discard/Damaged", to: "../discarddamaged", icon: <MdDelete /> },
       { name: "Ward Consumable", to: "../wardconsumable", icon: <MdInventory /> },
       { name: "Ambulance Consumable", to: "../ambulanceconsumable", icon: <FaAmbulance /> },
+      { name: "First Aid Consumable", to: "../firstaidconsumable", icon: <MdInventory /> },
+      { name: "Glucose Consumable", to: "../glucoseconsumable", icon: <MdInventory /> },
     ],
     hr: [
       { name: "Worker Profile", to: "../searchemployee", icon: <FaUsers /> }
-      ],
+    ],
   };
 
   const currentMenu = menus[accessLevel] || [];
@@ -168,7 +170,7 @@ const Sidebar = ({ redCount }) => {
             {count}
           </span>
         ) : (
-           <span className="bg-green-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full min-w-[20px] text-center leading-tight ml-auto">
+          <span className="bg-green-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full min-w-[20px] text-center leading-tight ml-auto">
             0
           </span>
         )}
@@ -213,13 +215,13 @@ const Sidebar = ({ redCount }) => {
       >
         {/* Logo */}
         <div className="p-6 flex justify-center flex-shrink-0 relative">
-           <button
-              className="md:hidden absolute top-2 right-2 p-2 text-white hover:text-gray-200"
-              onClick={() => setIsOpen(false)}
-              aria-label="Close Menu"
-            >
-              <FaTimes size={24} />
-            </button>
+          <button
+            className="md:hidden absolute top-2 right-2 p-2 text-white hover:text-gray-200"
+            onClick={() => setIsOpen(false)}
+            aria-label="Close Menu"
+          >
+            <FaTimes size={24} />
+          </button>
           <img
             src={img}
             alt="Logo"
@@ -230,40 +232,39 @@ const Sidebar = ({ redCount }) => {
         {/* Menu Items */}
         <nav className="flex-1 px-4 py-2">
           {currentMenu.map((item, index) => {
-             const absoluteBaseUrl = window.location.origin + location.pathname.substring(0, location.pathname.lastIndexOf('/'));
-             const absoluteItemPath = new URL(item.to, absoluteBaseUrl + '/').pathname;
-             const isActive = location.pathname === absoluteItemPath || (location.pathname.startsWith(absoluteItemPath + '/'));
+            const absoluteBaseUrl = window.location.origin + location.pathname.substring(0, location.pathname.lastIndexOf('/'));
+            const absoluteItemPath = new URL(item.to, absoluteBaseUrl + '/').pathname;
+            const isActive = location.pathname === absoluteItemPath || (location.pathname.startsWith(absoluteItemPath + '/'));
 
             return (
               <Link
                 key={index}
                 to={item.to}
-                className={`flex items-center justify-between p-3 mx-0 my-1 text-base rounded-lg font-medium transition duration-200 ease-in-out transform ${
-                  isActive
+                className={`flex items-center justify-between p-3 mx-0 my-1 text-base rounded-lg font-medium transition duration-200 ease-in-out transform ${isActive
                     ? "bg-white text-blue-600 scale-100 shadow-md font-semibold"
                     : "hover:bg-blue-500 hover:text-white hover:scale-105"
-                }`}
+                  }`}
               >
                 {/* Icon and Text container */}
                 <div className="flex items-center space-x-3">
-                    <span className="flex-shrink-0 w-5 h-5">{item.icon}</span>
-                    <span>{item.name}</span>
+                  <span className="flex-shrink-0 w-5 h-5">{item.icon}</span>
+                  <span>{item.name}</span>
                 </div>
 
                 {/* Badge rendering */}
-                 {item.badgeName && renderBadge(item.badgeName)}
+                {item.badgeName && renderBadge(item.badgeName)}
 
               </Link>
             );
           })}
         </nav>
 
-        
+
         <p className="flex justify-center font-bold tracking-wider text-lg px-4 py-2 text-center">
-            {userName.toUpperCase()}
+          {userName.toUpperCase()}
         </p>
         <p className="flex justify-center font-bold tracking-wider text-sm px-4 py-2 text-center">
-            Login as: {accessLevel.toUpperCase()}
+          Login as: {accessLevel.toUpperCase()}
         </p>
 
         {/* Logout Button */}
