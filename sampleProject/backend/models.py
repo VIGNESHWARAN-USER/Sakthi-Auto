@@ -1836,16 +1836,12 @@ class FirstAidConsumables(models.Model):
 
 class GlucoseConsumables(models.Model):
     entry_date = models.DateField(default=timezone.now)
-    medicine_form = models.CharField(max_length=20)
-    brand_name = models.CharField(max_length=255)  # Medicine name given by the company
-    chemical_name = models.CharField(max_length=255, null=True, blank=True)  # Active ingredient
-    dose_volume = models.CharField(max_length=50, null=True, blank=True)
     quantity = models.PositiveIntegerField()
-    expiry_date = models.DateField(null=True, blank=True)
-    consumed_date = models.DateField(auto_now_add=True)  # Date when medicine was discarded
+    consumed_date = models.DateField(auto_now_add=True)  # Date when medicine was consumed
+    aadhar = models.CharField(max_length=225, blank=True, null=True)
 
     def __str__(self):
-        return f"{self.brand_name} - {self.consumed_date}"
+        return f"Glucose Consumable - {self.consumed_date}"
 
 # --- Pharmacy Medicine Model ---
 # No emp_no, so no aadhar added here
