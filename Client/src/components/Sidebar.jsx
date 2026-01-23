@@ -241,8 +241,8 @@ const Sidebar = ({ redCount }) => {
                 key={index}
                 to={item.to}
                 className={`flex items-center justify-between p-3 mx-0 my-1 text-base rounded-lg font-medium transition duration-200 ease-in-out transform ${isActive
-                    ? "bg-white text-blue-600 scale-100 shadow-md font-semibold"
-                    : "hover:bg-blue-500 hover:text-white hover:scale-105"
+                  ? "bg-white text-blue-600 scale-100 shadow-md font-semibold"
+                  : "hover:bg-blue-500 hover:text-white hover:scale-105"
                   }`}
               >
                 {/* Icon and Text container */}

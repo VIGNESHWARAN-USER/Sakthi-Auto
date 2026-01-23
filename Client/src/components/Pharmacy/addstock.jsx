@@ -34,7 +34,7 @@ const AddStock = () => {
   const medicineOptions = [
     "Tablet", "Syrup", "Injection", "Lotions", "Respules",
     "Powder", "Creams", "Drops", "Fluids", "Other",
-    "SutureAndProcedureItems", "DressingItems"
+    "SutureAndProcedureItems", "DressingItems", "Glucose "
   ];
 
   useEffect(() => {
@@ -109,6 +109,13 @@ const AddStock = () => {
 
     let updatedFormData = { ...formData, [name]: value };
 
+    // Auto-fill for Glucose
+    if (name === "medicine_form" && value === "Glucose ") {
+      updatedFormData.chemical_name = "Glucose";
+      updatedFormData.brand_name = "Glucose";
+      updatedFormData.dose_volume = "N/A";
+    }
+
     if (name === "quantity" || name === "total_amount") {
       const qty = parseFloat(name === "quantity" ? value : formData.quantity);
       const total = parseFloat(name === "total_amount" ? value : formData.total_amount);
@@ -129,7 +136,9 @@ const AddStock = () => {
       setBrandSuggestions([]);
       setChemicalSuggestions([]);
       setDoseSuggestions([]);
-      setFormData(prev => ({ ...prev, brand_name: "", chemical_name: "", dose_volume: "" }));
+      if (value !== "Glucose ") {
+        setFormData(prev => ({ ...prev, brand_name: "", chemical_name: "", dose_volume: "" }));
+      }
     }
     if (name === "dose_volume") {
       setDoseManuallyEntered(true);
@@ -225,82 +234,88 @@ const AddStock = () => {
                 </select>
               </div>
 
-              {/* Chemical Name */}
-              <div className="relative">
-                <label className="block text-gray-700 text-sm font-bold mb-2">
-                  Chemical Name
-                </label>
-                <input
-                  type="text"
-                  name="chemical_name"
-                  value={formData.chemical_name}
-                  onChange={handleChange}
-                  placeholder="Enter or search chemical..."
-                  className="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  autoComplete="off"
-                  disabled={!formData.medicine_form}
-                />
-                {showChemicalSuggestions && chemicalSuggestions.length > 0 && (
-                  <ul className="absolute z-20 bg-white border border-gray-300 w-full mt-1 rounded-lg shadow-xl max-h-40 overflow-y-auto">
-                    {chemicalSuggestions.map((s, i) => (
-                      <li key={i} className="px-3 py-2 hover:bg-blue-50 cursor-pointer text-sm" onClick={() => handleSuggestionClick("chemical_name", s)}>
-                        {s}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
+              {/* Chemical Name - Hidden if Glucose */}
+              {formData.medicine_form !== "Glucose " && (
+                <div className="relative">
+                  <label className="block text-gray-700 text-sm font-bold mb-2">
+                    Chemical Name
+                  </label>
+                  <input
+                    type="text"
+                    name="chemical_name"
+                    value={formData.chemical_name}
+                    onChange={handleChange}
+                    placeholder="Enter or search chemical..."
+                    className="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    autoComplete="off"
+                    disabled={!formData.medicine_form}
+                  />
+                  {showChemicalSuggestions && chemicalSuggestions.length > 0 && (
+                    <ul className="absolute z-20 bg-white border border-gray-300 w-full mt-1 rounded-lg shadow-xl max-h-40 overflow-y-auto">
+                      {chemicalSuggestions.map((s, i) => (
+                        <li key={i} className="px-3 py-2 hover:bg-blue-50 cursor-pointer text-sm" onClick={() => handleSuggestionClick("chemical_name", s)}>
+                          {s}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              )}
 
-              {/* Brand Name */}
-              <div className="relative">
-                <label className="block text-gray-700 text-sm font-bold mb-2">
-                  Brand Name
-                </label>
-                <input
-                  type="text"
-                  name="brand_name"
-                  value={formData.brand_name}
-                  onChange={handleChange}
-                  placeholder="Enter or search brand..."
-                  className="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  autoComplete="off"
-                  disabled={!formData.medicine_form}
-                />
-                {showBrandSuggestions && brandSuggestions.length > 0 && (
-                  <ul className="absolute z-20 bg-white border border-gray-300 w-full mt-1 rounded-lg shadow-xl max-h-40 overflow-y-auto">
-                    {brandSuggestions.map((s, i) => (
-                      <li key={i} className="px-3 py-2 hover:bg-blue-50 cursor-pointer text-sm" onClick={() => handleSuggestionClick("brand_name", s)}>
-                        {s}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
+              {/* Brand Name - Hidden if Glucose */}
+              {formData.medicine_form !== "Glucose " && (
+                <div className="relative">
+                  <label className="block text-gray-700 text-sm font-bold mb-2">
+                    Brand Name
+                  </label>
+                  <input
+                    type="text"
+                    name="brand_name"
+                    value={formData.brand_name}
+                    onChange={handleChange}
+                    placeholder="Enter or search brand..."
+                    className="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    autoComplete="off"
+                    disabled={!formData.medicine_form}
+                  />
+                  {showBrandSuggestions && brandSuggestions.length > 0 && (
+                    <ul className="absolute z-20 bg-white border border-gray-300 w-full mt-1 rounded-lg shadow-xl max-h-40 overflow-y-auto">
+                      {brandSuggestions.map((s, i) => (
+                        <li key={i} className="px-3 py-2 hover:bg-blue-50 cursor-pointer text-sm" onClick={() => handleSuggestionClick("brand_name", s)}>
+                          {s}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              )}
 
-              {/* Dose / Volume */}
-              <div className="relative">
-                <label className="block text-gray-700 text-sm font-bold mb-2">
-                  Dose / Volume
-                </label>
-                <input
-                  type="text"
-                  name="dose_volume"
-                  value={formData.dose_volume}
-                  onChange={handleChange}
-                  placeholder="e.g. 500mg, 10ml"
-                  className="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  disabled={!formData.medicine_form}
-                />
-                {showDoseSuggestions && doseSuggestions.length > 0 && (
-                  <ul className="absolute z-20 bg-white border border-gray-300 w-full mt-1 rounded-lg shadow-xl max-h-40 overflow-y-auto">
-                    {doseSuggestions.map((s, i) => (
-                      <li key={i} className="px-3 py-2 hover:bg-blue-50 cursor-pointer text-sm" onClick={() => handleSuggestionClick("dose_volume", s)}>
-                        {s}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
+              {/* Dose / Volume - Hidden if Glucose */}
+              {formData.medicine_form !== "Glucose " && (
+                <div className="relative">
+                  <label className="block text-gray-700 text-sm font-bold mb-2">
+                    Dose / Volume
+                  </label>
+                  <input
+                    type="text"
+                    name="dose_volume"
+                    value={formData.dose_volume}
+                    onChange={handleChange}
+                    placeholder="e.g. 500mg, 10ml"
+                    className="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    disabled={!formData.medicine_form}
+                  />
+                  {showDoseSuggestions && doseSuggestions.length > 0 && (
+                    <ul className="absolute z-20 bg-white border border-gray-300 w-full mt-1 rounded-lg shadow-xl max-h-40 overflow-y-auto">
+                      {doseSuggestions.map((s, i) => (
+                        <li key={i} className="px-3 py-2 hover:bg-blue-50 cursor-pointer text-sm" onClick={() => handleSuggestionClick("dose_volume", s)}>
+                          {s}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              )}
 
               {/* Quantity */}
               <div>
