@@ -6880,7 +6880,7 @@ def archive_zero_quantity_stock(request):
                             dose_volume=item.dose_volume,
                             total_quantity=item.total_quantity, # Preserve original total
                             expiry_date=item.expiry_date,
-                            archive_date=timezone.now().date() # Set archive date
+                            # archive_date=timezone.now().date() # Removed: Field does not exist in model
                         )
                     )
 
