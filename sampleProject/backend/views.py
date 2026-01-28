@@ -3823,9 +3823,6 @@ def add_prescription(request):
         if not mrd_no:
             logger.warning("add_prescription failed: MRD number is required")
             return JsonResponse({"error": "MRD number is required"}, status=400)
-        if not emp_no:
-            logger.warning("add_prescription failed: emp_no is required")
-            return JsonResponse({"error": "Employee number (emp_no) is required"}, status=400)
         if not name:
             logger.warning("add_prescription failed: name is required")
             return JsonResponse({"error": "Employee name (name) is required"}, status=400)
