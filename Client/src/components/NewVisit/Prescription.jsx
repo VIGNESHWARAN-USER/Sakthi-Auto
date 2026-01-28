@@ -77,13 +77,13 @@ const Prescription = ({ data, onPrescriptionUpdate, condition, register, mrdNo }
   const accessLevel = localStorage.getItem("accessLevel");
   const isDoctor = accessLevel === "doctor";
   const isNurse = accessLevel === "nurse";
-  const isPharmacy = accessLevel === "pharmacist";
+  const isPharmacy = accessLevel === "pharmacy";
   const isNurseWithOverride = "nurse"
     isNurse &&
     register &&
     typeof register === "string" &&
     register.toUpperCase().startsWith("OVER");
-
+  console.log(accessLevel)
   // Default row structure
   const getDefaultRow = useCallback(
     () => ({
@@ -544,6 +544,16 @@ const Prescription = ({ data, onPrescriptionUpdate, condition, register, mrdNo }
       }));
     }
 
+    if(field === "issuedIn" || field === "prescriptionOut")
+      {
+        //ensure value is in range 0 to qty
+        const currentItem = getCurrentItemState(type, index);
+        const maxQty = parseInt(currentItem?.qty) || 0;
+        let intValue = parseInt(value);
+        if (isNaN(intValue) || intValue < 0) intValue = 0;
+        if (intValue > maxQty) intValue = maxQty;
+        value = intValue;
+      }
     console.log(
       `Updating ${type} row ${index}, field ${field} with value:`,
       value
@@ -1034,10 +1044,8 @@ const Prescription = ({ data, onPrescriptionUpdate, condition, register, mrdNo }
       "dressingItems",
       "others",
     ].includes(type);
-
-    const isFieldDisabledForCurrentUser = isSutureDressingOthers
-      ? !(isNurse || isDoctor  )
-      : !isDoctor && isNurse || isPharmacy;
+    console.log(data);
+    const isFieldDisabledForCurrentUser = false
 
     const isPharmacyFieldDisabledForCurrentUser = !isPharmacy;
     const fieldDisabledClass = isFieldDisabledForCurrentUser
@@ -1452,9 +1460,11 @@ const Prescription = ({ data, onPrescriptionUpdate, condition, register, mrdNo }
 
     const renderPharmacyFields = () => (
       <>
-        <textarea
+        <input
           placeholder="Issued In"
           value={item.issuedIn || ""}
+          type = "number"
+          max={item.qty}
           onChange={(e) =>
             handleInputChange(e, type, index, "issuedIn")
           }
@@ -1465,16 +1475,13 @@ const Prescription = ({ data, onPrescriptionUpdate, condition, register, mrdNo }
           rows="1"
           title="Pharmacy Use Only: Issued In Details"
         />
-        <textarea
+        <input
           placeholder="Issued Out"
-          value={item.issuedOut || ""}
-          onChange={(e) =>
-            handleInputChange(e, type, index, "issuedOut")
-          }
+          value={item.qty - item.issuedIn || ""}
           className={`${textareaBaseClass} ${pharmacyFieldDisabledClass} ${
             isPharmacy ? pharmacyEnabledClass : ""
           }`}
-          disabled={isPharmacyFieldDisabledForCurrentUser}
+          disabled={true}
           rows="1"
           title="Pharmacy Use Only: Issued Out Details"
         />

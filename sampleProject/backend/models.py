@@ -189,10 +189,10 @@ class Dashboard(BaseModel):
         return f"Dashboard Record {self.id} for Emp {self.emp_no or self.aadhar}"
 
 
-# --- Vitals Model --- *MODIFIED*
+
 class vitals(BaseModel):
-    # ... (keep all existing fields from vitals as they were) ...
-    emp_no = models.TextField(max_length=200)
+    
+    emp_no = models.TextField(max_length=200, blank=True, null=True)
     aadhar = models.CharField(max_length=225, blank=True, null=True) # Added Aadhar
     systolic = models.TextField(max_length=50)
     systolic_status = models.TextField(max_length=50, null=True, blank=True)
@@ -305,7 +305,7 @@ class heamatalogy(BaseModel):
     checked = models.BooleanField(default=False)
     mrdNo = models.TextField(max_length=255, blank=True)
 
-    emp_no = models.TextField(max_length=200)
+    emp_no = models.TextField(max_length=200, blank=True, null=True)
     aadhar = models.CharField(max_length=225, blank=True, null=True) 
 
     # --- Hemoglobin ---
@@ -420,7 +420,7 @@ class heamatalogy(BaseModel):
 # --- Routine Sugar Tests Model --- *MODIFIED*
 class RoutineSugarTests(BaseModel):
     checked = models.BooleanField(default=False)
-    emp_no = models.TextField(max_length=200)
+    emp_no = models.TextField(max_length=200, blank=True, null=True)
     mrdNo = models.TextField(max_length=255, blank=True)
     aadhar = models.CharField(max_length=225, blank=True, null=True)
 
@@ -461,7 +461,7 @@ class RoutineSugarTests(BaseModel):
 # --- Renal Function Test Model ---
 class RenalFunctionTest(BaseModel):
     checked = models.BooleanField(default=False)
-    emp_no = models.TextField(max_length=200)
+    emp_no = models.TextField(max_length=200, blank=True, null=True)
     mrdNo = models.TextField(max_length=255, blank=True)
     aadhar = models.CharField(max_length=225, blank=True, null=True)
 
@@ -538,7 +538,7 @@ class RenalFunctionTest(BaseModel):
 # --- Lipid Profile Model ---
 class LipidProfile(BaseModel):
     checked = models.BooleanField(default=False)
-    emp_no = models.TextField(max_length=200)
+    emp_no = models.TextField(max_length=200, blank=True, null=True)
     aadhar = models.CharField(max_length=225, blank=True, null=True)
     mrdNo = models.TextField(max_length=255, blank=True)
     
@@ -591,7 +591,7 @@ class LipidProfile(BaseModel):
 # --- Liver Function Test Model ---
 class LiverFunctionTest(BaseModel):
     checked = models.BooleanField(default=False)
-    emp_no = models.TextField(max_length=200)
+    emp_no = models.TextField(max_length=200, blank=True, null=True)
     aadhar = models.CharField(max_length=225, blank=True, null=True)
     mrdNo = models.TextField(max_length=255, blank=True)
 
@@ -673,7 +673,7 @@ class LiverFunctionTest(BaseModel):
 # --- Thyroid Function Test Model ---
 class ThyroidFunctionTest(BaseModel):
     checked = models.BooleanField(default=False)
-    emp_no = models.TextField(max_length=200)
+    emp_no = models.TextField(max_length=200, blank=True, null=True)
     aadhar = models.CharField(max_length=225, blank=True, null=True)
     mrdNo = models.TextField(max_length=255, blank=True)
 
@@ -702,7 +702,7 @@ class ThyroidFunctionTest(BaseModel):
 # --- Autoimmune test Model ---
 class AutoimmuneTest(BaseModel):
     checked = models.BooleanField(default=False)
-    emp_no = models.TextField(max_length=200)
+    emp_no = models.TextField(max_length=200, blank=True, null=True)
     aadhar = models.CharField(max_length=225, blank=True, null=True)
     mrdNo = models.TextField(max_length=255, blank=True)
 
@@ -737,7 +737,7 @@ class AutoimmuneTest(BaseModel):
 # --- Coagulation Test Model ---
 class CoagulationTest(BaseModel):
     checked = models.BooleanField(default=False)
-    emp_no = models.TextField(max_length=200)
+    emp_no = models.TextField(max_length=200, blank=True, null=True)
     aadhar = models.CharField(max_length=225, blank=True, null=True)
     mrdNo = models.TextField(max_length=255, blank=True)
 
@@ -772,7 +772,7 @@ class CoagulationTest(BaseModel):
 # --- Enzymes Cardiac Profile Model ---
 class EnzymesCardiacProfile(BaseModel):
     checked = models.BooleanField(default=False)
-    emp_no = models.TextField(max_length=200)
+    emp_no = models.TextField(max_length=200, blank=True, null=True)
     aadhar = models.CharField(max_length=225, blank=True, null=True)
     mrdNo = models.TextField(max_length=255, blank=True)
 
@@ -847,7 +847,7 @@ class EnzymesCardiacProfile(BaseModel):
 # --- Urine Routine Test Model ---
 class UrineRoutineTest(BaseModel):
     checked = models.BooleanField(default=False)
-    emp_no = models.TextField(max_length=200)
+    emp_no = models.TextField(max_length=200, blank=True, null=True)
     aadhar = models.CharField(max_length=225, blank=True, null=True)
     mrdNo = models.TextField(max_length=255, blank=True)
 
@@ -953,7 +953,7 @@ class UrineRoutineTest(BaseModel):
 # --- Serology Test Model ---
 class SerologyTest(BaseModel):
     checked = models.BooleanField(default=False)
-    emp_no = models.TextField(max_length=200)
+    emp_no = models.TextField(max_length=200, blank=True, null=True)
     aadhar = models.CharField(max_length=225, blank=True, null=True)
     mrdNo = models.TextField(max_length=255, blank=True)
 
@@ -1018,7 +1018,7 @@ class SerologyTest(BaseModel):
 # --- Motion Test Model ---
 class MotionTest(BaseModel):
     checked = models.BooleanField(default=False)
-    emp_no = models.TextField(max_length=200)
+    emp_no = models.TextField(max_length=200, blank=True, null=True)
     aadhar = models.CharField(max_length=225, blank=True, null=True)
     mrdNo = models.TextField(max_length=255, blank=True)
 
@@ -1083,7 +1083,7 @@ class MotionTest(BaseModel):
 # --- Culture Sensitivity Test Model ---
 class CultureSensitivityTest(BaseModel):
     checked = models.BooleanField(default=False)
-    emp_no = models.TextField(max_length=200)
+    emp_no = models.TextField(max_length=200, blank=True, null=True)
     aadhar = models.CharField(max_length=225, blank=True, null=True)
     mrdNo = models.TextField(max_length=255, blank=True)
 
@@ -1118,7 +1118,7 @@ class CultureSensitivityTest(BaseModel):
 # --- Mens Pack Model ---
 class MensPack(BaseModel):
     checked = models.BooleanField(default=False)
-    emp_no = models.TextField(max_length=200)
+    emp_no = models.TextField(max_length=200, blank=True, null=True)
     aadhar = models.CharField(max_length=225, blank=True, null=True)
     mrdNo = models.TextField(max_length=255, blank=True)
 
@@ -1136,7 +1136,7 @@ class MensPack(BaseModel):
 # No reference ranges in original code, usually just results/comments
 class WomensPack(BaseModel):
     checked = models.BooleanField(default=False)
-    emp_no = models.TextField(max_length=200)
+    emp_no = models.TextField(max_length=200, blank=True, null=True)
     aadhar = models.CharField(max_length=225, blank=True, null=True) 
     mrdNo = models.TextField(max_length=255, blank=True)
 
@@ -1154,7 +1154,7 @@ class WomensPack(BaseModel):
 # No reference ranges in original code, usually just results/comments
 class OccupationalProfile(BaseModel):
     checked = models.BooleanField(default=False)
-    emp_no = models.TextField(max_length=200)
+    emp_no = models.TextField(max_length=200, blank=True, null=True)
     aadhar = models.CharField(max_length=225, blank=True, null=True)   
     mrdNo = models.TextField(max_length=255, blank=True)
 
@@ -1171,7 +1171,7 @@ class OccupationalProfile(BaseModel):
 # --- Others Test Model ---      
 class OthersTest(BaseModel):
     checked = models.BooleanField(default=False)
-    emp_no = models.TextField(max_length=200)
+    emp_no = models.TextField(max_length=200, blank=True, null=True)
     aadhar = models.CharField(max_length=225, blank=True, null=True)   
     mrdNo = models.TextField(max_length=255, blank=True)
 
@@ -1234,7 +1234,7 @@ class OthersTest(BaseModel):
 # --- Ophthalmic Report Model ---
 class OphthalmicReport(BaseModel):
     checked = models.BooleanField(default=False)
-    emp_no = models.TextField(max_length=200)
+    emp_no = models.TextField(max_length=200, blank=True, null=True)
     aadhar = models.CharField(max_length=225, blank=True, null=True)
     mrdNo = models.TextField(max_length=255, blank=True)
 
@@ -1254,7 +1254,7 @@ class OphthalmicReport(BaseModel):
 # --- XRay Model ---
 class XRay(BaseModel):
     checked = models.BooleanField(default=False)
-    emp_no = models.TextField(max_length=200)
+    emp_no = models.TextField(max_length=200, blank=True, null=True)
     aadhar = models.CharField(max_length=225, blank=True, null=True)
     mrdNo = models.TextField(max_length=255, blank=True)
 
@@ -1289,7 +1289,7 @@ class XRay(BaseModel):
 # --- USG Report Model ---
 class USGReport(BaseModel):
     checked = models.BooleanField(default=False)
-    emp_no = models.TextField(max_length=200)
+    emp_no = models.TextField(max_length=200, blank=True, null=True)
     aadhar = models.CharField(max_length=225, blank=True, null=True)
     mrdNo = models.TextField(max_length=255, blank=True)
 
@@ -1314,7 +1314,7 @@ class USGReport(BaseModel):
 # --- CT Report Model ---
 class CTReport(BaseModel):
     checked = models.BooleanField(default=False)
-    emp_no = models.TextField(max_length=200)
+    emp_no = models.TextField(max_length=200, blank=True, null=True)
     aadhar = models.CharField(max_length=225, blank=True, null=True)
     mrdNo = models.TextField(max_length=255, blank=True)
 
@@ -1355,7 +1355,7 @@ class CTReport(BaseModel):
 # --- MRI Report Model ---
 class MRIReport(BaseModel):
     checked = models.BooleanField(default=False)
-    emp_no = models.TextField(max_length=200)
+    emp_no = models.TextField(max_length=200, blank=True, null=True)
     aadhar = models.CharField(max_length=225, blank=True, null=True)
     mrdNo = models.TextField(max_length=255, blank=True)
 
