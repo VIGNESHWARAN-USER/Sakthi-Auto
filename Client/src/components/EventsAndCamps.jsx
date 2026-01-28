@@ -36,7 +36,7 @@
             });
 
             const [isSubmitting, setIsSubmitting] = useState(false);
-            const [formVal, setformVal] = useState("");
+            const [formVal, setformVal] = useState("View Camps");
 
             const handleChange = (e) => {
                 const { name, value } = e.target;
@@ -151,7 +151,9 @@
                     fetchCampData();
                 }
             }, [formVal, fetchCampData]); //  fetchCampData is a dependency
-
+            
+            const nurseOptions = ["View Camps", "Add Camps"];
+            const doctorOptions = ["View Camps"];
 
             const handleFilter = () => {
                 setSearchTerm(tempSearchTerm);
@@ -346,7 +348,8 @@
                         <div className="mb-8 flex justify-between items-center">
                             <h1 className="text-4xl font-bold mb-8 text-gray-800">Camps</h1>
                         <div>
-                                {["View Camps", "Add Camps"].map((btnText, index) => (
+                                {(accessLevel === "nurse") && (
+                                    ["View Camps", "Add Camps"].map((btnText, index) => (
                                     <button
                                     key={index}
                                     className={`px-4 py-2 rounded-lg me-4 text-white hover:opacity-90 ${
@@ -358,7 +361,20 @@
                                     >
                                     {btnText}
                                     </button>
-                                ))}
+                                ))) || (
+                                    ["View Camps"].map((btnText, index) => (
+                                    <button
+                                    key={index}
+                                    className={`px-4 py-2 rounded-lg me-4 text-white hover:opacity-90 ${
+                                        index === 0 ? "bg-blue-500 hover:bg-blue-600" : "bg-green-500 hover:bg-green-600"
+                                    }`}
+                                    onClick={() => {
+                                        setformVal(btnText);
+                                    }}
+                                    >
+                                    {btnText}
+                                    </button>
+                                )))}
                                 </div>
 
                                 
