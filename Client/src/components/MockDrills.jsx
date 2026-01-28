@@ -42,12 +42,12 @@ const MockDrills = () => {
     const navigate = useNavigate();
 
     const [showForm, setShowForm] = useState(false); // Will be true by default due to handleAddMockDrills in useEffect
-    const [viewButtonSelected, setViewButtonSelected] = useState(false);
-    const [addButtonSelected, setAddButtonSelected] = useState(true); // True by default
+    const [viewButtonSelected, setViewButtonSelected] = useState(true);
+    const [addButtonSelected, setAddButtonSelected] = useState(false); 
     const [formDatas, setformDatas] = useState(initialMockDrillFormState); // Initialize with empty state
     const [mockDrillData, setMockDrillData] = useState([]);
     const [selectedDrill, setSelectedDrill] = useState(null);
-    const [detailedView, setDetailedView] = useState(false);
+    const [detailedView, setDetailedView] = useState(true);
     const [fromDate, setFromDate] = useState('');
     const [toDate, setToDate] = useState('');
 
@@ -257,21 +257,31 @@ const MockDrills = () => {
                 <Sidebar />
                 <div className="w-4/5 h-screen overflow-auto p-8">
 
-                    {/* Buttons moved to the top right corner */}
-                    <div className="flex justify-end space-x-4 mb-4">
-                        <button
-                            style={buttonStyleView}
-                            onClick={handleViewMockDrills}
-                        >
-                            View Mock Drills
+
+                    {(accessLevel === "nurse") && (
+                        <div className="flex justify-end space-x-4">
+                            <button
+                                style={buttonStyleView}
+                                onClick={handleViewMockDrills}
+                            >
+                                View Mock Drills
                         </button>
                         <button
                             style={buttonStyle}
-                            onClick={handleAddMockDrills} // This will now also attempt to autofill
+                            onClick={handleAddMockDrills} 
                         >
                             Add Mock Drill
                         </button>
-                    </div>
+                    </div>) || (
+                        <div className="flex justify-end space-x-4">
+                            <button
+                                style={buttonStyleView}
+                                onClick={handleViewMockDrills}
+                            >
+                                View Mock Drills
+                        </button>
+                    </div>)
+                        }
 
                     {detailedView && (
                         <div className="mb-4 flex space-x-4 items-end"> {/* items-end to align button with inputs */}
