@@ -8187,92 +8187,103 @@ def get_currentfootfalls(request):
         return JsonResponse({'error': 'Invalid Method. Only POST is allowed.'}, status=405)
 
     try:
-        # 1. Get optional filter parameters
         from_date_str = request.GET.get('fromDate')
         to_date_str = request.GET.get('toDate')
         purpose_str = request.GET.get('purpose')
 
-        # 2. Start with base queryset
         queryset = employee_details.objects.all()
 
-        # 3. Apply filters
         if from_date_str:
             queryset = queryset.filter(entry_date__gte=from_date_str)
-        
+
         if to_date_str:
             queryset = queryset.filter(entry_date__lte=to_date_str)
 
         if purpose_str:
             queryset = queryset.filter(register=purpose_str)
-            
-        # 4. Default to today if no date range
+
         if not from_date_str and not to_date_str:
             today = date.today()
             queryset = queryset.filter(entry_date=today)
-        
-        # 5. Get Footfalls
-        footfalls = list(queryset.order_by('-entry_date', '-id').values())
 
+        # 1. Fetch ONLY pending MRDs from the child tables directly
+        preventive_mrds = FitnessAssessment.objects.filter(
+            #not equal to pending
+            status__in=['Completed', 'InProgress', 'Initiate']
+        ).values_list('mrdNo', flat=True)
+
+        curative_mrds = Consultation.objects.filter(
+            status__in=['Completed', 'InProgress', 'Initiate']
+        ).values_list('mrdNo', flat=True)
+        print(curative_mrds)
+
+        # 2. Filter footfalls: This enforces that data MUST exist in child tables to be fetched here
+        queryset = queryset.filter(
+            Q(type_of_visit="New Arrivals Medical Examination", mrdNo__in=preventive_mrds) |
+            Q(type_of_visit__in=["Eye Incident Register", "Sickness Register", "Injury Register"], mrdNo__in=curative_mrds)
+        )
+
+        footfalls = list(queryset.order_by('-entry_date', '-id').values())
+        
         if not footfalls:
             return JsonResponse({
-                'message': 'No footfalls found for the selected criteria.',
+                'message': 'No pending footfalls found',
                 'data': []
             }, status=200)
 
-        # 6. Extract MRDs based on type
-        preventive_mrds = [
-            f['mrdNo'] for f in footfalls if f['type_of_visit'] == 'Preventive' and f['mrdNo']
-        ]
-        curative_mrds = [
-            f['mrdNo'] for f in footfalls if f['type_of_visit'] == 'Curative' and f['mrdNo']
-        ]
+        # 3. Fetch full pending records for mapping
+        fitness_records = FitnessAssessment.objects.filter(
+            mrdNo__in=preventive_mrds,
+            status__in=['Completed', 'InProgress', 'Initiate']
+        ).values()
 
-        # 7. Fetch related records
-        fitness_records = FitnessAssessment.objects.filter(mrdNo__in=preventive_mrds).values()
-        consultation_records = Consultation.objects.filter(mrdNo__in=curative_mrds).values()
-
-        # 8. Create maps
+        consultation_records = Consultation.objects.filter(
+            mrdNo__in=curative_mrds,
+            status__in=['Completed', 'InProgress', 'Initiate']
+        ).values()
+        print(consultation_records)
         fitness_map = {record['mrdNo']: record for record in fitness_records}
         consultation_map = {record['mrdNo']: record for record in consultation_records}
 
-        # 9. Combine data (WITH STRICT FILTERING)
         response_data = []
         for footfall in footfalls:
             mrd_number = footfall.get('mrdNo')
             visit_type = footfall.get('type_of_visit')
-            
+            print(footfall)
             combined_record = {
                 'details': footfall,
                 'assessment': None,
-                'consultation': None,
+                'consultation': None
             }
+
             
             data_found = False
 
-            if visit_type == 'Preventive':
+            if visit_type == 'New Arrivals Medical Examination':
                 assessment_data = fitness_map.get(mrd_number)
                 if assessment_data:
                     combined_record['assessment'] = assessment_data
                     data_found = True
-            
-            elif visit_type == 'Curative':
+
+            elif visit_type in ('Eye Incident Register', 'Sickness Register', 'Injury Register'):
                 consultation_data = consultation_map.get(mrd_number)
                 if consultation_data:
                     combined_record['consultation'] = consultation_data
                     data_found = True
+
             
-            # Only append if we actually found the linked data
             if data_found:
                 response_data.append(combined_record)
-        
+
         return JsonResponse(
-            {'data': response_data, 'message': 'Successfully retrieved data'},
+            {'data': response_data, 'message': 'Pending records fetched successfully'},
             status=200
         )
 
     except Exception as e:
-        logger.exception("An error occurred in get_currentfootfalls")
+        logger.exception("Error in get_pendingfootfalls")
         return JsonResponse({'error': f'An error occurred: {str(e)}'}, status=500)
+
 
 @csrf_exempt
 def get_pendingfootfalls(request):
@@ -8307,15 +8318,16 @@ def get_pendingfootfalls(request):
         curative_mrds = Consultation.objects.filter(
             status="pending"
         ).values_list('mrdNo', flat=True)
+        print(curative_mrds)
 
         # 2. Filter footfalls: This enforces that data MUST exist in child tables to be fetched here
         queryset = queryset.filter(
-            Q(type_of_visit='Preventive', mrdNo__in=preventive_mrds) |
-            Q(type_of_visit='Curative', mrdNo__in=curative_mrds)
+            Q(type_of_visit="New Arrivals Medical Examination", mrdNo__in=preventive_mrds) |
+            Q(type_of_visit__in=["Eye Incident Register", "Sickness Register", "Injury Register"], mrdNo__in=curative_mrds)
         )
 
         footfalls = list(queryset.order_by('-entry_date', '-id').values())
-
+        
         if not footfalls:
             return JsonResponse({
                 'message': 'No pending footfalls found',
@@ -8332,7 +8344,7 @@ def get_pendingfootfalls(request):
             mrdNo__in=curative_mrds,
             status="pending"
         ).values()
-
+        print(consultation_records)
         fitness_map = {record['mrdNo']: record for record in fitness_records}
         consultation_map = {record['mrdNo']: record for record in consultation_records}
 
@@ -8340,29 +8352,29 @@ def get_pendingfootfalls(request):
         for footfall in footfalls:
             mrd_number = footfall.get('mrdNo')
             visit_type = footfall.get('type_of_visit')
-
+            print(footfall)
             combined_record = {
                 'details': footfall,
                 'assessment': None,
                 'consultation': None
             }
 
-            # --- STRICT FILTERING IN LOOP ---
+            
             data_found = False
 
-            if visit_type == 'Preventive':
+            if visit_type == 'New Arrivals Medical Examination':
                 assessment_data = fitness_map.get(mrd_number)
                 if assessment_data:
                     combined_record['assessment'] = assessment_data
                     data_found = True
 
-            elif visit_type == 'Curative':
+            elif visit_type in ('Eye Incident Register', 'Sickness Register', 'Injury Register'):
                 consultation_data = consultation_map.get(mrd_number)
                 if consultation_data:
                     combined_record['consultation'] = consultation_data
                     data_found = True
 
-            # Only append if the child record definitely exists
+            
             if data_found:
                 response_data.append(combined_record)
 
