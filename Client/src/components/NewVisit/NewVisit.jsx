@@ -101,7 +101,7 @@ const NewVisit = () => {
 
         if (updateResponse.status === 200) {
           alert("Profile image updated successfully!");
-          const fetchResponse = await axios.post("http://localhost:8000/userDataWithID");
+          const fetchResponse = await axios.post("http://localhost:8000/userDataWithID", {aadhar: formData.aadhar});
           setEmployees(fetchResponse.data.data);
           setFilteredEmployees(fetchResponse.data.data);
           setdata([{ ...formData, profileImage: imageData }]);
@@ -408,7 +408,8 @@ const NewVisit = () => {
         // Auto-fill dropdowns based on fetched data
         setType(latestEmployee.type || "");
         setOtherType(latestEmployee.other_type || "");
-
+        setOtherRegister(latestEmployee.other_register || "");
+        console.log(latestEmployee.other_register)
         // Handle Profile Picture
         localStorage.setItem("selectedEmployee", JSON.stringify(latestEmployee));
         setProfileImage(latestEmployee.profileImage || null);
@@ -712,7 +713,7 @@ const NewVisit = () => {
 
             if (updateResponse.status === 200) {
                 alert("Profile image captured and updated successfully!");
-                const fetchResponse = await axios.post("http://localhost:8000/userDataWithID");
+                const fetchResponse = await axios.post("http://localhost:8000/userDataWithID", {aadhar: formData.aadhar});
                 setEmployees(fetchResponse.data.data);
                 setFilteredEmployees(fetchResponse.data.data);
                 setdata([{ ...formData, profileImage: imageData }]);
