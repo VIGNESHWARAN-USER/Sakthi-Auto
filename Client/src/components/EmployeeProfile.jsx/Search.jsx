@@ -56,7 +56,7 @@ const Search = () => {
       // If your backend returns the array directly, remove .data
       setEmployees(response.data.data || []); 
       
-      console.log("Search Results:", response.data.data);
+      
 
     } catch (error) {
       console.error("Error fetching data:", error);

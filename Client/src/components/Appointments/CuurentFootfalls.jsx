@@ -50,7 +50,6 @@ const CurrentFootfalls = () => {
         url += `?${queryString}`;
       }
 
-      console.log("Fetching appointments from:", url);
 
       const response = await axios.post(url);
       if (response.status !== 200) {
@@ -58,7 +57,6 @@ const CurrentFootfalls = () => {
       } 
       
       const data = await response.data.data;
-      console.log("Received appointments data:", data);
 
       if (data && Array.isArray(data)) {
         setAppointments(data);

@@ -56,7 +56,6 @@ export const FormRadioGroup = ({ label, name, value, onChange, options, classNam
 // --- MODIFIED: The `initialData` prop is removed. ---
 const MedicalCertificateForm = ({ onDataChange,  mrdNo, aadhar }) => {
   const [showForm, setShowForm] = useState(false);
-  console.log()
   // --- A constant for the default empty state, used for resetting the form. ---
   const defaultFormState = {
     employeeName: '', age: '', sex: '', date: '', empNo: '',
@@ -90,11 +89,9 @@ const MedicalCertificateForm = ({ onDataChange,  mrdNo, aadhar }) => {
         const response = await axios.get(`http://localhost:8000/medical-certificate/get/?aadhar=${aadhar}`);
         
         if (response.data && Object.keys(response.data).length > 0) {
-          console.log("Fetched existing certificate data:", response.data);
           setFormData(response.data); // Populate the form with fetched data.
           setShowForm(true); // Automatically expand the form if data exists.
         } else {
-          console.log("No existing certificate data found. Displaying empty form.");
           setFormData(defaultFormState); // Reset to empty form if no data.
         }
       } catch (error) {

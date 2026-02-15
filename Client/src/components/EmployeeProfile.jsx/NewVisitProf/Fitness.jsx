@@ -264,7 +264,6 @@ const Fitness = ({ data }) => {
             });
         }
     }, [data, fitnessAssessmentData, formSource]);
-    console.log("Display Data:", displayData);
 
     return (
         <div className="mt-6 p-6 bg-white rounded-lg shadow">

@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
 from django.db import transaction
-from backend.models import (
+from sacl_ohc.models import (
     user, employee_details, Dashboard, vitals, mockdrills, eventsandcamps,
     heamatalogy, RoutineSugarTests, RenalFunctionTest, LipidProfile,
     LiverFunctionTest, ThyroidFunctionTest, AutoimmuneTest, CoagulationTest,

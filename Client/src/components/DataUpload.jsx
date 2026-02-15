@@ -87,7 +87,7 @@ const DataUpload = () => {
     // --- MODIFIED FUNCTION END ---
 
     const handleFileChange = (event) => {
-        // console.log("File input changed", event);
+        
         const file = event.target.files[0];
         handleFileSelection(file);
     };

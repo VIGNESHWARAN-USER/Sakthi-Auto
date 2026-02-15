@@ -20,7 +20,7 @@ const NewVisit = () => {
   const navigate = useNavigate();
 
   const {search, mrdNumber,type1, type_of_visit1, register1, purpose1 ,appointment, reference, fieldType} = useLocation().state || "";
-  console.log(fieldType)
+  
 
   const [isUpdated, setIsUpdated] = useState(false);
   const [isFrozen, setIsFrozen] = useState(false);
@@ -314,7 +314,6 @@ const NewVisit = () => {
   };
 
     try {
-    console.log(submissionData);
     const response = await axios.post(
       "http://localhost:8000/addEntries",
       submissionData,
@@ -322,7 +321,6 @@ const NewVisit = () => {
     );
 
     if (response.status === 200) {
-      console.log(response.data)
       const mrd = response.data.mrdNo;
 
       setMRDNo(mrd);
@@ -352,13 +350,11 @@ const NewVisit = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log(mrdNo);
       if(mrdNo === "" || mrdNo === undefined){
         alert("Please submit the entries first to get MRD Number"); 
         return;
       }
       const updatedformData = { ...formData, type: type, mrdNo: mrdNo }
-      console.log(updatedformData)
       const response = await axios.post("http://localhost:8000/addbasicdetails", updatedformData, {
         headers: {
           "Content-Type": "application/json"
@@ -395,7 +391,6 @@ const NewVisit = () => {
       if (resultData && resultData.length > 0) {
         
         const latestEmployee = resultData[0];
-        console.log(latestEmployee);
         
         latestEmployee.mrdNo = ""; 
 
@@ -409,7 +404,6 @@ const NewVisit = () => {
         setType(latestEmployee.type || "");
         setOtherType(latestEmployee.other_type || "");
         setOtherRegister(latestEmployee.other_register || "");
-        console.log(latestEmployee.other_register)
         // Handle Profile Picture
         localStorage.setItem("selectedEmployee", JSON.stringify(latestEmployee));
         setProfileImage(latestEmployee.profileImage || null);
@@ -479,7 +473,6 @@ const NewVisit = () => {
   useEffect(() => {
     const initialize = async () => {
       setLoading(true);
-      console.log("Initializing with reference and appointment:", reference, appointment);
 
       if (reference && appointment) {
         
@@ -597,7 +590,6 @@ const NewVisit = () => {
   
     const handleTypeChange = (e) => {
       const selectedType = e.target.value;
-      console.log("Selected Type:", selectedType);
       setType(selectedType);
       setRegister(""); 
       setOtherRegister
@@ -607,7 +599,6 @@ const NewVisit = () => {
 
     const handleOtherTypeChange = (e) => {
       const selectedType = e.target.value;
-      console.log("Selected Type:", selectedType);
       setOtherType(selectedType);
       setRegister(""); 
       setOtherRegister
@@ -617,7 +608,6 @@ const NewVisit = () => {
 
     const handlefollowUpTypeChange = (e) => {
       const selectedType = e.target.value;
-      console.log("Selected Type:", selectedType);
       setFollowUpType(selectedType);
       setRegister(""); 
       setPurpose("");   
@@ -644,7 +634,7 @@ const NewVisit = () => {
   const calculateAge = (dob) => {
     const today = new Date();
     const [year, month, day] = dob.split('-');
-    console.log(day)
+    
     const birthDate = new Date(year, month - 1, day);
     let age = today.getFullYear() - birthDate.getFullYear();
     const monthDiff = today.getMonth() - birthDate.getMonth();

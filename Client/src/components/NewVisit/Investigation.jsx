@@ -16,8 +16,6 @@ const ChevronUpIcon = () => (
 
 
 function InvestigationForm({ data, mrdNo }) {
-  console.log("Received data prop:", data);
-  console.log("Received mrdNo prop:", mrdNo);
 
   const [formData, setFormData] = useState({});
   const [processedData, setProcessedData] = useState(null);
@@ -203,7 +201,6 @@ function InvestigationForm({ data, mrdNo }) {
         accessLevel: accessLevel
       };
       
-      console.log(`Submitting Data for ${categoryNameToSubmit}:`, finalPayload);
 
       const response = await axios.post(url, finalPayload, {
         headers: { "Content-Type": "application/json" },

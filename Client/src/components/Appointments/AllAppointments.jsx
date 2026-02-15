@@ -63,15 +63,13 @@ const AllAppointments = () => {
                 url += `?${queryString}`;
             }
 
-            console.log("Fetching appointments from:", url);
+            
 
             const response = await fetch(url);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             const data = await response.json();
-
-            console.log("Received appointments data:", data);
 
             if (data.appointments && Array.isArray(data.appointments)) {
                 setAppointments(data.appointments);
@@ -107,9 +105,8 @@ const AllAppointments = () => {
             return empNoMatch || nameMatch;
         });
     }, [appointments, searchQuery]);
-    console.log(filteredAppointments);
     const handleNavigate = async (appointment) => {
-        console.log();
+      
             navigate("../newvisit", { state: { appointment: appointment, reference: true} });
     };
 
@@ -280,12 +277,10 @@ const AllAppointments = () => {
                             </tr>
                         ) : filteredAppointments.length > 0 ? (
                             filteredAppointments.map((appointment) => {
-                                console.log(appointment.submitted_Dr, appointment.submitted_by_nurse)
                                 let owner = appointment.submitted_Dr;
                                 if(owner === undefined || owner === "") owner = appointment.submitted_by_nurse;
                                 const isLocked = appointment.status === 'inprogress' && currentUser !== owner;
                                 const isCompleted = appointment.status === 'completed';
-                                console.log(appointment.status, currentUser, isLocked, isCompleted);
                                 return(
                                 <tr key={appointment.id} className="border-b border-gray-100 hover:bg-gray-50 transition group">
                                     <td className="px-3 py-2 text-xs text-gray-700 text-left truncate sticky left-0 bg-white group-hover:bg-gray-50 z-10">{appointment.appointment_no || '-'}</td>

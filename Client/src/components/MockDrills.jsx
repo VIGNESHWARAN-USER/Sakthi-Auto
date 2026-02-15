@@ -66,7 +66,6 @@ const MockDrills = () => {
             to_date: toDate || ""
         };
 
-        console.log("Sending body:", bodyData);
 
         const response = await fetch(url, {
             method: "POST",
@@ -76,7 +75,6 @@ const MockDrills = () => {
             body: JSON.stringify(bodyData),
         });
 
-        console.log("response value", response);
 
         if (response.ok) {
             const data = await response.json();
@@ -112,7 +110,6 @@ const MockDrills = () => {
             // const response = await fetch("http://localhost:8000/get-one-mockdrills");
             if (response.ok) {
                 const latestData = await response.json();
-                console.log("Latest mock drill data fetched for autofill:", latestData);
                 if (latestData && Object.keys(latestData).length > 0) {
                     // Populate formDatas with latestData
                     // Map backend keys (lowercase) to frontend state keys (mixed case for some)

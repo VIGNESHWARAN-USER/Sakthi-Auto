@@ -226,7 +226,7 @@ const EmployeeProfile = () => {
             // Ensure endpoint matches your backend urls.py
             const response = await axios.get(`http://localhost:8000/get_notes/${idValue}`);
             
-            console.log("Fetched Data:", response.data);
+            
 
             // 1. Handle Notes (Visit history)
             if (Array.isArray(response.data.notes)) {
@@ -237,8 +237,7 @@ const EmployeeProfile = () => {
 
             // 2. Handle Status History
             if (Array.isArray(response.data.status_history)) {
-                setEmploymentHistoryState(response.data.status_history);
-                console.log("Employment History:", response.data.status_history);   
+                setEmploymentHistoryState(response.data.status_history); 
             } else {
                 // Fallback for empty or unexpected structure
                 setEmploymentHistoryState([]);

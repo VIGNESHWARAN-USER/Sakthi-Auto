@@ -90,7 +90,6 @@ const RecordsFilters = () => {
 
                 let filterKey = key;
                 let filterObject = { [key]: value };
-                console.log(filterKey, filterObject)
                 
                 if (key === "param" && typeof value === 'object' && value.param) {
                     filterKey = `param_${value.param}`; filterObject = { [filterKey]: value };
@@ -143,14 +142,10 @@ const RecordsFilters = () => {
             return acc;
         }, {});
         filtersMap.role = selectedRole
-        console.log(filtersMap)
         const response = await axios.post("http://localhost:8000/get_filtered_data", filtersMap);
         results = results.filter(employee => {
             for (const key in filtersMap) {
-                const value = filtersMap[key];
-                console.log("Filtering Key:", key, "Value:", value, "Employee ID:", employee.id, employee.nationality);
-                
-                
+                const value = filtersMap[key];               
                 if (key === 'sex') { if (!employee.sex || employee.sex?.toLowerCase() !== value.toLowerCase()) return false; }
                 else if (key === 'bloodgrp') { if (employee.bloodgrp !== value) return false; }
                 else if (key === 'marital_status') { if (!employee.marital_status || employee.marital_status?.toLowerCase() !== value.toLowerCase()) return false; }
@@ -940,7 +935,7 @@ const SpecialCasesFilter = ({ addFilter }) => {
 
 const ShiftingAmbulanceFilter = ({ addFilter }) => {
     const [formData, setFormData] = useState({ val: "", from: "", to: "" });
-    const handleChange = (e) => { console.log(e.target.name, e.target.value); setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value })); };
+    const handleChange = (e) => {  setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value })); };
     const handleSubmit = () => { if (!formData.val) { alert("Select option."); return; } addFilter({ shiftingAmbulance: formData }); setFormData({ val: "", from: "", to: "" }); };
     return (
         <div className="space-y-4">

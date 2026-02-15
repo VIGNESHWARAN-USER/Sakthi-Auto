@@ -10,9 +10,9 @@ sys.path.append(r'd:\Sakthi-Auto\sampleProject')
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sampleProject.settings')
 django.setup()
 
-from backend.models import PharmacyStock, DailyQuantity
+from sacl_ohc.models import PharmacyStock, DailyQuantity
 from django.test import RequestFactory
-from backend.views import update_daily_quantities
+from sacl_ohc.views import update_daily_quantities
 from django.utils import timezone
 
 def verify():
