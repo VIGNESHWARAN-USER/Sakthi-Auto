@@ -9,7 +9,6 @@ import VIsitHistory from "../VIsitHistory";
 
 const NewVisit = ({data}) => {
   const accessLevel = localStorage.getItem("accessLevel")
-  console.log(accessLevel)
   const [activeTab, setActiveTab] = useState("DocBasicDetails");
   let tabs = [];
   if(accessLevel === "hr")

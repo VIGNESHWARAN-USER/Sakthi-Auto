@@ -41,7 +41,6 @@ const SignificantNotesDetails = ({ data }) => {
                 try {
                     // Use GET request if just fetching data, or POST if required by backend
                     const response = await axios.get(`http://localhost:8000/get_notes/${empNo}`);
-                    console.log("Fetched Notes/Visit Data:", response.data);
 
                     // Handle potential nesting like { data: [...] }
                     const fetchedNotesArray = response.data && Array.isArray(response.data.data)

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 const getDefaultFormData = (formType) => {
-    console.log(formType)
     switch (formType) {
         case 'ophthalmicReport':
             return {
@@ -153,19 +152,16 @@ const FormFields = ({ formType, initialData = null, logoSrc = null, apiUrlBase =
     const [formData, setFormData] = useState({});
 
     useEffect(() => {
-        console.log(`Form type changed to: ${formType}`);
         const defaultStructure = getDefaultFormData(formType);
         let dataToSet = { ...defaultStructure };
 
         if (initialData && typeof initialData === 'object') {
-            console.log("Loading initial data:", initialData);
             for (const key in defaultStructure) { // Iterate over default keys
                 if (initialData.hasOwnProperty(key)) {
                     dataToSet[key] = initialData[key] ?? ''; // Use provided value or empty string
                 }
             }
         } else {
-            console.log("No valid initial data provided or keys mismatch, using defaults.");
         }
 
         setFormData(dataToSet);
@@ -181,7 +177,6 @@ const FormFields = ({ formType, initialData = null, logoSrc = null, apiUrlBase =
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Submitting Form Data:", formData);
         const apiUrl = `${apiUrlBase}/submit/${formType}`;
 
         if (!formType || Object.keys(getDefaultFormData(formType)).length === 0) {

@@ -6,7 +6,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path('', include('backend.urls')),
+    path('', include('sacl_ohc.urls')),
     path('admin/', admin.site.urls),
 ]
 

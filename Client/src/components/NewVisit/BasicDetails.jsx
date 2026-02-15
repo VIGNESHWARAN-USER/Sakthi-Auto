@@ -257,7 +257,6 @@ const NewVisit = () => {
         const response = await axios.post("http://localhost:8000/userData");
         setEmployees(response.data.data);                        
         setFilteredEmployees(response.data.data);
-        console.log(response.data.data);
                                                                     
         const savedEmployee = localStorage.getItem("selectedEmployee");
         if (savedEmployee) {
@@ -265,12 +264,8 @@ const NewVisit = () => {
           setdata([parsedEmployee]);
           setFormData(parsedEmployee);
         }
-
-        
-        console.log(search, reference);
         
         if(reference && search) {
-          console.log(search);
           setSearchId(search);
         }
 
@@ -329,7 +324,6 @@ const NewVisit = () => {
     const calculateAge = (dob) => {
       const today = new Date();
       const birthDate = new Date(dob.split('-')[2], dob.split('-')[1] - 1, dob.split('-')[0]); 
-      console.log(birthDate)
       let age = today.getFullYear() - birthDate.getFullYear();
       const monthDiff = today.getMonth() - birthDate.getMonth();
       if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {

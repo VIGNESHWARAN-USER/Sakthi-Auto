@@ -43,8 +43,6 @@ const allFitnessTestsConfig = [
 ];
 
 const FitnessPage = ({ data, mrdNo, register, reference, appointment }) => {
-    console.log(data?.[0]?.fitnessassessment?.mrdNo, mrdNo);
-    console.log(data)
     const [showAllTests, setShowAllTests] = useState(false); // For toggling fitness tests visibility
     const allOptions = ["Height", "Gas Line", "Confined Space", "SCBA Rescue", "Fire Rescue", "Lone Work", "Fisher Man", "Snake Catch", "Pest Control", "Others"];
     const statutoryOptions = ["Select Form", "Form 17", "Form 38", "Form 39", "Form 40", "Form 27"];
@@ -395,7 +393,7 @@ const FitnessPage = ({ data, mrdNo, register, reference, appointment }) => {
         const employer = data?.[0]?.type || '';
         const submittedDoctor = localStorage.getItem("userData") || '';
         const isDoctorVisited = existingAssessment?.submittedDoctor === "" || existingAssessment?.submittedDoctor === null || existingAssessment?.submittedDoctor === undefined || existingAssessment.medNo !== mrdNo;
-        console.log(isDoctorVisited)
+      
         const payload = {
             ...fitnessFormData,
             mrdNo: mrdNo,

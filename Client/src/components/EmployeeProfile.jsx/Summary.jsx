@@ -22,10 +22,9 @@ const Summary = () => {
         const fetchUserData = async () => {
             try {
                 const response = await axios.get(`http://localhost:8000/visitDataWithMrd/${mrdNo}`);
-                console.log(response)
-                console.log(response.data.data)
+                
                 const data = await response.data.data;
-                console.log(data);
+                
                 setVisitData(data);
                 setFilteredData(data);
                 setLoading(false);

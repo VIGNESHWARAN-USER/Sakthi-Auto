@@ -122,7 +122,7 @@
                     }
 
                     const data = await response.json();
-                    console.log("Fetched camp data:", data); // Debugging log
+                    
                     setCampData(data);
                     setFilteredCampData(data);
 
@@ -136,7 +136,7 @@
                             ppt: camp.ppt
                         };
                     });
-                    console.log("Initial dbFiles state:", initialDbFiles); // Debugging log
+                    
                     setDbFiles(initialDbFiles);
 
                 } catch (err) {
@@ -163,11 +163,8 @@
             };
 
             const handleFileChange = (e, campId, fileType) => {
-                console.log("upload sucessfully",e);
-                console.log(campId);
-                console.log(fileType);
-                const files = Array.from(e.target.files);   
-                console.log("Selected files:", files);
+                
+                const files = Array.from(e.target.files);  
                 setSelectedFiles((prevSelectedFiles) => ({
                     ...prevSelectedFiles,
                     [campId]: {
@@ -251,7 +248,6 @@
 
                 const formData = new FormData();
                 formData.append("files", fileToUpload);
-                console.log("Form Data File:", fileToUpload);
                 formData.append("campId", campId);
                 formData.append("fileType", fileType);
 
@@ -268,7 +264,6 @@
                     }
 
                     const responseData = await response.json();
-                    console.log("File upload response:", responseData); // Debugging log
 
                     // Update the dbFiles state with the new file URL
                     setDbFiles(prevDbFiles => ({

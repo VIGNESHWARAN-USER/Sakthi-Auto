@@ -15,7 +15,6 @@ const VisitHistory = ({ data }) => {
     // State for data
     const [filteredData, setFilteredData] = useState([]);
     const [visitData, setVisitData] = useState([]); // This will hold the original, unfiltered data
-    console.log(visitData)
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
     const aadhar = data.aadhar;

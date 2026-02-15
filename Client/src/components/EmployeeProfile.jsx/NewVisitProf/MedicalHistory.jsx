@@ -89,8 +89,6 @@ const FamilyMemberTable = ({ title, members, tableStyle, headerStyle, cellStyle 
 // --- Main Component ---
 
 const MedicalHistory1 = ({ data }) => {
-  // console.log(data.medicalhistory) 
-  // Check for valid data, otherwise show a message
   if (!data || !data?.medicalhistory) {
     return (
       <div className="p-6 bg-white rounded-lg shadow-md">

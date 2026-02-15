@@ -148,7 +148,7 @@ const SignificantNotes = ({ data, type, mrdNo}) => {
   const emp_no = data && data.length > 0 ? data[0]?.emp_no : null;
   const aadhar = data && data.length > 0 ? data[0]?.aadhar : null;
   const accessLevel = typeof window !== 'undefined' ? localStorage.getItem('accessLevel') : null; // Check for window object
-  console.log(accessLevel)
+  
   const isDoctor = accessLevel === 'doctor';
 
   // Function to fetch history and find previous entry (remains mostly the same)
@@ -161,7 +161,7 @@ const SignificantNotes = ({ data, type, mrdNo}) => {
         setPreviousCommunicableDisease(''); // Reset previous value on fetch
         try {
             const response = await axios.get(`http://localhost:8000/get_notes/${aadharNumber}`);
-            console.log("Fetched Historical Notes:", response.data);
+           
 
             // Handle the new response format
             let fetchedNotesArray = [];

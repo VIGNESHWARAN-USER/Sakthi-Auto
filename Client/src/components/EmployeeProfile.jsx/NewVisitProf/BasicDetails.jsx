@@ -107,11 +107,9 @@ const BasicDetails = ({ data }) => {
     // Helper function to handle the update logic
     // You would pass 'onUpdateData' from your parent page component to handle the actual API call
     const handleFieldUpdate = async (fieldKey, newValue) => {
-        console.log(`Updating ${fieldKey} to:`, newValue);
         
         try {
             
-            console.log("HII")
             const respose = await axios.post("http://localhost:8000/updateEmployeeData",{
                 emp_no: data.emp_no,
                 field: fieldKey,

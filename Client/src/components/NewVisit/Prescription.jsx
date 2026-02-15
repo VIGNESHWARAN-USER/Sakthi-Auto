@@ -8,11 +8,11 @@ import jsPDF from "jspdf";
 const Prescription = ({ data, onPrescriptionUpdate, condition, register, mrdNo }) => {
   
   
-  console.log(data)
+ 
   let aadhar = data?.[0]?.aadhar || "";
   const emp_no = data?.[0]?.emp_no;
   const existingPrescription = data?.[0]?.prescription || data?.[0];  // Assuming 'data' prop might contain an existing prescription
-  console.log(existingPrescription, condition)
+  
   // State for different medicine types
   const [tablets, setTablets] = useState([]);
   const [injections, setInjections] = useState([]);
@@ -83,8 +83,6 @@ const Prescription = ({ data, onPrescriptionUpdate, condition, register, mrdNo }
     register &&
     typeof register === "string" &&
     register.toUpperCase().startsWith("OVER");
-  console.log(accessLevel)
-  // Default row structure
   const getDefaultRow = useCallback(
     () => ({
       chemicalName: "",
@@ -554,11 +552,7 @@ const Prescription = ({ data, onPrescriptionUpdate, condition, register, mrdNo }
         if (intValue > maxQty) intValue = maxQty;
         value = intValue;
       }
-    console.log(
-      `Updating ${type} row ${index}, field ${field} with value:`,
-      value
-    );
-
+    
     updateRowState(type, index, field, value);
     
     if (isDoctor || isNurseWithOverride) {
@@ -1044,7 +1038,6 @@ const Prescription = ({ data, onPrescriptionUpdate, condition, register, mrdNo }
       "dressingItems",
       "others",
     ].includes(type);
-    console.log(data);
     const isFieldDisabledForCurrentUser = false
 
     const isPharmacyFieldDisabledForCurrentUser = !isPharmacy;

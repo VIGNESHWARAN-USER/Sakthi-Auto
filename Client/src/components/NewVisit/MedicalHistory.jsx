@@ -177,7 +177,6 @@
         setSex(currentInitialSex);
 
         const medical = currentData.medicalhistory || {};
-        console.log("Extracted medical history data:", medical);
 
         const defaultPersonalHistory = { diet: "", paan: { yesNo: "", years: "" }, alcohol: { yesNo: "", years: "", frequency: "" }, smoking: { yesNo: "", years: "", perDay: "" } };
         const loadedPersonalHistory = medical.personal_history || {};
@@ -250,7 +249,6 @@
 
         setConditions({ ...initialConditions, ...(medical.conditions || {}) });
       } else {
-        console.log("No valid data received, resetting medical history form state.");
         setSex("");
         setPersonalHistory({ diet: "", paan: { yesNo: "", years: "" }, alcohol: { yesNo: "", years: "", frequency: "" }, smoking: { yesNo: "", years: "", perDay: "" } });
         setMedicalData(initialMedicalData);
@@ -447,9 +445,6 @@
           delete formData.family_history.Gynaec;
         }
       }
-
-      console.log("Submitting Data:", JSON.stringify(formData, null, 2));
-
       try {
         const response = await fetch("http://localhost:8000/medical-history/", {
           method: "POST",
@@ -458,7 +453,6 @@
         });
         if (response.ok) {
           const result = await response.json();
-          console.log("Data submitted successfully!", result);
           alert("Form submitted successfully!");
           setMedicalData(processedMedicalData);
           setSurgicalHistory(processedSurgicalHistory);

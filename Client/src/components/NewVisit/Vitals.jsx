@@ -103,7 +103,6 @@ const VitalsForm = ({ data, type, mrdNo }) => {
                     loadedData[key] = initialVitals[key];
                 }
             }
-            console.log(loadedData)
             loadedData.aadhar = initialData.aadhar || loadedData.aadhar || '';
             loadedData.bp_status = calculateBpStatus(loadedData.systolic, loadedData.diastolic);
             loadedData.pulse_status = calculatePulseStatus(loadedData.pulse);
@@ -114,7 +113,6 @@ const VitalsForm = ({ data, type, mrdNo }) => {
             loadedData.bmi_status = calculateBmiStatus(loadedData.bmi);
             setFormData(loadedData);
         } else {
-            console.log("No initial vitals found or invalid format. Using default empty state.");
             const initialBmi = calculateBmiValue(defaultState.height, defaultState.weight);
             defaultState.bmi = initialBmi;
             defaultState.bmi_status = calculateBmiStatus(initialBmi);
@@ -235,11 +233,7 @@ const VitalsForm = ({ data, type, mrdNo }) => {
                 }
             }
         }
-
-        console.log("Submitting FormData:");
-        for (let pair of submissionData.entries()) {
-            console.log(pair[0] + ': ' + (pair[1] instanceof File ? `File(${pair[1].name}, size: ${pair[1].size}, type: ${pair[1].type})` : pair[1]));
-        }
+        
 
         const apiUrl = "http://localhost:8000/addvitals";
 

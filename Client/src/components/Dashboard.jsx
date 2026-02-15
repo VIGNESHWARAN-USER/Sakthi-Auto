@@ -332,7 +332,7 @@ const App = () => {
                 filteredData = visitData.filter(item => item.type === overAllFootFall);
             }
             const subFilteredData = filteredData.filter(item => item.type_of_visit === selectedBar);
-            console.log("Sub Filtered Data for Level 2:", subFilteredData);
+            
             const groupedData = {};
             if(selectedBar === "Follow Up")
             {
@@ -359,11 +359,11 @@ const App = () => {
     useEffect(() => {
         let thirdData = [];
         if (selectedSubBar && selectedBar) {
-            console.log("Selected Sub Bar for Level 3:", selectedSubBar, selectedBar);
+            
             const filteredVisitData = visitData.filter(item => 
                 item.register === selectedSubBar && item.type_of_visit === selectedBar
             );
-            console.log("Filtered Data for Level 3:", filteredVisitData);
+            
             const groupedData = {};
             filteredVisitData.forEach(item => {
                 const key = item.other_register;

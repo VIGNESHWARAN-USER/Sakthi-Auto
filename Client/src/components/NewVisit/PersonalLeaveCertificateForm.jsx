@@ -17,9 +17,7 @@ export const FormRadioGroup = ({ label, name, value, onChange, options, classNam
 
 
 const PersonalLeaveCertificateForm = ({ aadhar, mrdNo, onDataChange, isDoctor, logoSrc }) => {
-  // ----> ADD THIS LINE TO DEBUG <----
-  console.log(`[Certificate Form] Received isDoctor prop with value:`, isDoctor);
-
+  
   const [showForm, setShowForm] = useState(false);
 
   const defaultState = {

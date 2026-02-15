@@ -32,7 +32,6 @@ const MedicalCertificate = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Submitted Data:", formData);
   };
 
   return (

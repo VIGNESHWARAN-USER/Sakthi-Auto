@@ -52,7 +52,6 @@ const Login = () => {
           username: name,
           password: pass,
         });
-        console.log(response.data)
         if (response.status === 200) {
           localStorage.setItem("accessLevel", response.data.accessLevel);
           localStorage.setItem("userData", response.data.username)
