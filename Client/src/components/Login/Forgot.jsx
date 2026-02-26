@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import leftlogin from "../../assets/login-left.png";
-import logo from "../../assets/login.png";
+import logo from "../../assets/logo.png";
 import { IoIosEyeOff, IoIosEye } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";

@@ -98,9 +98,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'sakthiautodb',
         'USER': 'avnadmin',
-        'PASSWORD': 'AVNS_fTKFcjzwiSA50liDciv',
-        'HOST': "mysql-96df329-pramothrpro-9634.f.aivencloud.com",
-        'PORT': '25197',
+        'PASSWORD': 'AVNS_pglAGGn58sK9XJ7RYqD',
+        'HOST': "erp-vigneshwaran-6b62.k.aivencloud.com",
+        'PORT': '16990',
         'CONN_MAX_AGE':0
     }
 }
