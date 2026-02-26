@@ -98,8 +98,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'sakthiautodb',
         'USER': 'avnadmin',
-        'PASSWORD': 'AVNS_pglAGGn58sK9XJ7RYqD',
-        'HOST': "erp-vigneshwaran-6b62.k.aivencloud.com",
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
         'PORT': '16990',
         'CONN_MAX_AGE':0
     }
