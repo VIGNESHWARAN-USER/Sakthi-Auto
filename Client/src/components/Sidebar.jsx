@@ -22,9 +22,9 @@ import {
   MdReceipt,
 } from "react-icons/md";
 import axios from "axios";
-import img from "../assets/logo.png"; // Make sure this path is correct
+import img from "../assets/logo.png"; 
 
-// --- CHANGE 1: Accept the 'redCount' prop ---
+
 const Sidebar = ({ redCount }) => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -35,38 +35,30 @@ const Sidebar = ({ redCount }) => {
   const [expiryCount, setExpiryCount] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  // Close sidebar when navigating on mobile
+  
   useEffect(() => {
     if (isOpen) {
       setIsOpen(false);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, [location]);
 
-  // --- CHANGE 2: Update the logic to use the prop or fetch from API ---
+  
   useEffect(() => {
-    // If redCount is passed as a prop (it will be a number, including 0), use it directly.
-    // This will happen when the user is on the InstrumentCalibration page.
     if (typeof redCount === 'number') {
       setPendingCount(redCount);
     } else {
-      // Otherwise (on any other page), fall back to the original fetch logic.
       if (accessLevel === 'nurse' || accessLevel === 'doctor') {
         fetchPendingCount();
       } else {
-        setPendingCount(0); // Set to 0 if not applicable for this user role
+        setPendingCount(0); 
       }
     }
-
-    // Fetch expiry count separately, as this logic is independent.
     if (accessLevel === 'pharmacy') {
       fetchExpiryCount();
     }
-    // This effect will re-run if the user navigates, the role changes, or the redCount prop updates.
   }, [redCount, accessLevel, location.pathname]);
 
-
-  // This function now serves as the fallback for pages other than InstrumentCalibration.
   const fetchPendingCount = async () => {
     try {
       const response = await axios.get("http://localhost:8000/get_red_status_count/");
@@ -213,7 +205,7 @@ const Sidebar = ({ redCount }) => {
           [scrollbar-width:none] [&::-webkit-scrollbar]:hidden
           `}
       >
-        {/* Logo */}
+        
         <div className="p-6 flex justify-center flex-shrink-0 relative">
           <button
             className="md:hidden absolute top-2 right-2 p-2 text-white hover:text-gray-200"
@@ -225,11 +217,11 @@ const Sidebar = ({ redCount }) => {
           <img
             src={img}
             alt="Logo"
-            className="w-auto max-w-[80%] h-auto p-2"
+            className="w-auto bg-white rounded-2xl max-w-[80%] h-auto p-2"
           />
         </div>
 
-        {/* Menu Items */}
+        
         <nav className="flex-1 px-4 py-2">
           {currentMenu.map((item, index) => {
             const absoluteBaseUrl = window.location.origin + location.pathname.substring(0, location.pathname.lastIndexOf('/'));
@@ -245,13 +237,11 @@ const Sidebar = ({ redCount }) => {
                   : "hover:bg-blue-500 hover:text-white hover:scale-105"
                   }`}
               >
-                {/* Icon and Text container */}
+                
                 <div className="flex items-center space-x-3">
                   <span className="flex-shrink-0 w-5 h-5">{item.icon}</span>
                   <span>{item.name}</span>
                 </div>
-
-                {/* Badge rendering */}
                 {item.badgeName && renderBadge(item.badgeName)}
 
               </Link>
@@ -267,7 +257,7 @@ const Sidebar = ({ redCount }) => {
           Login as: {accessLevel.toUpperCase()}
         </p>
 
-        {/* Logout Button */}
+       
         <div className="p-4 mt-auto flex-shrink-0">
           <button
             onClick={() => {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import leftlogin from "../../assets/login-left.png";
-import logo from "../../assets/login.png";
+import logo from "../../assets/logo.png";
 import { IoIosEyeOff, IoIosEye } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -85,7 +85,7 @@ const Login = () => {
     <div className="flex flex-col md:flex-row h-screen">
       <div className="md:w-2/5 w-full h-1/3 md:h-full bg-center bg-cover" style={{ backgroundImage: `url(${leftlogin})` }}>
         <div className="flex items-end justify-center h-full pb-5 md:pb-10">
-          <img src={logo} alt="Logo" className="w-[500px]" />
+          <img src={logo} alt="Logo" className="w-[400px]" />
         </div>
       </div>
 
